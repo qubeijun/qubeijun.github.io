@@ -1,0 +1,340 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Dojo简单入门 | qubeijun的博客</title><meta name="author" content="QuBeiJun"><meta name="copyright" content="QuBeiJun"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Dojo是一个用javascript语言实现的开源DHTML工具包。  以前从来没听过，PM说未来项目需要，所以就用一天时间大概过了一遍。中文教程确实非常少，找教程找了半天找到了一个，但对于小白来说入门是非常容易了。   &lt;!DOCTYPE html&gt; &lt;html lang&#x3D;&quot;en&quot; dir&#x3D;&quot;ltr&quot;&gt;   &lt;head&gt;     &lt;title&gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dojo简单入门">
+<meta property="og:url" content="https://qubeijun.github.io/2020/03/19/Dojo%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/index.html">
+<meta property="og:site_name" content="qubeijun的博客">
+<meta property="og:description" content="Dojo是一个用javascript语言实现的开源DHTML工具包。  以前从来没听过，PM说未来项目需要，所以就用一天时间大概过了一遍。中文教程确实非常少，找教程找了半天找到了一个，但对于小白来说入门是非常容易了。   &lt;!DOCTYPE html&gt; &lt;html lang&#x3D;&quot;en&quot; dir&#x3D;&quot;ltr&quot;&gt;   &lt;head&gt;     &lt;title&gt;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://qubeijun.github.io/image/avatar.jpg">
+<meta property="article:published_time" content="2020-03-19T02:50:05.000Z">
+<meta property="article:modified_time" content="2024-09-30T08:25:08.966Z">
+<meta property="article:author" content="QuBeiJun">
+<meta property="article:tag" content="dojo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://qubeijun.github.io/image/avatar.jpg"><link rel="shortcut icon" href="/quBlogHexo/img/favicon.png"><link rel="canonical" href="https://qubeijun.github.io/2020/03/19/Dojo%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/quBlogHexo/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/quBlogHexo/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Dojo简单入门',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-09-30 16:25:08'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/quBlogHexo/image/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/quBlogHexo/archives/"><div class="headline">文章</div><div class="length-num">29</div></a><a href="/quBlogHexo/tags/"><div class="headline">标签</div><div class="length-num">22</div></a><a href="/quBlogHexo/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/quBlogHexo/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/quBlogHexo/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/quBlogHexo/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/quBlogHexo/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/quBlogHexo/" title="qubeijun的博客"><img class="site-icon" src="/quBlogHexo/image/avatar.jpg"/><span class="site-name">qubeijun的博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/quBlogHexo/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/quBlogHexo/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/quBlogHexo/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/quBlogHexo/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">Dojo简单入门</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-03-19T02:50:05.000Z" title="发表于 2020-03-19 10:50:05">2020-03-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-09-30T08:25:08.966Z" title="更新于 2024-09-30 16:25:08">2024-09-30</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Dojo简单入门"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><span id="more"></span>
+
+<p><em>Dojo</em>是一个用javascript语言实现的开源DHTML工具包。</p>
+
+<p>以前从来没听过，PM说未来项目需要，所以就用一天时间大概过了一遍。中文教程确实非常少，找教程找了半天找到了<a target="_blank" rel="noopener" href="https://www.ibm.com/developerworks/cn/web/wa-ground/index.html?ca=drs-">一个</a>，但对于小白来说入门是非常容易了。</p>
+
+<pre>
+<code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en" dir="ltr"&gt;
+  &lt;head&gt;
+    &lt;title&gt;Dijit Template&lt;/title&gt;
+    &lt;link rel="stylesheet" href="dojo-release-1.16.2/dijit/themes/claro/claro.css" /&gt;
+    &lt;link rel="stylesheet" href="dojo-release-1.16.2/dojox/form/resources/Rating.css" /&gt;
+    &lt;style type="text/css"&gt;
+      body,
+      html &#123;
+        font-family: helvetica, arial, sans-serif;
+        font-size: 90%;
+      &#125;
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body class="claro"&gt;
+    &lt;!-- HTML content here --&gt;
+
+    &lt;!-- 1、声明的方式使用dijit --&gt;
+    &lt;div dojoType="dijit._Calendar"&gt;&lt;/div&gt;
+    &lt;!-- 2、javascript使用dijit --&gt;
+    &lt;div id="myCalendar"&gt;&lt;/div&gt;
+    &lt;!-- 按钮 --&gt;
+    &lt;button id="myButton" dojoType="dijit.form.Button"&gt;Push Me&lt;/button&gt;
+    &lt;!-- 五星好评 --&gt;
+    &lt;div dojoType="dojox.form.Rating" numstars="5" value="3"&gt;&lt;/div&gt;
+    &lt;!-- 内容窗格 --&gt;
+    &lt;br /&gt;
+    &lt;button dojoType="dijit.form.Button" id="myButton1"&gt;
+      Load content using XHR
+    &lt;/button&gt;
+    &lt;div dojoType="dijit.layout.ContentPane" id="myContentPane1"&gt;
+      &lt;h1&gt;Static content here!&lt;/h1&gt;
+    &lt;/div&gt;
+
+    &lt;!-- 堆叠容器 --&gt;
+    &lt;div dojoType="dijit.layout.StackContainer" id="stackContainer"&gt;
+      &lt;div dojoType="dijit.layout.ContentPane" title="Stack 1"&gt;
+        This is the content in stack 1.
+      &lt;/div&gt;
+      &lt;div dojoType="dijit.layout.ContentPane" title="Stack 2"&gt;
+        This is the content in stack 2.
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div dojoType="dijit.layout.StackController" containerId="stackContainer"&gt;&lt;/div&gt;
+
+    &lt;!-- 选项卡容器 --&gt;
+    &lt;div style="width: 535px; height: 290px"&gt;
+      &lt;div dojoType="dijit.layout.TabContainer" style="width: 100%; height: 100%;"&gt;
+        &lt;div dojoType="dijit.layout.ContentPane" title="Tab 1"&gt;
+          This is the content in tab 1.
+        &lt;/div&gt;
+        &lt;div dojoType="dijit.layout.ContentPane" title="Tab 2"&gt;
+          This is the content in tab 2.
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- 折叠容器 --&gt;
+    &lt;div style="width: 535px; height: 290px"&gt;
+      &lt;div dojoType="dijit.layout.AccordionContainer" style="width: 100%; height: 100%;"&gt;
+        &lt;div dojoType="dijit.layout.ContentPane" title="Blade 1"&gt;
+          This is the content in blade 1.
+        &lt;/div&gt;
+        &lt;div dojoType="dijit.layout.ContentPane" title="Blade 2"&gt;
+          This is the content in blade 2.
+        &lt;/div&gt;
+        &lt;div dojoType="dijit.layout.ContentPane" title="Blade 3"&gt;
+          This is the content in blade 3.
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- 边框容器布局 --&gt;
+    &lt;div style="width: 535px; height: 290px"&gt;
+      &lt;div dojoType="dijit.layout.BorderContainer" style="width: 100%; height: 100%;"&gt;
+        &lt;div dojoType="dijit.layout.ContentPane" region="top" splitter="true"&gt;
+          This is the content in the top section.
+        &lt;/div&gt;
+        &lt;div dojoType="dijit.layout.ContentPane" region="left" style="width: 100px;" splitter="true"&gt;
+          This is the content in the left section.
+        &lt;/div&gt;
+        &lt;div dojoType="dijit.layout.ContentPane" region="center" splitter="true"&gt;
+          This is the content in the center section.
+        &lt;/div&gt;
+        &lt;div dojoType="dijit.layout.ContentPane" region="right" style="width: 100px;" splitter="true"&gt;
+          This is the content in the right section.
+        &lt;/div&gt;
+        &lt;div dojoType="dijit.layout.ContentPane" region="bottom" splitter="true"&gt;
+          This is the content in the bottom section.
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- 1、嵌套组件 --&gt;
+    &lt;div dojoType="dijit.TitlePane" title="Color Picker"&gt;
+      &lt;!-- 添加事件 --&gt;
+      &lt;div dojoType="dijit.ColorPalette" onChange="alert(this.value)"&gt;
+        &lt;script type="dojo/method" event="onChange" args="evt"&gt;
+          alert(this.value);
+        &lt;/script&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- 2、嵌套组件 --&gt;
+    &lt;div id="myTitlePane"&gt;
+      &lt;div id="myColorPalette"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;script src="dojo-release-1.16.2/dojo/dojo.js" djConfig="parseOnLoad: true"&gt;&lt;/script&gt;
+    &lt;script&gt;
+      dojo.require('dijit.dijit')
+      //Add Dijit components you are using here using dojo.require
+      dojo.require('dijit._Calendar')
+      
+      dojo.require('dojox.form.Rating')
+
+      dojo.require('dijit.form.Button')
+      dojo.require('dijit.Dialog')
+
+      dojo.require('dijit.form.Button')
+      dojo.require('dijit.layout.ContentPane')
+
+      dojo.require('dijit.layout.StackContainer')
+      dojo.require('dijit.layout.StackController')
+      dojo.require('dijit.layout.ContentPane')
+
+      dojo.require('dijit.layout.TabContainer')
+      dojo.require('dijit.layout.ContentPane')
+
+      dojo.require('dijit.layout.AccordionContainer')
+      dojo.require('dijit.layout.ContentPane')
+
+      dojo.require('dijit.layout.BorderContainer')
+      dojo.require('dijit.layout.ContentPane')
+
+      dojo.require('dijit.TitlePane')
+      dojo.require('dijit.ColorPalette')
+
+      dojo.addOnLoad(function() &#123;
+        //时间组件
+        var calendar = new dijit.Calendar(&#123;&#125;, 'myCalendar')
+        //嵌套组件
+        var colorPalette = new dijit.ColorPalette(
+          &#123;
+            //1、点击事件方法1
+            // onChange: function(evt) &#123;
+            //   alert(this.value)
+            // &#125;
+          &#125;,
+          'myColorPalette'
+        )
+        //2、点击事件方法2
+        dojo.connect(colorPalette, 'onChange', null, function(evt) &#123;
+          alert(this.value)
+        &#125;)
+        var titlePane = new dijit.TitlePane(&#123; title: 'Color Picker' &#125;, 'myTitlePane')
+        //JavaScript content here
+        //按钮组件
+        var button = dijit.byId('myButton')
+        dojo.connect(button, 'onClick', null, function(evt) &#123;
+          var dialog = new dijit.Dialog(&#123;
+            content: 'You clicked the button!',
+            title: 'Message'
+          &#125;).show()
+        &#125;)
+
+        //内容窗格
+        var button = dijit.byId('myButton1')
+        var contentPane = dijit.byId('myContentPane1')
+        dojo.connect(button, 'onClick', null, function(evt) &#123;
+          contentPane.attr('href', 'content.html')
+        &#125;)
+      &#125;)
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p><img alt="" height="1200" src="https://i-blog.csdnimg.cn/blog_migrate/88c00098224c880c327d2e6eceff4954.png" width="679" /></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://qubeijun.github.io">QuBeiJun</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://qubeijun.github.io/2020/03/19/Dojo%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/">https://qubeijun.github.io/2020/03/19/Dojo%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://qubeijun.github.io" target="_blank">qubeijun的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/quBlogHexo/tags/dojo/">dojo</a></div><div class="post_share"><div class="social-share" data-image="/quBlogHexo/image/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/quBlogHexo/2021/02/02/Alibaba%20Cloud%20Toolkit%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/" title="Alibaba Cloud Toolkit的使用说明"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Alibaba Cloud Toolkit的使用说明</div></div></a></div><div class="next-post pull-right"><a href="/quBlogHexo/2020/03/17/Angular%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/" title="Angular简单入门"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Angular简单入门</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/quBlogHexo/image/avatar.jpg" onerror="this.onerror=null;this.src='/quBlogHexo/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">QuBeiJun</div><div class="author-info__description">qubeijun的博客</div></div><div class="card-info-data site-data is-center"><a href="/quBlogHexo/archives/"><div class="headline">文章</div><div class="length-num">29</div></a><a href="/quBlogHexo/tags/"><div class="headline">标签</div><div class="length-num">22</div></a><a href="/quBlogHexo/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/qubeijun" target="_blank" title="Github"><i class="fab fa-github" style="color: #hdhfbb;"></i></a><a class="social-icon" href="/quBlogHexo/18640274769@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #000000;"></i></a><a class="social-icon" href="/quBlogHexo/qu825954789" target="_blank" title=""><i class="fa-brands fa-weixin"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is qu's Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/quBlogHexo/2024/09/29/hello-world/" title="Hello World">Hello World</a><time datetime="2024-09-29T09:31:40.260Z" title="发表于 2024-09-29 17:31:40">2024-09-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/quBlogHexo/2021/04/13/%E5%90%84%E7%A7%8D%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E7%AD%94%E6%A1%88%E6%B1%87%E6%80%BB/" title="各种问题解决答案汇总">各种问题解决答案汇总</a><time datetime="2021-04-13T09:37:36.000Z" title="发表于 2021-04-13 17:37:36">2021-04-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/quBlogHexo/2021/02/02/Alibaba%20Cloud%20Toolkit%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/" title="Alibaba Cloud Toolkit的使用说明">Alibaba Cloud Toolkit的使用说明</a><time datetime="2021-02-02T06:56:42.000Z" title="发表于 2021-02-02 14:56:42">2021-02-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/quBlogHexo/2020/03/19/Dojo%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/" title="Dojo简单入门">Dojo简单入门</a><time datetime="2020-03-19T02:50:05.000Z" title="发表于 2020-03-19 10:50:05">2020-03-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/quBlogHexo/2020/03/17/Angular%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/" title="Angular简单入门">Angular简单入门</a><time datetime="2020-03-17T06:47:58.000Z" title="发表于 2020-03-17 14:47:58">2020-03-17</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By QuBeiJun</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/quBlogHexo/js/utils.js?v=4.13.0"></script><script src="/quBlogHexo/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

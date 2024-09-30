@@ -1,0 +1,602 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>词性标注集 | qubeijun的博客</title><meta name="author" content="QuBeiJun"><meta name="copyright" content="QuBeiJun"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="HanLP词性标注集         a                       形容词                       ad                       副形词                       ag                       形容词性语素                       al">
+<meta property="og:type" content="article">
+<meta property="og:title" content="词性标注集">
+<meta property="og:url" content="https://qubeijun.github.io/2019/05/14/%E8%AF%8D%E6%80%A7%E6%A0%87%E6%B3%A8%E9%9B%86/index.html">
+<meta property="og:site_name" content="qubeijun的博客">
+<meta property="og:description" content="HanLP词性标注集         a                       形容词                       ad                       副形词                       ag                       形容词性语素                       al">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://qubeijun.github.io/image/avatar.jpg">
+<meta property="article:published_time" content="2019-05-14T07:00:47.000Z">
+<meta property="article:modified_time" content="2024-09-30T08:25:08.968Z">
+<meta property="article:author" content="QuBeiJun">
+<meta property="article:tag" content="hanlp">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://qubeijun.github.io/image/avatar.jpg"><link rel="shortcut icon" href="/quBlogHexo/img/favicon.png"><link rel="canonical" href="https://qubeijun.github.io/2019/05/14/%E8%AF%8D%E6%80%A7%E6%A0%87%E6%B3%A8%E9%9B%86/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/quBlogHexo/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/quBlogHexo/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '词性标注集',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-09-30 16:25:08'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/quBlogHexo/image/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/quBlogHexo/archives/"><div class="headline">文章</div><div class="length-num">29</div></a><a href="/quBlogHexo/tags/"><div class="headline">标签</div><div class="length-num">22</div></a><a href="/quBlogHexo/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/quBlogHexo/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/quBlogHexo/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/quBlogHexo/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/quBlogHexo/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/quBlogHexo/" title="qubeijun的博客"><img class="site-icon" src="/quBlogHexo/image/avatar.jpg"/><span class="site-name">qubeijun的博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/quBlogHexo/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/quBlogHexo/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/quBlogHexo/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/quBlogHexo/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">词性标注集</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-05-14T07:00:47.000Z" title="发表于 2019-05-14 15:00:47">2019-05-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-09-30T08:25:08.968Z" title="更新于 2024-09-30 16:25:08">2024-09-30</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="词性标注集"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><span id="more"></span>
+
+<table border="1" cellpadding="3" cellspacing="0" summary=""><tbody><tr><th colspan="2">HanLP词性标注集</th>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">a</a></strong></code><br />
+                      形容词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">ad</a></strong></code><br />
+                      副形词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">ag</a></strong></code><br />
+                      形容词性语素</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">al</a></strong></code><br />
+                      形容词性惯用语</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">an</a></strong></code><br />
+                      名形词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">b</a></strong></code><br />
+                      区别词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">begin</a></strong></code><br />
+                      仅用于始##始</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">bg</a></strong></code><br />
+                      区别语素</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">bl</a></strong></code><br />
+                      区别词性惯用语</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">c</a></strong></code><br />
+                      连词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">cc</a></strong></code><br />
+                      并列连词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">d</a></strong></code><br />
+                      副词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">dg</a></strong></code><br />
+                      辄,俱,复之类的副词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">dl</a></strong></code><br />
+                      连语</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">e</a></strong></code><br />
+                      叹词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">end</a></strong></code><br />
+                      仅用于终##终</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">f</a></strong></code><br />
+                      方位词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">g</a></strong></code><br />
+                      学术词汇</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">gb</a></strong></code><br />
+                      生物相关词汇</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">gbc</a></strong></code><br />
+                      生物类别</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">gc</a></strong></code><br />
+                      化学相关词汇</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">gg</a></strong></code><br />
+                      地理地质相关词汇</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">gi</a></strong></code><br />
+                      计算机相关词汇</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">gm</a></strong></code><br />
+                      数学相关词汇</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">gp</a></strong></code><br />
+                      物理相关词汇</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">h</a></strong></code><br />
+                      前缀</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">i</a></strong></code><br />
+                      成语</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">j</a></strong></code><br />
+                      简称略语</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">k</a></strong></code><br />
+                      后缀</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">l</a></strong></code><br />
+                      习用语</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">m</a></strong></code><br />
+                      数词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">mg</a></strong></code><br />
+                      数语素</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">Mg</a></strong></code><br />
+                      甲乙丙丁之类的数词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">mq</a></strong></code><br />
+                      数量词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">n</a></strong></code><br />
+                      名词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">nb</a></strong></code><br />
+                      生物名</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">nba</a></strong></code><br />
+                      动物名</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">nbc</a></strong></code><br />
+                      动物纲目</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">nbp</a></strong></code><br />
+                      植物名</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">nf</a></strong></code><br />
+                      食品，比如“薯片”</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">ng</a></strong></code><br />
+                      名词性语素</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">nh</a></strong></code><br />
+                      医药疾病等健康相关名词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">nhd</a></strong></code><br />
+                      疾病</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">nhm</a></strong></code><br />
+                      药品</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">ni</a></strong></code><br />
+                      机构相关（不是独立机构名）</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">nic</a></strong></code><br />
+                      下属机构</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">nis</a></strong></code><br />
+                      机构后缀</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">nit</a></strong></code><br />
+                      教育相关机构</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">nl</a></strong></code><br />
+                      名词性惯用语</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">nm</a></strong></code><br />
+                      物品名</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">nmc</a></strong></code><br />
+                      化学品名</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">nn</a></strong></code><br />
+                      工作相关名词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">nnd</a></strong></code><br />
+                      职业</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">nnt</a></strong></code><br />
+                      职务职称</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">nr</a></strong></code><br />
+                      人名</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">nr1</a></strong></code><br />
+                      复姓</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">nr2</a></strong></code><br />
+                      蒙古姓名</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">nrf</a></strong></code><br />
+                      音译人名</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">nrj</a></strong></code><br />
+                      日语人名</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">ns</a></strong></code><br />
+                      地名</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">nsf</a></strong></code><br />
+                      音译地名</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">nt</a></strong></code><br />
+                      机构团体名</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">ntc</a></strong></code><br />
+                      公司名</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">ntcb</a></strong></code><br />
+                      银行</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">ntcf</a></strong></code><br />
+                      工厂</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">ntch</a></strong></code><br />
+                      酒店宾馆</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">nth</a></strong></code><br />
+                      医院</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">nto</a></strong></code><br />
+                      政府机构</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">nts</a></strong></code><br />
+                      中小学</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">ntu</a></strong></code><br />
+                      大学</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">nx</a></strong></code><br />
+                      字母专名</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">nz</a></strong></code><br />
+                      其他专名</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">o</a></strong></code><br />
+                      拟声词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">p</a></strong></code><br />
+                      介词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">pba</a></strong></code><br />
+                      介词“把”</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">pbei</a></strong></code><br />
+                      介词“被”</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">q</a></strong></code><br />
+                      量词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">qg</a></strong></code><br />
+                      量词语素</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">qt</a></strong></code><br />
+                      时量词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">qv</a></strong></code><br />
+                      动量词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">r</a></strong></code><br />
+                      代词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">rg</a></strong></code><br />
+                      代词性语素</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">Rg</a></strong></code><br />
+                      古汉语代词性语素</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">rr</a></strong></code><br />
+                      人称代词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">ry</a></strong></code><br />
+                      疑问代词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">rys</a></strong></code><br />
+                      处所疑问代词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">ryt</a></strong></code><br />
+                      时间疑问代词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">ryv</a></strong></code><br />
+                      谓词性疑问代词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">rz</a></strong></code><br />
+                      指示代词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">rzs</a></strong></code><br />
+                      处所指示代词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">rzt</a></strong></code><br />
+                      时间指示代词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">rzv</a></strong></code><br />
+                      谓词性指示代词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">s</a></strong></code><br />
+                      处所词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">t</a></strong></code><br />
+                      时间词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">tg</a></strong></code><br />
+                      时间词性语素</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">u</a></strong></code><br />
+                      助词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">ud</a></strong></code><br />
+                      助词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">ude1</a></strong></code><br />
+                      的 底</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">ude2</a></strong></code><br />
+                      地</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">ude3</a></strong></code><br />
+                      得</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">udeng</a></strong></code><br />
+                      等 等等 云云</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">udh</a></strong></code><br />
+                      的话</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">ug</a></strong></code><br />
+                      过</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">uguo</a></strong></code><br />
+                      过</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">uj</a></strong></code><br />
+                      助词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">ul</a></strong></code><br />
+                      连词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">ule</a></strong></code><br />
+                      了 喽</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">ulian</a></strong></code><br />
+                      连 （“连小学生都会”）</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">uls</a></strong></code><br />
+                      来讲 来说 而言 说来</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">usuo</a></strong></code><br />
+                      所</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">uv</a></strong></code><br />
+                      连词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">uyy</a></strong></code><br />
+                      一样 一般 似的 般</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">uz</a></strong></code><br />
+                      着</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">uzhe</a></strong></code><br />
+                      着</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">uzhi</a></strong></code><br />
+                      之</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">v</a></strong></code><br />
+                      动词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">vd</a></strong></code><br />
+                      副动词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">vf</a></strong></code><br />
+                      趋向动词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">vg</a></strong></code><br />
+                      动词性语素</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">vi</a></strong></code><br />
+                      不及物动词（内动词）</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">vl</a></strong></code><br />
+                      动词性惯用语</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">vn</a></strong></code><br />
+                      名动词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">vshi</a></strong></code><br />
+                      动词“是”</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">vx</a></strong></code><br />
+                      形式动词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">vyou</a></strong></code><br />
+                      动词“有”</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">w</a></strong></code><br />
+                      标点符号</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">wb</a></strong></code><br />
+                      百分号千分号，全角：％ ‰   半角：%</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">wd</a></strong></code><br />
+                      逗号，全角：， 半角：,</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">wf</a></strong></code><br />
+                      分号，全角：； 半角： ;</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">wh</a></strong></code><br />
+                      单位符号，全角：￥ ＄ ￡  °  ℃  半角：$</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">wj</a></strong></code><br />
+                      句号，全角：。</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">wky</a></strong></code><br />
+                      右括号，全角：） 〕  ］ ｝ 》  】 〗 〉 半角： ) ] { &gt;</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">wkz</a></strong></code><br />
+                      左括号，全角：（ 〔  ［  ｛  《 【  〖 〈   半角：( [ { &lt;</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">wm</a></strong></code><br />
+                      冒号，全角：： 半角： :</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">wn</a></strong></code><br />
+                      顿号，全角：、</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">wp</a></strong></code><br />
+                      破折号，全角：——   －－   ——－   半角：—  —-</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">ws</a></strong></code><br />
+                      省略号，全角：……  …</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">wt</a></strong></code><br />
+                      叹号，全角：！</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">ww</a></strong></code><br />
+                      问号，全角：？</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">wyy</a></strong></code><br />
+                      右引号，全角：” ’ 』</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">wyz</a></strong></code><br />
+                      左引号，全角：“ ‘ 『</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">x</a></strong></code><br />
+                      字符串</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">xu</a></strong></code><br />
+                      网址URL</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">xx</a></strong></code><br />
+                      非语素字</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">y</a></strong></code><br />
+                      语气词(delete yg)</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">yg</a></strong></code><br />
+                      语气语素</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">z</a></strong></code><br />
+                      状态词</td>
+            <td> </td>
+        </tr><tr><td><code><strong><a target="_blank" rel="noopener" href="https://github.com/hankcs/HanLP">zg</a></strong></code><br />
+                      状态词</td>
+        </tr></tbody></table></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://qubeijun.github.io">QuBeiJun</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://qubeijun.github.io/2019/05/14/%E8%AF%8D%E6%80%A7%E6%A0%87%E6%B3%A8%E9%9B%86/">https://qubeijun.github.io/2019/05/14/%E8%AF%8D%E6%80%A7%E6%A0%87%E6%B3%A8%E9%9B%86/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://qubeijun.github.io" target="_blank">qubeijun的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/quBlogHexo/tags/hanlp/">hanlp</a></div><div class="post_share"><div class="social-share" data-image="/quBlogHexo/image/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/quBlogHexo/2019/07/23/Python%20%E4%B9%8B%20pymysql%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5Mysql%E6%95%B0%E6%8D%AE%E5%BA%93/" title="Python 之 pymysql增删改查Mysql数据库"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Python 之 pymysql增删改查Mysql数据库</div></div></a></div><div class="next-post pull-right"><a href="/quBlogHexo/2019/04/29/python%20%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E7%9A%84%E6%89%80%E6%9C%89%E7%9A%84%E6%96%87%E4%BB%B6%E5%90%8D/" title="python 获取当前文件夹下的所有的文件名"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">python 获取当前文件夹下的所有的文件名</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/quBlogHexo/image/avatar.jpg" onerror="this.onerror=null;this.src='/quBlogHexo/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">QuBeiJun</div><div class="author-info__description">qubeijun的博客</div></div><div class="card-info-data site-data is-center"><a href="/quBlogHexo/archives/"><div class="headline">文章</div><div class="length-num">29</div></a><a href="/quBlogHexo/tags/"><div class="headline">标签</div><div class="length-num">22</div></a><a href="/quBlogHexo/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/qubeijun" target="_blank" title="Github"><i class="fab fa-github" style="color: #hdhfbb;"></i></a><a class="social-icon" href="/quBlogHexo/18640274769@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #000000;"></i></a><a class="social-icon" href="/quBlogHexo/qu825954789" target="_blank" title=""><i class="fa-brands fa-weixin"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is qu's Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/quBlogHexo/2024/09/29/hello-world/" title="Hello World">Hello World</a><time datetime="2024-09-29T09:31:40.260Z" title="发表于 2024-09-29 17:31:40">2024-09-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/quBlogHexo/2021/04/13/%E5%90%84%E7%A7%8D%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E7%AD%94%E6%A1%88%E6%B1%87%E6%80%BB/" title="各种问题解决答案汇总">各种问题解决答案汇总</a><time datetime="2021-04-13T09:37:36.000Z" title="发表于 2021-04-13 17:37:36">2021-04-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/quBlogHexo/2021/02/02/Alibaba%20Cloud%20Toolkit%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/" title="Alibaba Cloud Toolkit的使用说明">Alibaba Cloud Toolkit的使用说明</a><time datetime="2021-02-02T06:56:42.000Z" title="发表于 2021-02-02 14:56:42">2021-02-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/quBlogHexo/2020/03/19/Dojo%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/" title="Dojo简单入门">Dojo简单入门</a><time datetime="2020-03-19T02:50:05.000Z" title="发表于 2020-03-19 10:50:05">2020-03-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/quBlogHexo/2020/03/17/Angular%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/" title="Angular简单入门">Angular简单入门</a><time datetime="2020-03-17T06:47:58.000Z" title="发表于 2020-03-17 14:47:58">2020-03-17</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By QuBeiJun</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/quBlogHexo/js/utils.js?v=4.13.0"></script><script src="/quBlogHexo/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

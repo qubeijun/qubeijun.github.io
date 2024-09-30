@@ -1,0 +1,459 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>java常用的io，输入输出 | qubeijun的博客</title><meta name="author" content="QuBeiJun"><meta name="copyright" content="QuBeiJun"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="package _8javaio;  import java.io.*; import java.nio.charset.StandardCharsets; import java.nio.file.*; import java.util.Arrays; import java.util.zip.GZIPInputStream; import java.util.zip.ZipEntry;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java常用的io，输入输出">
+<meta property="og:url" content="https://qubeijun.github.io/2020/02/28/java%E5%B8%B8%E7%94%A8%E7%9A%84io%EF%BC%8C%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/index.html">
+<meta property="og:site_name" content="qubeijun的博客">
+<meta property="og:description" content="package _8javaio;  import java.io.*; import java.nio.charset.StandardCharsets; import java.nio.file.*; import java.util.Arrays; import java.util.zip.GZIPInputStream; import java.util.zip.ZipEntry;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://qubeijun.github.io/image/avatar.jpg">
+<meta property="article:published_time" content="2020-02-28T06:38:20.000Z">
+<meta property="article:modified_time" content="2024-09-30T08:25:08.967Z">
+<meta property="article:author" content="QuBeiJun">
+<meta property="article:tag" content="java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://qubeijun.github.io/image/avatar.jpg"><link rel="shortcut icon" href="/quBlogHexo/img/favicon.png"><link rel="canonical" href="https://qubeijun.github.io/2020/02/28/java%E5%B8%B8%E7%94%A8%E7%9A%84io%EF%BC%8C%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/quBlogHexo/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/quBlogHexo/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'java常用的io，输入输出',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-09-30 16:25:08'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/quBlogHexo/image/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/quBlogHexo/archives/"><div class="headline">文章</div><div class="length-num">29</div></a><a href="/quBlogHexo/tags/"><div class="headline">标签</div><div class="length-num">22</div></a><a href="/quBlogHexo/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/quBlogHexo/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/quBlogHexo/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/quBlogHexo/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/quBlogHexo/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/quBlogHexo/" title="qubeijun的博客"><img class="site-icon" src="/quBlogHexo/image/avatar.jpg"/><span class="site-name">qubeijun的博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/quBlogHexo/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/quBlogHexo/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/quBlogHexo/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/quBlogHexo/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">java常用的io，输入输出</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-02-28T06:38:20.000Z" title="发表于 2020-02-28 14:38:20">2020-02-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-09-30T08:25:08.967Z" title="更新于 2024-09-30 16:25:08">2024-09-30</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="java常用的io，输入输出"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><span id="more"></span>
+
+<pre>
+<code class="language-java">package _8javaio;
+
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.*;
+import java.util.Arrays;
+import java.util.zip.GZIPInputStream;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
+import java.util.zip.ZipOutputStream;
+
+public class Main &#123;
+    public static byte[] getFileDataAsBytes(File f)
+    &#123;
+        byte[] data = new byte[(int)f.length()];
+        try(InputStream is =new FileInputStream(f))
+        &#123;
+            int n;
+            while((n=is.read(data))!=-1)
+            &#123;
+                System.out.println("read"+n+"bytes");
+            &#125;
+
+        &#125;catch(IOException e)
+        &#123;
+            e.printStackTrace();
+        &#125;
+        return data;
+    &#125;
+    static void printFiles(File[] files) &#123;
+        System.out.println("==========");
+        if (files != null) &#123;
+            for (File f : files) &#123;
+                System.out.println(f);
+            &#125;
+        &#125;
+        System.out.println("==========");
+    &#125;
+
+    public static void main(String[] args) throws Exception&#123;
+        //File对象
+        File f = new File("..");
+        System.out.println(f.getPath());         //构造方法传入路径
+        System.out.println(f.getAbsolutePath()); //返回绝对路径
+        System.out.println(f.getCanonicalPath());//返回规范绝对路径
+        System.out.println(File.separator);      //返回当前平台系统路径分隔符
+
+//        File f1 = new File("C:\\Windows");
+//        File f2 = new File("C:\\Windows\\notepad.exe");
+//        File f3 = new File("C:\\Windows\\nothing");
+//        System.out.println(f1.isFile());      //false 文件
+//        System.out.println(f1.isDirectory()); //true  目录
+//        System.out.println(f2.isFile());      //true
+//        System.out.println(f2.isDirectory()); //false
+//        System.out.println(f3.isFile());      //false
+//        System.out.println(f3.isDirectory()); //false
+
+
+        //文件权限和大小
+//        System.out.println(f2.canRead());   //是否可读
+//        System.out.println(f2.canWrite());  //是否可写
+//        System.out.println(f2.canExecute());//是否可执行
+//        System.out.println(f2.length());    //文件字节大小
+
+        //创建删除文件
+        File file = new File("test/test.txt"); //与src同一级
+        if (file.createNewFile()) &#123;
+            // 文件创建成功:
+            System.out.println("create success");
+            System.out.println(file.getAbsolutePath());
+            // TODO:
+            if (file.delete()) &#123;
+                // 删除文件成功:
+                System.out.println("delete success");
+            &#125;
+        &#125;
+
+        //创建临时文件
+//        File f4 = File.createTempFile("tmp-", ".txt"); // 提供临时文件的前缀和后缀
+//        f4.deleteOnExit(); // JVM退出时自动删除
+//        System.out.println(f4.isFile());
+//        System.out.println(f4.getAbsolutePath());
+
+        //遍历文件和目录
+//        File f5 = new File("C:Windows");
+//
+//        File[] fs1 = f5.listFiles(); // 列出所有文件和子目录
+//        printFiles(fs1);
+//        File[] fs2 = f5.listFiles(new FilenameFilter() &#123; // 仅列出.exe文件
+//            public boolean accept(File dir, String name) &#123;
+//                return name.endsWith(".exe"); // 返回true表示接受该文件
+//            &#125;
+//        &#125;);
+//        printFiles(fs2);
+
+        //创建和删除目录
+        new File("hello").mkdir();
+        new File("hello/le").mkdirs();
+        new File("hello/le").delete();
+        new File("hello").delete();
+
+
+        //Path
+        Path p1 = Paths.get(".", "project", "study"); // 构造一个Path对象
+        System.out.println(p1);
+        Path p2 = p1.toAbsolutePath(); // 转换为绝对路径
+        System.out.println(p2);
+        Path p3 = p2.normalize(); // 转换为规范路径
+        System.out.println(p3);
+        File f6 = p3.toFile(); // 转换为File对象
+        System.out.println(f6);
+        for (Path p : Paths.get("..").toAbsolutePath()) &#123; // 可以直接遍历Path
+            System.out.println("  " + p);
+        &#125;
+
+
+        /**InputStream*/
+        //字节读文件
+        // 创建一个FileInputStream对象:
+        File file2 = new File("test/readme.txt");
+        file2.createNewFile();
+        try (InputStream input = new FileInputStream("test/readme.txt")) &#123;
+            int n;
+            while ((n = input.read()) != -1) &#123;
+                System.out.println(n);
+            &#125;
+        &#125; // 编译器在此自动为我们写入finally并调用close()
+
+
+        //缓冲读文件
+        try (InputStream input = new FileInputStream("test/readme.txt")) &#123;
+            // 定义1000个字节大小的缓冲区:
+            byte[] buffer = new byte[1000];
+            int n;
+            while ((n = input.read(buffer)) != -1) &#123; // 读取到缓冲区
+                System.out.println("read " + n + " bytes.");
+            &#125;
+        &#125;
+        //模拟InputStream
+        String s;
+        byte[] data = &#123; 72, 101, 108, 108, 111, 33 &#125;;
+        try (InputStream input = new ByteArrayInputStream(data)) &#123;
+            int n;
+            StringBuilder sb = new StringBuilder();
+            while ((n = input.read()) != -1) &#123;
+                sb.append((char) n);
+                System.out.println((char)n);
+            &#125;
+            s = sb.toString();
+        &#125;
+        System.out.println(s);
+
+
+        /**OutputStream*/
+        //一次写入一个字节
+        OutputStream output = new FileOutputStream("test/readme.txt");
+        output.write(72); // H
+        output.write(101); // e
+        output.write(108); // l
+        output.write(108); // l
+        output.write(111); // o
+        output.close();
+
+        //一次写入若干字节
+        try (OutputStream output1 = new FileOutputStream("test/readme.txt")) &#123;
+            output1.write("Hello！".getBytes("UTF-8")); // Hello
+        &#125; // 编译器在此自动为我们写入finally并调用close()
+
+        //模拟OutputStream
+        byte[] data3;
+        try (ByteArrayOutputStream output3 = new ByteArrayOutputStream()) &#123;
+            output3.write("Hello ".getBytes("UTF-8"));
+            output3.write("world!".getBytes("UTF-8"));
+            data3 = output3.toByteArray();
+        &#125;
+        System.out.println(new String(data3, "UTF-8"));
+
+
+        //Filter模式
+        InputStream file7 = new FileInputStream("test/test.gz");
+        InputStream buffered = new BufferedInputStream(file7);
+        InputStream gzip = new GZIPInputStream(buffered);
+        System.out.println(gzip);
+        file7.close();
+
+        /**操作Zip*/
+        //读取zip
+        try (ZipInputStream zip = new ZipInputStream(new FileInputStream("test/test.zip"))) &#123;
+            ZipEntry entry = null;
+            while ((entry = zip.getNextEntry()) != null) &#123;
+                String name = entry.getName();
+                System.out.println("name："+name);
+                if (!entry.isDirectory()) &#123;
+                    int n;
+                    while ((n = zip.read()) != -1) &#123;
+                        System.out.println(n);
+                    &#125;
+                &#125;
+            &#125;
+        &#125;
+        //写入zip
+        try (ZipOutputStream zip = new ZipOutputStream(new FileOutputStream("test/log.zip"))) &#123;
+            File ff = new File("log");
+            File[] files = ff.listFiles();
+            for (File file1 : files) &#123;
+                zip.putNextEntry(new ZipEntry(file1.getName()));
+                zip.write(getFileDataAsBytes(file1));
+                zip.closeEntry();
+            &#125;
+        &#125;
+
+        /**序列化*/
+        ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+        try (ObjectOutputStream output1 = new ObjectOutputStream(buffer)) &#123;
+            // 写入int:
+            output1.writeInt(12345);
+            // 写入String:
+            output1.writeUTF("Hello");
+            // 写入Object:
+            output1.writeObject(Double.valueOf(123.456));
+        &#125;
+        System.out.println(Arrays.toString(buffer.toByteArray()));
+
+
+        /**反序列化*/
+        ByteArrayInputStream input1 = new ByteArrayInputStream(buffer.toByteArray());
+        try (ObjectInputStream input2 = new ObjectInputStream(input1)) &#123;
+            int n1 = input2.readInt();
+            String s1 = input2.readUTF();
+            Double d1 = (Double) input2.readObject();
+            System.out.println(n1+s1+d1);
+        &#125;
+
+
+        /**Reader 字符流*/
+        //FileReader
+        try (Reader reader = new FileReader("test/test.txt")) &#123;
+            char[] buffer1 = new char[1000];
+            int n;
+            while ((n = reader.read(buffer1)) != -1) &#123;
+                System.out.println("read " + n + " chars.");
+            &#125;
+        &#125;
+        //CharArrayReader 模拟Reader
+        try (Reader reader = new CharArrayReader("Hello".toCharArray())) &#123;
+            System.out.println(reader);
+        &#125;
+        //StringReader
+        try (Reader reader = new StringReader("Hello")) &#123;
+            System.out.println(reader);
+        &#125;
+        //InputStreamReader
+        try (Reader reader = new InputStreamReader(new FileInputStream("test/test.txt"), "UTF-8")) &#123;
+            // TODO:
+            System.out.println(reader);
+        &#125;
+
+        /**Wirter 字符流*/
+        //FileWriter
+        try (Writer writer = new FileWriter("test/test.txt")) &#123;
+            writer.write('H'); // 写入单个字符
+            writer.write("Hello".toCharArray()); // 写入char[]
+            writer.write("Hello"); // 写入String
+            writer.write("你好");
+        &#125;
+
+        //CharArrayWriter
+        try (CharArrayWriter writer = new CharArrayWriter()) &#123;
+            writer.write(65);
+            writer.write(66);
+            writer.write(67);
+            char[] data4 = writer.toCharArray(); // &#123; 'A', 'B', 'C' &#125;
+            System.out.println(data4);
+        &#125;
+
+        //StringWriter
+        //OutputStreamWriter
+        try (Writer writer = new OutputStreamWriter(new FileOutputStream("test/test.txt"), "UTF-8")) &#123;
+            // TODO:
+            System.out.println(writer);
+        &#125;
+
+        /**PrintStream和PrintWriter*/
+        System.out.print(12345); // 输出12345
+        System.out.print(new Object()); // 输出类似java.lang.Object@3c7a835a
+        System.out.println("Hello"); // 输出Hello并换行
+
+        StringWriter buffer4 = new StringWriter();
+        try (PrintWriter pw = new PrintWriter(buffer4)) &#123;
+            pw.println("Hello");
+            pw.println(12345);
+            pw.println(true);
+        &#125;
+        System.out.println(buffer4.toString());
+
+    &#125;
+&#125;
+</code></pre>
+
+<p> </p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://qubeijun.github.io">QuBeiJun</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://qubeijun.github.io/2020/02/28/java%E5%B8%B8%E7%94%A8%E7%9A%84io%EF%BC%8C%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/">https://qubeijun.github.io/2020/02/28/java%E5%B8%B8%E7%94%A8%E7%9A%84io%EF%BC%8C%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://qubeijun.github.io" target="_blank">qubeijun的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/quBlogHexo/tags/java/">java</a></div><div class="post_share"><div class="social-share" data-image="/quBlogHexo/image/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/quBlogHexo/2020/02/28/java%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%E5%92%8C%E6%97%A5%E6%9C%9Fapi/" title="java处理时间和日期api"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">java处理时间和日期api</div></div></a></div><div class="next-post pull-right"><a href="/quBlogHexo/2020/02/27/java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E6%B1%87%E6%80%BB/" title="java常见集合汇总"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">java常见集合汇总</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/quBlogHexo/2020/02/26/java%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E7%B1%BB%E6%80%BB%E7%BB%93/" title="java常用工具类总结"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-02-26</div><div class="title">java常用工具类总结</div></div></a></div><div><a href="/quBlogHexo/2020/02/28/java%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%E5%92%8C%E6%97%A5%E6%9C%9Fapi/" title="java处理时间和日期api"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-02-28</div><div class="title">java处理时间和日期api</div></div></a></div><div><a href="/quBlogHexo/2020/02/27/java%E5%B8%B8%E8%A7%81%E9%9B%86%E5%90%88%E6%B1%87%E6%80%BB/" title="java常见集合汇总"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-02-27</div><div class="title">java常见集合汇总</div></div></a></div><div><a href="/quBlogHexo/2020/03/02/java%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%94%B6%E9%9B%86/" title="java正则表达式收集"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-03-02</div><div class="title">java正则表达式收集</div></div></a></div><div><a href="/quBlogHexo/2020/02/25/%E5%B8%B8%E7%94%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93/" title="常用字符串操作总结"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-02-25</div><div class="title">常用字符串操作总结</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/quBlogHexo/image/avatar.jpg" onerror="this.onerror=null;this.src='/quBlogHexo/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">QuBeiJun</div><div class="author-info__description">qubeijun的博客</div></div><div class="card-info-data site-data is-center"><a href="/quBlogHexo/archives/"><div class="headline">文章</div><div class="length-num">29</div></a><a href="/quBlogHexo/tags/"><div class="headline">标签</div><div class="length-num">22</div></a><a href="/quBlogHexo/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/qubeijun" target="_blank" title="Github"><i class="fab fa-github" style="color: #hdhfbb;"></i></a><a class="social-icon" href="/quBlogHexo/18640274769@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #000000;"></i></a><a class="social-icon" href="/quBlogHexo/qu825954789" target="_blank" title=""><i class="fa-brands fa-weixin"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is qu's Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/quBlogHexo/2024/09/29/hello-world/" title="Hello World">Hello World</a><time datetime="2024-09-29T09:31:40.260Z" title="发表于 2024-09-29 17:31:40">2024-09-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/quBlogHexo/2021/04/13/%E5%90%84%E7%A7%8D%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E7%AD%94%E6%A1%88%E6%B1%87%E6%80%BB/" title="各种问题解决答案汇总">各种问题解决答案汇总</a><time datetime="2021-04-13T09:37:36.000Z" title="发表于 2021-04-13 17:37:36">2021-04-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/quBlogHexo/2021/02/02/Alibaba%20Cloud%20Toolkit%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/" title="Alibaba Cloud Toolkit的使用说明">Alibaba Cloud Toolkit的使用说明</a><time datetime="2021-02-02T06:56:42.000Z" title="发表于 2021-02-02 14:56:42">2021-02-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/quBlogHexo/2020/03/19/Dojo%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/" title="Dojo简单入门">Dojo简单入门</a><time datetime="2020-03-19T02:50:05.000Z" title="发表于 2020-03-19 10:50:05">2020-03-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/quBlogHexo/2020/03/17/Angular%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/" title="Angular简单入门">Angular简单入门</a><time datetime="2020-03-17T06:47:58.000Z" title="发表于 2020-03-17 14:47:58">2020-03-17</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By QuBeiJun</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/quBlogHexo/js/utils.js?v=4.13.0"></script><script src="/quBlogHexo/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
