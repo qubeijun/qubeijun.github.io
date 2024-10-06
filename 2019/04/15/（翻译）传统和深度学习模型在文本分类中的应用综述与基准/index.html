@@ -7,9 +7,12 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://qubeijun.github.io/image/avatar.jpg">
 <meta property="article:published_time" content="2019-04-15T09:01:46.000Z">
-<meta property="article:modified_time" content="2024-10-01T14:37:49.811Z">
+<meta property="article:modified_time" content="2024-10-06T12:25:37.244Z">
 <meta property="article:author" content="qubeijun">
-<meta property="article:tag" content="cnn rnn GloVe 分类">
+<meta property="article:tag" content="cnn">
+<meta property="article:tag" content="rnn">
+<meta property="article:tag" content="GloVe">
+<meta property="article:tag" content="分类">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://qubeijun.github.io/image/avatar.jpg"><link rel="shortcut icon" href="/quBlogHexo/img/favicon.png"><link rel="canonical" href="https://qubeijun.github.io/2019/04/15/%EF%BC%88%E7%BF%BB%E8%AF%91%EF%BC%89%E4%BC%A0%E7%BB%9F%E5%92%8C%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E5%9C%A8%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E7%BB%BC%E8%BF%B0%E4%B8%8E%E5%9F%BA%E5%87%86/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/quBlogHexo/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
   root: '/quBlogHexo/',
@@ -56,7 +59,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2024-10-01 22:37:49'
+  postUpdate: '2024-10-06 20:25:37'
 }</script><script>(win=>{
       win.saveToLocal = {
         set: (key, value, ttl) => {
@@ -153,7 +156,7 @@
         }
       }
       detectApple()
-    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/quBlogHexo/image/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/quBlogHexo/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/quBlogHexo/tags/"><div class="headline">标签</div><div class="length-num">22</div></a><a href="/quBlogHexo/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/quBlogHexo/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/quBlogHexo/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/quBlogHexo/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/quBlogHexo/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/galleryGroup/"><i class="fa-fw fa-solid fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><span id="blog-info"><a href="/quBlogHexo/" title="qubeijun的博客"><img class="site-icon" src="/quBlogHexo/image/avatar.jpg"/><span class="site-name">qubeijun的博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/quBlogHexo/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/quBlogHexo/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/quBlogHexo/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/quBlogHexo/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/galleryGroup/"><i class="fa-fw fa-solid fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">（翻译）传统和深度学习模型在文本分类中的应用综述与基准</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-04-15T09:01:46.000Z" title="发表于 2019-04-15 17:01:46">2019-04-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-10-01T14:37:49.811Z" title="更新于 2024-10-01 22:37:49">2024-10-01</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="（翻译）传统和深度学习模型在文本分类中的应用综述与基准"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><span id="more"></span>
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/quBlogHexo/image/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/quBlogHexo/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/quBlogHexo/tags/"><div class="headline">标签</div><div class="length-num">34</div></a><a href="/quBlogHexo/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/quBlogHexo/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/quBlogHexo/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/quBlogHexo/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/quBlogHexo/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/galleryGroup/"><i class="fa-fw fa-solid fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><span id="blog-info"><a href="/quBlogHexo/" title="qubeijun的博客"><img class="site-icon" src="/quBlogHexo/image/avatar.jpg"/><span class="site-name">qubeijun的博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/quBlogHexo/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/quBlogHexo/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/quBlogHexo/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/quBlogHexo/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/galleryGroup/"><i class="fa-fw fa-solid fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">（翻译）传统和深度学习模型在文本分类中的应用综述与基准</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-04-15T09:01:46.000Z" title="发表于 2019-04-15 17:01:46">2019-04-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-10-06T12:25:37.244Z" title="更新于 2024-10-06 20:25:37">2024-10-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/quBlogHexo/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="（翻译）传统和深度学习模型在文本分类中的应用综述与基准"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><span id="more"></span>
 
 <p>原文：<a target="_blank" rel="noopener" href="https://ahmedbesbes.com/overview-and-benchmark-of-traditional-and-deep-learning-models-in-text-classification.html">Overview and benchmark of traditional and deep learning models in text classification</a></p>
 
@@ -184,31 +187,7 @@
 
 <p>Let's get started!</p>
 
-<pre class="has">
-<code class="language-python">import os
-import re
-
-import warnings
-warnings.simplefilter("ignore", UserWarning)
-from matplotlib import pyplot as plt
-%matplotlib inline
-
-
-import pandas as pd
-pd.options.mode.chained_assignment = None
-import numpy as np 
-from string import punctuation
-
-from nltk.tokenize import word_tokenize
-
-from sklearn.model_selection import train_test_split
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, auc, roc_auc_score
-from sklearn.externals import joblib
-
-import scipy
-from scipy.sparse import hstack</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">import re</span><br><span class="line"></span><br><span class="line">import warnings</span><br><span class="line">warnings.simplefilter(&quot;ignore&quot;, UserWarning)</span><br><span class="line">from matplotlib import pyplot as plt</span><br><span class="line">%matplotlib inline</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import pandas as pd</span><br><span class="line">pd.options.mode.chained_assignment = None</span><br><span class="line">import numpy as np </span><br><span class="line">from string import punctuation</span><br><span class="line"></span><br><span class="line">from nltk.tokenize import word_tokenize</span><br><span class="line"></span><br><span class="line">from sklearn.model_selection import train_test_split</span><br><span class="line">from sklearn.feature_extraction.text import TfidfVectorizer</span><br><span class="line">from sklearn.linear_model import LogisticRegression</span><br><span class="line">from sklearn.metrics import accuracy_score, auc, roc_auc_score</span><br><span class="line">from sklearn.externals import joblib</span><br><span class="line"></span><br><span class="line">import scipy</span><br><span class="line">from scipy.sparse import hstack</span><br></pre></td></tr></table></figure>
 
 <h1 id="0---Data-pre-processing">0 - Data pre-processing</h1>
 
@@ -220,18 +199,11 @@ from scipy.sparse import hstack</code></pre>
 
 <p>作者建议使用1/10来测试算法，其余用于训练。</p>
 
-<pre class="has">
-<code class="language-python">data = pd.read_csv('./data/tweets.csv', encoding='latin1', usecols=['Sentiment', 'SentimentText'])
-data.columns = ['sentiment', 'text']
-data = data.sample(frac=1, random_state=42)
-print(data.shape)</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">data = pd.read_csv(&#x27;./data/tweets.csv&#x27;, encoding=&#x27;latin1&#x27;, usecols=[&#x27;Sentiment&#x27;, &#x27;SentimentText&#x27;])</span><br><span class="line">data.columns = [&#x27;sentiment&#x27;, &#x27;text&#x27;]</span><br><span class="line">data = data.sample(frac=1, random_state=42)</span><br><span class="line">print(data.shape)</span><br></pre></td></tr></table></figure>
 
-<pre>
-<code class="language-html hljs">(1578614, 2)</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(1578614, 2)</span><br></pre></td></tr></table></figure>
 
-<pre class="has">
-<code class="language-python">for row in data.head(10).iterrows():
-    print(row[1]['sentiment'], row[1]['text']) </code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for row in data.head(10).iterrows():</span><br><span class="line">    print(row[ 1][&#x27;sentiment&#x27;], row[ 1][&#x27;text&#x27;])</span><br></pre></td></tr></table></figure>
 
 <p>1 http://www.popsugar.com/2999655 keep voting for robert pattinson in the popsugar100 as well!! <br />
 1 @GamrothTaylor I am starting to worry about you, only I have Navy Seal type sleep hours. <br />
@@ -246,31 +218,15 @@ print(data.shape)</code></pre>
 
 <p>推文有很多噪声，让我们通过删除网址，主题标签和用户提及来清理它们。</p>
 
-<pre class="has">
-<code class="language-python">def tokenize(tweet):
-    tweet = re.sub(r'http\S+', '', tweet)
-    tweet = re.sub(r"#(\w+)", '', tweet)
-    tweet = re.sub(r"@(\w+)", '', tweet)
-    tweet = re.sub(r'[^\w\s]', '', tweet)
-    tweet = tweet.strip().lower()
-    tokens = word_tokenize(tweet)
-    return tokens</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def tokenize(tweet):</span><br><span class="line">    tweet = re.sub(r&#x27;http\S+&#x27;, &#x27;&#x27;, tweet)</span><br><span class="line">    tweet = re.sub(r&quot;#(\w+)&quot;, &#x27;&#x27;, tweet)</span><br><span class="line">    tweet = re.sub(r&quot;@(\w+)&quot;, &#x27;&#x27;, tweet)</span><br><span class="line">    tweet = re.sub(r&#x27;[^\w\s]&#x27;, &#x27;&#x27;, tweet)</span><br><span class="line">    tweet = tweet.strip().lower()</span><br><span class="line">    tokens = word_tokenize(tweet)</span><br><span class="line">    return tokens</span><br></pre></td></tr></table></figure>
 
 <p>数据清理完毕后，我们将其保存在磁盘上。</p>
 
-<pre class="has">
-<code class="language-python">data['tokens'] = data.text.progress_map(tokenize)
-data['cleaned_text'] = data['tokens'].map(lambda tokens: ' '.join(tokens))
-data[['sentiment', 'cleaned_text']].to_csv('./data/cleaned_text.csv')
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">data[&#x27;tokens&#x27;] = data.text.progress_map(tokenize)</span><br><span class="line">data[&#x27;cleaned_text&#x27;] = data[&#x27;tokens&#x27;].map(lambda tokens: &#x27; &#x27;.join(tokens))</span><br><span class="line">data[[&#x27;sentiment&#x27;, &#x27;cleaned_text&#x27;]].to_csv(&#x27;./data/cleaned_text.csv&#x27;)</span><br><span class="line"></span><br><span class="line">data = pd.read_csv(&#x27;./data/cleaned_text.csv&#x27;)</span><br><span class="line">print(data.shape)</span><br></pre></td></tr></table></figure>
 
-data = pd.read_csv('./data/cleaned_text.csv')
-print(data.shape)</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(1575026, 2)</span><br></pre></td></tr></table></figure>
 
-<pre>
-<code class="language-html hljs">(1575026, 2)</code></pre>
-
-<pre class="has">
-<code class="language-python">data.head()</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data.head()</span><br></pre></td></tr></table></figure>
 
 <table border="1" cellpadding="1" cellspacing="1" style="width:500px;"><tbody><tr><td> </td>
             <td>sentiment</td>
@@ -294,22 +250,13 @@ print(data.shape)</code></pre>
 
 <p>我们将在整个笔记本中使用这种分割。</p>
 
-<pre class="has">
-<code class="language-python">x_train, x_test, y_train, y_test = train_test_split(data['cleaned_text'], 
-                                                    data['sentiment'], 
-                                                    test_size=0.1, 
-                                                    random_state=42,
-                                                    stratify=data['sentiment'])
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">x_train, x_test, y_train, y_test = train_test_split(data[&#x27;cleaned_text&#x27;], </span><br><span class="line">                                                    data[&#x27;sentiment&#x27;], </span><br><span class="line">                                                    test_size=0.1, </span><br><span class="line">                                                    random_state=42,</span><br><span class="line">                                                    stratify=data[&#x27;sentiment&#x27;])</span><br><span class="line"></span><br><span class="line">print(x_train.shape, x_test.shape, y_train.shape, y_test.shape)</span><br></pre></td></tr></table></figure>
 
-print(x_train.shape, x_test.shape, y_train.shape, y_test.shape)</code></pre>
-
-<pre>
-<code class="language-html hljs">(1417523,) (157503,) (1417523,) (157503,)</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(1417523,) (157503,) (1417523,) (157503,)</span><br></pre></td></tr></table></figure>
 
 <p>我将测试标签保存在磁盘上供以后使用。</p>
 
-<pre class="has">
-<code class="language-python">pd.DataFrame(y_test).to_csv('./predictions/y_true.csv', index=False, encoding='utf-8')</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.DataFrame(y_test).to_csv(&#x27;./predictions/y_true.csv&#x27;, index=False, encoding=&#x27;utf-8&#x27;)</span><br></pre></td></tr></table></figure>
 
 <p>让我们现在开始应用一些机器学习：</p>
 
@@ -331,59 +278,35 @@ print(x_train.shape, x_test.shape, y_train.shape, y_test.shape)</code></pre>
 
 <p style="text-align:center;"><img alt="" class="has" src="https://ahmedbesbes.com/images/article_5/tfidf.jpg" /></p>
 
-<p> </p>
-
-<h1 id="I-like-pizza-a-lot">I like pizza a lot</h1>
-
+<p><strong>I like pizza a lot</strong></p>
 <p>假设我们想使用上述特征将此句子提供给预测模型。</p>
 
 <p>鉴于我们正在使用unigrams和bigrams，该模型将提取以下功能：</p>
 
-<h1 id="i,-like,-pizza,-a,-lot,-i-like,-like-pizza,-pizza-a,-a-lot">i, like, pizza, a, lot, i like, like pizza, pizza a, a lot</h1>
-
+<p><strong>i, like, pizza, a, lot, i like, like pizza, pizza a, a lot</strong></p>
 <p>因此，句子将由包含大量零的大小为N（=令牌总数）的向量和这些ngram的tf-idf得分组成。 所以你可以清楚地看到我们将处理大而稀疏的向量。</p>
 
 <p>在处理大型和稀疏数据时，线性模型通常表现良好。 此外，它们比其他类型的模型（例如基于树的模型）更快地训练。</p>
 
 <p>从过去的经验我可以看出，逻辑回归在稀疏tf idf矩阵之上运行良好。</p>
 
-<pre class="has">
-<code class="language-python">vectorizer_word = TfidfVectorizer(max_features=40000,
-                             min_df=5, 
-                             max_df=0.5, 
-                             analyzer='word', 
-                             stop_words='english', 
-                             ngram_range=(1, 2))
-
-vectorizer_word.fit(x_train, leave=False)
-
-tfidf_matrix_word_train = vectorizer_word.transform(x_train)
-tfidf_matrix_word_test = vectorizer_word.transform(x_test)</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">vectorizer_word = TfidfVectorizer(max_features=40000,</span><br><span class="line">                             min_df=5, </span><br><span class="line">                             max_df=0.5, </span><br><span class="line">                             analyzer=&#x27;word&#x27;, </span><br><span class="line">                             stop_words=&#x27;english&#x27;, </span><br><span class="line">                             ngram_range=(1, 2))</span><br><span class="line"></span><br><span class="line">vectorizer_word.fit(x_train, leave=False)</span><br><span class="line"></span><br><span class="line">tfidf_matrix_word_train = vectorizer_word.transform(x_train)</span><br><span class="line">tfidf_matrix_word_test = vectorizer_word.transform(x_test)</span><br></pre></td></tr></table></figure>
 
 <p>在为训练集和测试集生成tfidf矩阵之后，我们可以构建我们的第一个模型进行测试。</p>
 
 <p>tifidf矩阵是逻辑回归的特征。</p>
 
-<pre class="has">
-<code class="language-python">lr_word = LogisticRegression(solver='sag', verbose=2)
-lr_word.fit(tfidf_matrix_word_train, y_train)</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lr_word = LogisticRegression(solver=&#x27;sag&#x27;, verbose=2)</span><br><span class="line">lr_word.fit(tfidf_matrix_word_train, y_train)</span><br></pre></td></tr></table></figure>
 
 <p>一旦模型被训练，我们将其应用于测试数据以获得预测。 然后我们将这些值以及模型保存在磁盘上。</p>
 
-<pre class="has">
-<code class="language-python">joblib.dump(lr_word, './models/lr_word_ngram.pkl')
-
-y_pred_word = lr_word.predict(tfidf_matrix_word_test)
-pd.DataFrame(y_pred_word, columns=['y_pred']).to_csv('./predictions/lr_word_ngram.csv', index=False)</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">joblib.dump(lr_word, &#x27;./models/lr_word_ngram.pkl&#x27;)</span><br><span class="line"></span><br><span class="line">y_pred_word = lr_word.predict(tfidf_matrix_word_test)</span><br><span class="line">pd.DataFrame(y_pred_word, columns=[&#x27;y_pred&#x27;]).to_csv(&#x27;./predictions/lr_word_ngram.csv&#x27;, index=False)</span><br></pre></td></tr></table></figure>
 
 <p>让我们看看我们得到的准确度分数：</p>
 
-<pre class="has">
-<code class="language-python">y_pred_word = pd.read_csv('./predictions/lr_word_ngram.csv')
-print(accuracy_score(y_test, y_pred_word))</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">y_pred_word = pd.read_csv(&#x27;./predictions/lr_word_ngram.csv&#x27;)</span><br><span class="line">print(accuracy_score(y_test, y_pred_word))</span><br></pre></td></tr></table></figure>
 
-<pre>
-<code class="language-html hljs">0.782042246814</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0.782042246814</span><br></pre></td></tr></table></figure>
 
 <p>第一个模型的准确度为78.2％！ 还不错。 让我们转到下一个模型。</p>
 
@@ -397,8 +320,7 @@ print(accuracy_score(y_test, y_pred_word))</code></pre>
 
 <p>这基本上意味着像“我喜欢这部电影”这样的句子将具有以下特征：</p>
 
-<h1 id="I,-l,-i,-k,-e,-...,-I-li,--lik,-like,-...,-this,-...-,-is-m,-s-mo,-movi,-...">I, l, i, k, e, ..., I li, lik, like, ..., this, ... , is m, s mo, movi, ...</h1>
-
+<p><strong>I, l, i, k, e, …, I li, lik, like, …, this, … , is m, s mo, movi, …</strong></p>
 <p>字符ngram令人惊讶地非常有效。 在建模语言任务时，它们甚至可以胜过单词标记。 例如，垃圾邮件过滤器或本地语言识别严重依赖于字符ngram。</p>
 
 <p>与之前学习单词组合的模型不同，该模型学习字母组合，可以处理单词的形态构成。</p>
@@ -407,32 +329,11 @@ print(accuracy_score(y_test, y_pred_word))</code></pre>
 
 <p>让我们运行相同的管道：</p>
 
-<pre class="has">
-<code class="language-python">vectorizer_char = TfidfVectorizer(max_features=40000,
-                             min_df=5, 
-                             max_df=0.5, 
-                             analyzer='char', 
-                             ngram_range=(1, 4))
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">vectorizer_char = TfidfVectorizer(max_features=40000,</span><br><span class="line">                             min_df=5, </span><br><span class="line">                             max_df=0.5, </span><br><span class="line">                             analyzer=&#x27;char&#x27;, </span><br><span class="line">                             ngram_range=(1, 4))</span><br><span class="line"></span><br><span class="line">vectorizer_char.fit(tqdm_notebook(x_train, leave=False));</span><br><span class="line"></span><br><span class="line">tfidf_matrix_char_train = vectorizer_char.transform(x_train)</span><br><span class="line">tfidf_matrix_char_test = vectorizer_char.transform(x_test)</span><br><span class="line"></span><br><span class="line">lr_char = LogisticRegression(solver=&#x27;sag&#x27;, verbose=2)</span><br><span class="line">lr_char.fit(tfidf_matrix_char_train, y_train)</span><br><span class="line"></span><br><span class="line">y_pred_char = lr_char.predict(tfidf_matrix_char_test)</span><br><span class="line">joblib.dump(lr_char, &#x27;./models/lr_char_ngram.pkl&#x27;)</span><br><span class="line"></span><br><span class="line">pd.DataFrame(y_pred_char, columns=[&#x27;y_pred&#x27;]).to_csv(&#x27;./predictions/lr_char_ngram.csv&#x27;, index=False)</span><br></pre></td></tr></table></figure>
 
-vectorizer_char.fit(tqdm_notebook(x_train, leave=False));
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">y_pred_char = pd.read_csv(&#x27;./predictions/lr_char_ngram.csv&#x27;)</span><br><span class="line">print(accuracy_score(y_test, y_pred_char))</span><br></pre></td></tr></table></figure>
 
-tfidf_matrix_char_train = vectorizer_char.transform(x_train)
-tfidf_matrix_char_test = vectorizer_char.transform(x_test)
-
-lr_char = LogisticRegression(solver='sag', verbose=2)
-lr_char.fit(tfidf_matrix_char_train, y_train)
-
-y_pred_char = lr_char.predict(tfidf_matrix_char_test)
-joblib.dump(lr_char, './models/lr_char_ngram.pkl')
-
-pd.DataFrame(y_pred_char, columns=['y_pred']).to_csv('./predictions/lr_char_ngram.csv', index=False)</code></pre>
-
-<pre class="has">
-<code class="language-python">y_pred_char = pd.read_csv('./predictions/lr_char_ngram.csv')
-print(accuracy_score(y_test, y_pred_char))</code></pre>
-
-<pre>
-<code class="language-html hljs">0.80420055491</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0.80420055491</span><br></pre></td></tr></table></figure>
 
 <p>精度80.4％！ 字符图表比word-ngrams表现更好。</p>
 
@@ -446,24 +347,11 @@ print(accuracy_score(y_test, y_pred_char))</code></pre>
 
 <p>这些属性结合在一起。</p>
 
-<pre class="has">
-<code class="language-python">tfidf_matrix_word_char_train =  hstack((tfidf_matrix_word_train, tfidf_matrix_char_train))
-tfidf_matrix_word_char_test =  hstack((tfidf_matrix_word_test, tfidf_matrix_char_test))
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">tfidf_matrix_word_char_train =  hstack((tfidf_matrix_word_train, tfidf_matrix_char_train))</span><br><span class="line">tfidf_matrix_word_char_test =  hstack((tfidf_matrix_word_test, tfidf_matrix_char_test))</span><br><span class="line"></span><br><span class="line">lr_word_char = LogisticRegression(solver=&#x27;sag&#x27;, verbose=2)</span><br><span class="line">lr_word_char.fit(tfidf_matrix_word_char_train, y_train)</span><br><span class="line"></span><br><span class="line">y_pred_word_char = lr_word_char.predict(tfidf_matrix_word_char_test)</span><br><span class="line">joblib.dump(lr_word_char, &#x27;./models/lr_word_char_ngram.pkl&#x27;)</span><br><span class="line"></span><br><span class="line">pd.DataFrame(y_pred_word_char, columns=[&#x27;y_pred&#x27;]).to_csv(&#x27;./predictions/lr_word_char_ngram.csv&#x27;, index=False)</span><br></pre></td></tr></table></figure>
 
-lr_word_char = LogisticRegression(solver='sag', verbose=2)
-lr_word_char.fit(tfidf_matrix_word_char_train, y_train)
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">y_pred_word_char = pd.read_csv(&#x27;./predictions/lr_word_char_ngram.csv&#x27;)</span><br><span class="line">print(accuracy_score(y_test, y_pred_word_char))</span><br></pre></td></tr></table></figure>
 
-y_pred_word_char = lr_word_char.predict(tfidf_matrix_word_char_test)
-joblib.dump(lr_word_char, './models/lr_word_char_ngram.pkl')
-
-pd.DataFrame(y_pred_word_char, columns=['y_pred']).to_csv('./predictions/lr_word_char_ngram.csv', index=False)</code></pre>
-
-<pre class="has">
-<code class="language-python">y_pred_word_char = pd.read_csv('./predictions/lr_word_char_ngram.csv')
-print(accuracy_score(y_test, y_pred_word_char))</code></pre>
-
-<pre>
-<code class="language-html hljs">0.81423845895</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0.81423845895</span><br></pre></td></tr></table></figure>
 
 <p>太棒了：81.4％的准确率。 我们只增加了一整个单位，并且超过了之前的两个设置。</p>
 
@@ -479,25 +367,7 @@ print(accuracy_score(y_test, y_pred_word_char))</code></pre>
 
 <p>一个很好的选择是AWS。 我通常在EC2 p2.xlarge实例上使用这种深度学习AMI。 Amazon AMI是预先配置的VM映像，其中安装了所有软件包（Tensorflow，PyTocrh，Keras等）。 我强烈推荐这个我已经使用了一段时间。</p>
 
-<pre class="has">
-<code class="language-python">from keras.preprocessing.text import Tokenizer
-from keras.preprocessing.text import text_to_word_sequence
-from keras.preprocessing.sequence import pad_sequences
-
-from keras.models import Model
-from keras.models import Sequential
-
-from keras.layers import Input, Dense, Embedding, Conv1D, Conv2D, MaxPooling1D, MaxPool2D
-from keras.layers import Reshape, Flatten, Dropout, Concatenate
-from keras.layers import SpatialDropout1D, concatenate
-from keras.layers import GRU, Bidirectional, GlobalAveragePooling1D, GlobalMaxPooling1D
-
-from keras.callbacks import Callback
-from keras.optimizers import Adam
-
-from keras.callbacks import ModelCheckpoint, EarlyStopping
-from keras.models import load_model
-from keras.utils.vis_utils import plot_model</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">from keras.preprocessing.text import Tokenizer</span><br><span class="line">from keras.preprocessing.text import text_to_word_sequence</span><br><span class="line">from keras.preprocessing.sequence import pad_sequences</span><br><span class="line"></span><br><span class="line">from keras.models import Model</span><br><span class="line">from keras.models import Sequential</span><br><span class="line"></span><br><span class="line">from keras.layers import Input, Dense, Embedding, Conv1D, Conv2D, MaxPooling1D, MaxPool2D</span><br><span class="line">from keras.layers import Reshape, Flatten, Dropout, Concatenate</span><br><span class="line">from keras.layers import SpatialDropout1D, concatenate</span><br><span class="line">from keras.layers import GRU, Bidirectional, GlobalAveragePooling1D, GlobalMaxPooling1D</span><br><span class="line"></span><br><span class="line">from keras.callbacks import Callback</span><br><span class="line">from keras.optimizers import Adam</span><br><span class="line"></span><br><span class="line">from keras.callbacks import ModelCheckpoint, EarlyStopping</span><br><span class="line">from keras.models import load_model</span><br><span class="line">from keras.utils.vis_utils import plot_model</span><br></pre></td></tr></table></figure>
 
 <h1 id="4---Recurrent-Neural-Network-without-pre-trained-embedding">4 - Recurrent Neural Network without pre-trained embedding</h1>
 
@@ -513,11 +383,7 @@ from keras.utils.vis_utils import plot_model</code></pre>
 
 <p>要在文本数据上使用Keras，我们必须对其进行预处理。 为此，我们可以使用Keras的Tokenizer类。 该对象采用num_words参数作为参数，这是基于字频率进行标记化后保留的最大字数。</p>
 
-<pre class="has">
-<code class="language-python">MAX_NB_WORDS = 80000
-tokenizer = Tokenizer(num_words=MAX_NB_WORDS)
-
-tokenizer.fit_on_texts(data['cleaned_text'])</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">MAX_NB_WORDS = 80000</span><br><span class="line">tokenizer = Tokenizer(num_words=MAX_NB_WORDS)</span><br><span class="line"></span><br><span class="line">tokenizer.fit_on_texts(data[&#x27;cleaned_text&#x27;])</span><br></pre></td></tr></table></figure>
 
 <p>一旦将标记化器安装在数据上，我们就可以使用它将文本字符串转换为数字序列。</p>
 
@@ -525,50 +391,31 @@ tokenizer.fit_on_texts(data['cleaned_text'])</code></pre>
 
 <p>我们来看一个例子：</p>
 
-<pre class="has">
-<code class="language-python">x_train[15]</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x_train[15]</span><br></pre></td></tr></table></figure>
 
-<pre>
-'breakfast time happy time'</pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x27;breakfast time happy time&#x27;</span><br></pre></td></tr></table></figure>
 
 <p>这是令牌器将其转换为数字序列的方式。</p>
 
-<pre class="has">
-<code class="language-python">tokenizer.texts_to_sequences([x_train[15]])</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tokenizer.texts_to_sequences([x_train[15]])</span><br></pre></td></tr></table></figure>
 
-<pre>
-[[530, 50, 119, 50]]</pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[[530, 50, 119, 50]]</span><br></pre></td></tr></table></figure>
 
 <p>现在让我们在训练和测试序列上应用这个标记器：</p>
 
-<pre class="has">
-<code class="language-python">train_sequences = tokenizer.texts_to_sequences(x_train)
-test_sequences = tokenizer.texts_to_sequences(x_test)</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">train_sequences = tokenizer.texts_to_sequences(x_train)</span><br><span class="line">test_sequences = tokenizer.texts_to_sequences(x_test)</span><br></pre></td></tr></table></figure>
 
 <p>现在推文被映射到整数列表。 但是，由于它们具有不同的长度，我们仍然不能将它们堆叠在一起。 希望Keras允许将序列填充为0到最大长度。 我们将此长度设置为35.（这是推文中令牌的最大数量）。</p>
 
-<pre class="has">
-<code class="language-python">MAX_LENGTH = 35
-padded_train_sequences = pad_sequences(train_sequences, maxlen=MAX_LENGTH)
-padded_test_sequences = pad_sequences(test_sequences, maxlen=MAX_LENGTH)</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MAX_LENGTH = 35</span><br><span class="line">padded_train_sequences = pad_sequences( train_sequences, maxlen=MAX_LENGTH)</span><br><span class="line">padded_test_sequences = pad_sequences( test_sequences, maxlen=MAX_LENGTH)</span><br></pre></td></tr></table></figure>
 
-<pre class="has">
-<code class="language-python">padded_train_sequences</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">padded_train_sequences</span><br></pre></td></tr></table></figure>
 
-<pre>
-array([[    0,     0,     0, ...,  2383,   284,     9],
-       [    0,     0,     0, ...,    13,    30,    76],
-       [    0,     0,     0, ...,    19,    37, 45231],
-       ..., 
-       [    0,     0,     0, ...,    43,   502,  1653],
-       [    0,     0,     0, ...,     5,  1045,   890],
-       [    0,     0,     0, ..., 13748, 38750,   154]])</pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">array([[    0,     0,     0, ...,  2383,   284,     9],</span><br><span class="line">       [    0,     0,     0, ...,    13,    30,    76],</span><br><span class="line">       [    0,     0,     0, ...,    19,    37, 45231],</span><br><span class="line">       ..., </span><br><span class="line">       [    0,     0,     0, ...,    43,   502,  1653],</span><br><span class="line">       [    0,     0,     0, ...,     5,  1045,   890],</span><br><span class="line">       [    0,     0,     0, ..., 13748, 38750,   154]])</span><br></pre></td></tr></table></figure>
 
-<pre class="has">
-<code class="language-python">padded_train_sequences.shape</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">padded_train_sequences.shape</span><br></pre></td></tr></table></figure>
 
-<pre>
-(1417523, 35)</pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(1417523, 35)</span><br></pre></td></tr></table></figure>
 
 <p>现在数据已准备好送到RNN。</p>
 
@@ -582,69 +429,23 @@ array([[    0,     0,     0, ...,  2383,   284,     9],
 <ul><li>在每个批次的顶部，我们应用全局平均池化，其中包括平均对应于每个时间步的输出向量（即单词）</li>
     <li>我们对最大池化应用相同的操作。</li>
     <li>我们连接前两个操作的输出。</li>
-</ul><pre class="has">
-<code class="language-python">def get_simple_rnn_model():
-    embedding_dim = 300
-    embedding_matrix = np.random.random((MAX_NB_WORDS, embedding_dim))
-    
-<pre><code>inp = Input(shape=(MAX_LENGTH, ))
-x = Embedding(input_dim=MAX_NB_WORDS, output_dim=embedding_dim, input_length=MAX_LENGTH, 
-              weights=[embedding_matrix], trainable=True)(inp)
-x = SpatialDropout1D(0.3)(x)
-x = Bidirectional(GRU(100, return_sequences=True))(x)
-avg_pool = GlobalAveragePooling1D()(x)
-max_pool = GlobalMaxPooling1D()(x)
-conc = concatenate([avg_pool, max_pool])
-outp = Dense(1, activation=&quot;sigmoid&quot;)(conc)
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">def get_simple_rnn_model():</span><br><span class="line">    embedding_dim = 300</span><br><span class="line">    embedding_matrix = np.random.random((MAX_NB_WORDS, embedding_dim))</span><br><span class="line">    </span><br><span class="line">    inp = Input(shape=(MAX_LENGTH, ))</span><br><span class="line">    x = Embedding(input_dim=MAX_NB_WORDS, output_dim=embedding_dim, input_length=MAX_LENGTH, </span><br><span class="line">                  weights=[embedding_matrix], trainable=True)(inp)</span><br><span class="line">    x = SpatialDropout1D(0.3)(x)</span><br><span class="line">    x = Bidirectional(GRU(100, return_sequences=True))(x)</span><br><span class="line">    avg_pool = GlobalAveragePooling1D()(x)</span><br><span class="line">    max_pool = GlobalMaxPooling1D()(x)</span><br><span class="line">    conc = concatenate([avg_pool, max_pool])</span><br><span class="line">    outp = Dense(1, activation=&quot;sigmoid&quot;)(conc)</span><br><span class="line">    </span><br><span class="line">    model = Model(inputs=inp, outputs=outp)</span><br><span class="line">    model.compile(loss=&#x27;binary_crossentropy&#x27;,</span><br><span class="line">                  optimizer=&#x27;adam&#x27;,</span><br><span class="line">                  metrics=[&#x27;accuracy&#x27;])</span><br><span class="line">    return model</span><br><span class="line"></span><br><span class="line">rnn_simple_model = get_simple_rnn_model()</span><br></pre></td></tr></table></figure>
 
-model = Model(inputs=inp, outputs=outp)
-model.compile(loss=&#39;binary_crossentropy&#39;,
-              optimizer=&#39;adam&#39;,
-              metrics=[&#39;accuracy&#39;])
-return model
-</code></pre>
-<p>rnn_simple_model &#x3D; get_simple_rnn_model()</code></pre></p>
 <p>让我们看看这个模型的不同层：</p>
 
-<pre class="has">
-<code class="language-python">plot_model(rnn_simple_model, 
-           to_file='./images/article_5/rnn_simple_model.png', 
-           show_shapes=True, 
-           show_layer_names=True)</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">plot_model(rnn_simple_model, </span><br><span class="line">           to_file=&#x27;./images/article_5/rnn_simple_model.png&#x27;, </span><br><span class="line">           show_shapes=True, </span><br><span class="line">           show_layer_names=True)</span><br></pre></td></tr></table></figure>
 
 <p style="text-align:center;"><img alt="" class="has" src="https://ahmedbesbes.com/images/article_5/rnn_simple_model.png" /></p>
 
 <p>在训练期间，使用模型检查点。 它允许在每个epoch结束时自动保存（在磁盘上）最佳模型（w.r.t精度测量）。</p>
 
-<pre class="has">
-<code class="language-python">filepath="./models/rnn_no_embeddings/weights-improvement-&#123;epoch:02d&#125;-&#123;val_acc:.4f&#125;.hdf5"
-checkpoint = ModelCheckpoint(filepath, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">filepath=&quot;./models/rnn_no_embeddings/weights-improvement-&#123;epoch:02d&#125;-&#123;val_acc:.4f&#125;.hdf5&quot;</span><br><span class="line">checkpoint = ModelCheckpoint(filepath, monitor=&#x27;val_acc&#x27;, verbose=1, save_best_only=True, mode=&#x27;max&#x27;)</span><br><span class="line"></span><br><span class="line">batch_size = 256</span><br><span class="line">epochs = 2</span><br><span class="line"></span><br><span class="line">history = rnn_simple_model.fit(x=padded_train_sequences, </span><br><span class="line">                    y=y_train, </span><br><span class="line">                    validation_data=(padded_test_sequences, y_test), </span><br><span class="line">                    batch_size=batch_size, </span><br><span class="line">                    callbacks=[checkpoint], </span><br><span class="line">                    epochs=epochs, </span><br><span class="line">                    verbose=1)</span><br><span class="line"></span><br><span class="line">best_rnn_simple_model = load_model(&#x27;./models/rnn_no_embeddings/weights-improvement-01-0.8262.hdf5&#x27;)</span><br><span class="line"></span><br><span class="line">y_pred_rnn_simple = best_rnn_simple_model.predict(padded_test_sequences, verbose=1, batch_size=2048)</span><br><span class="line"></span><br><span class="line">y_pred_rnn_simple = pd.DataFrame(y_pred_rnn_simple, columns=[&#x27;prediction&#x27;])</span><br><span class="line">y_pred_rnn_simple[&#x27;prediction&#x27;] = y_pred_rnn_simple[&#x27;prediction&#x27;].map(lambda p: 1 if p &gt;= 0.5 else 0)</span><br><span class="line">y_pred_rnn_simple.to_csv(&#x27;./predictions/y_pred_rnn_simple.csv&#x27;, index=False)</span><br></pre></td></tr></table></figure>
 
-batch_size = 256
-epochs = 2
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">y_pred_rnn_simple = pd.read_csv(&#x27;./predictions/y_pred_rnn_simple.csv&#x27;)</span><br><span class="line">print(accuracy_score(y_test, y_pred_rnn_simple))</span><br></pre></td></tr></table></figure>
 
-history = rnn_simple_model.fit(x=padded_train_sequences, 
-                    y=y_train, 
-                    validation_data=(padded_test_sequences, y_test), 
-                    batch_size=batch_size, 
-                    callbacks=[checkpoint], 
-                    epochs=epochs, 
-                    verbose=1)
 
-best_rnn_simple_model = load_model('./models/rnn_no_embeddings/weights-improvement-01-0.8262.hdf5')
-
-y_pred_rnn_simple = best_rnn_simple_model.predict(padded_test_sequences, verbose=1, batch_size=2048)
-
-y_pred_rnn_simple = pd.DataFrame(y_pred_rnn_simple, columns=['prediction'])
-y_pred_rnn_simple['prediction'] = y_pred_rnn_simple['prediction'].map(lambda p: 1 if p &gt;= 0.5 else 0)
-y_pred_rnn_simple.to_csv('./predictions/y_pred_rnn_simple.csv', index=False)</code></pre>
-
-<pre class="has">
-<code class="language-python">y_pred_rnn_simple = pd.read_csv('./predictions/y_pred_rnn_simple.csv')
-print(accuracy_score(y_test, y_pred_rnn_simple))</code></pre>
-
-<pre>
-0.826219183127</pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0.826219183127</span><br></pre></td></tr></table></figure>
 
 <p>准确率为82.6％！ 还不错！ 我们现在比以前的词袋模型表现更好，因为我们考虑了文本的顺序性质。</p>
 
@@ -672,33 +473,11 @@ print(accuracy_score(y_test, y_pred_rnn_simple))</code></pre>
 
 <p>GloVe嵌入有原始文本数据，每行包含一个单词和300个浮点数（相应的嵌入）。 所以要做的第一件事就是将这个结构转换为python字典。</p>
 
-<pre class="has">
-<code class="language-python">def get_coefs(word, *arr):
-    try:
-        return word, np.asarray(arr, dtype='float32')
-    except:
-        return None, None
-    
-embeddings_index = dict(get_coefs(*o.strip().split()) for o in tqdm_notebook(open('./embeddings/glove.840B.300d.txt')))
-
-embed_size=300
-for k in tqdm_notebook(list(embeddings_index.keys())):
-    v = embeddings_index[k]
-    try:
-        if v.shape != (embed_size, ):
-            embeddings_index.pop(k)
-    except:
-        pass
-            
-embeddings_index.pop(None)</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">def get_coefs(word, *arr):</span><br><span class="line">    try:</span><br><span class="line">        return word, np.asarray(arr, dtype=&#x27;float32&#x27;)</span><br><span class="line">    except:</span><br><span class="line">        return None, None</span><br><span class="line">    </span><br><span class="line">embeddings_index = dict(get_coefs(*o.strip().split()) for o in tqdm_notebook(open(&#x27;./embeddings/glove.840B.300d.txt&#x27;)))</span><br><span class="line"></span><br><span class="line">embed_size=300</span><br><span class="line">for k in tqdm_notebook(list(embeddings_index.keys())):</span><br><span class="line">    v = embeddings_index[k]</span><br><span class="line">    try:</span><br><span class="line">        if v.shape != (embed_size, ):</span><br><span class="line">            embeddings_index.pop(k)</span><br><span class="line">    except:</span><br><span class="line">        pass</span><br><span class="line">            </span><br><span class="line">embeddings_index.pop(None)</span><br></pre></td></tr></table></figure>
 
 <p> 一旦创建了嵌入索引，我们提取所有向量，我们将它们堆叠在一起并计算它们的均值和标准差。</p>
 
-<pre class="has">
-<code class="language-python">values = list(embeddings_index.values())
-all_embs = np.stack(values)
-
-emb_mean, emb_std = all_embs.mean(), all_embs.std()</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">values = list(embeddings_index.values())</span><br><span class="line">all_embs = np.stack(values)</span><br><span class="line"></span><br><span class="line">emb_mean, emb_std = all_embs.mean(), all_embs.std()</span><br></pre></td></tr></table></figure>
 
 <p>现在我们生成嵌入矩阵。 我们将按照mean = emb_mean和std = emb_std的正态分布对其进行初始化。</p>
 
@@ -706,71 +485,11 @@ emb_mean, emb_std = all_embs.mean(), all_embs.std()</code></pre>
 
 <p>否则，我们pass。</p>
 
-<pre class="has">
-<code class="language-python">word_index = tokenizer.word_index
-nb_words = MAX_NB_WORDS
-embedding_matrix = np.random.normal(emb_mean, emb_std, (nb_words, embed_size))
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">word_index = tokenizer.word_index</span><br><span class="line">nb_words = MAX_NB_WORDS</span><br><span class="line">embedding_matrix = np.random.normal(emb_mean, emb_std, (nb_words, embed_size))</span><br><span class="line"></span><br><span class="line">oov = 0</span><br><span class="line">for word, i in tqdm_notebook(word_index.items()):</span><br><span class="line">    if i &gt;= MAX_NB_WORDS: continue</span><br><span class="line">    embedding_vector = embeddings_index.get(word)</span><br><span class="line">    if embedding_vector is not None:</span><br><span class="line">        embedding_matrix[i] = embedding_vector</span><br><span class="line">    else:</span><br><span class="line">        oov += 1</span><br><span class="line"></span><br><span class="line">print(oov)</span><br><span class="line"></span><br><span class="line">def get_rnn_model_with_glove_embeddings():</span><br><span class="line">    embedding_dim = 300</span><br><span class="line">    inp = Input(shape=(MAX_LENGTH, ))</span><br><span class="line">    x = Embedding(MAX_NB_WORDS, embedding_dim, weights=[embedding_matrix], input_length=MAX_LENGTH, trainable=True)(inp)</span><br><span class="line">    x = SpatialDropout1D(0.3)(x)</span><br><span class="line">    x = Bidirectional(GRU(100, return_sequences=True))(x)</span><br><span class="line">    avg_pool = GlobalAveragePooling1D()(x)</span><br><span class="line">    max_pool = GlobalMaxPooling1D()(x)</span><br><span class="line">    conc = concatenate([avg_pool, max_pool])</span><br><span class="line">    outp = Dense(1, activation=&quot;sigmoid&quot;)(conc)</span><br><span class="line">    </span><br><span class="line">    model = Model(inputs=inp, outputs=outp)</span><br><span class="line">    model.compile(loss=&#x27;binary_crossentropy&#x27;,</span><br><span class="line">                  optimizer=&#x27;adam&#x27;,</span><br><span class="line">                  metrics=[&#x27;accuracy&#x27;])</span><br><span class="line">    return model</span><br><span class="line"></span><br><span class="line">rnn_model_with_embeddings = get_rnn_model_with_glove_embeddings()</span><br><span class="line"></span><br><span class="line">filepath=&quot;./models/rnn_with_embeddings/weights-improvement-&#123;epoch:02d&#125;-&#123;val_acc:.4f&#125;.hdf5&quot;</span><br><span class="line">checkpoint = ModelCheckpoint(filepath, monitor=&#x27;val_acc&#x27;, verbose=1, save_best_only=True, mode=&#x27;max&#x27;)</span><br><span class="line"></span><br><span class="line">batch_size = 256</span><br><span class="line">epochs = 4</span><br><span class="line"></span><br><span class="line">history = rnn_model_with_embeddings.fit(x=padded_train_sequences, </span><br><span class="line">                    y=y_train, </span><br><span class="line">                    validation_data=(padded_test_sequences, y_test), </span><br><span class="line">                    batch_size=batch_size, </span><br><span class="line">                    callbacks=[checkpoint], </span><br><span class="line">                    epochs=epochs, </span><br><span class="line">                    verbose=1)</span><br><span class="line"></span><br><span class="line">best_rnn_model_with_glove_embeddings = load_model(&#x27;./models/rnn_with_embeddings/weights-improvement-03-0.8372.hdf5&#x27;)</span><br><span class="line"></span><br><span class="line">y_pred_rnn_with_glove_embeddings = best_rnn_model_with_glove_embeddings.predict(</span><br><span class="line">    padded_test_sequences, verbose=1, batch_size=2048)</span><br><span class="line"></span><br><span class="line">y_pred_rnn_with_glove_embeddings = pd.DataFrame(y_pred_rnn_with_glove_embeddings, columns=[&#x27;prediction&#x27;])</span><br><span class="line">y_pred_rnn_with_glove_embeddings[&#x27;prediction&#x27;] = y_pred_rnn_with_glove_embeddings[&#x27;prediction&#x27;].map(lambda p: </span><br><span class="line">                                                                                                    1 if p &gt;= 0.5 else 0)</span><br><span class="line">y_pred_rnn_with_glove_embeddings.to_csv(&#x27;./predictions/y_pred_rnn_with_glove_embeddings.csv&#x27;, index=False)</span><br></pre></td></tr></table></figure>
 
-oov = 0
-for word, i in tqdm_notebook(word_index.items()):
-    if i &gt;= MAX_NB_WORDS: continue
-    embedding_vector = embeddings_index.get(word)
-    if embedding_vector is not None:
-        embedding_matrix[i] = embedding_vector
-    else:
-        oov += 1
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">y_pred_rnn_with_glove_embeddings = pd.read_csv(&#x27;./predictions/y_pred_rnn_with_glove_embeddings.csv&#x27;)</span><br><span class="line">print(accuracy_score(y_test, y_pred_rnn_with_glove_embeddings))</span><br></pre></td></tr></table></figure>
 
-print(oov)
-
-def get_rnn_model_with_glove_embeddings():
-    embedding_dim = 300
-    inp = Input(shape=(MAX_LENGTH, ))
-    x = Embedding(MAX_NB_WORDS, embedding_dim, weights=[embedding_matrix], input_length=MAX_LENGTH, trainable=True)(inp)
-    x = SpatialDropout1D(0.3)(x)
-    x = Bidirectional(GRU(100, return_sequences=True))(x)
-    avg_pool = GlobalAveragePooling1D()(x)
-    max_pool = GlobalMaxPooling1D()(x)
-    conc = concatenate([avg_pool, max_pool])
-    outp = Dense(1, activation="sigmoid")(conc)
-    
-    model = Model(inputs=inp, outputs=outp)
-    model.compile(loss='binary_crossentropy',
-                  optimizer='adam',
-                  metrics=['accuracy'])
-    return model
-
-rnn_model_with_embeddings = get_rnn_model_with_glove_embeddings()
-
-filepath="./models/rnn_with_embeddings/weights-improvement-&#123;epoch:02d&#125;-&#123;val_acc:.4f&#125;.hdf5"
-checkpoint = ModelCheckpoint(filepath, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
-
-batch_size = 256
-epochs = 4
-
-history = rnn_model_with_embeddings.fit(x=padded_train_sequences, 
-                    y=y_train, 
-                    validation_data=(padded_test_sequences, y_test), 
-                    batch_size=batch_size, 
-                    callbacks=[checkpoint], 
-                    epochs=epochs, 
-                    verbose=1)
-
-best_rnn_model_with_glove_embeddings = load_model('./models/rnn_with_embeddings/weights-improvement-03-0.8372.hdf5')
-
-y_pred_rnn_with_glove_embeddings = best_rnn_model_with_glove_embeddings.predict(
-    padded_test_sequences, verbose=1, batch_size=2048)
-
-y_pred_rnn_with_glove_embeddings = pd.DataFrame(y_pred_rnn_with_glove_embeddings, columns=['prediction'])
-y_pred_rnn_with_glove_embeddings['prediction'] = y_pred_rnn_with_glove_embeddings['prediction'].map(lambda p: 
-                                                                                                    1 if p &gt;= 0.5 else 0)
-y_pred_rnn_with_glove_embeddings.to_csv('./predictions/y_pred_rnn_with_glove_embeddings.csv', index=False)</code></pre>
-
-<pre class="has">
-<code class="language-python">y_pred_rnn_with_glove_embeddings = pd.read_csv('./predictions/y_pred_rnn_with_glove_embeddings.csv')
-print(accuracy_score(y_test, y_pred_rnn_with_glove_embeddings))</code></pre>
-
-<pre>
-0.837203100893</pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0.837203100893</span><br></pre></td></tr></table></figure>
 
 <p>精度为83.7％！ 从外部词嵌入转移学习有效！ 对于本教程的其余部分，我将在嵌入矩阵中使用GloVe嵌入。</p>
 
@@ -794,95 +513,15 @@ print(accuracy_score(y_test, y_pred_rnn_with_glove_embeddings))</code></pre>
 
 <p style="text-align:center;"><img alt="" class="has" src="https://ahmedbesbes.com/images/article_5/cnn_text.png" /></p>
 
-<pre class="has">
-<code class="language-python">def get_cnn_model():
-    embedding_dim = 300
-    
-    filter_sizes = [2, 3, 5]
-    num_filters = 256
-    drop = 0.3
-
-    inputs = Input(shape=(MAX_LENGTH,), dtype='int32')
-    embedding = Embedding(input_dim=MAX_NB_WORDS,
-                                output_dim=embedding_dim,
-                                weights=[embedding_matrix],
-                                input_length=MAX_LENGTH,
-                                trainable=True)(inputs)
-
-    reshape = Reshape((MAX_LENGTH, embedding_dim, 1))(embedding)
-    conv_0 = Conv2D(num_filters, 
-                    kernel_size=(filter_sizes[0], embedding_dim), 
-                    padding='valid', kernel_initializer='normal', 
-                    activation='relu')(reshape)
-
-    conv_1 = Conv2D(num_filters, 
-                    kernel_size=(filter_sizes[1], embedding_dim), 
-                    padding='valid', kernel_initializer='normal', 
-                    activation='relu')(reshape)
-    conv_2 = Conv2D(num_filters, 
-                    kernel_size=(filter_sizes[2], embedding_dim), 
-                    padding='valid', kernel_initializer='normal', 
-                    activation='relu')(reshape)
-
-    maxpool_0 = MaxPool2D(pool_size=(MAX_LENGTH - filter_sizes[0] + 1, 1), 
-                          strides=(1,1), padding='valid')(conv_0)
-
-    maxpool_1 = MaxPool2D(pool_size=(MAX_LENGTH - filter_sizes[1] + 1, 1), 
-                          strides=(1,1), padding='valid')(conv_1)
-
-    maxpool_2 = MaxPool2D(pool_size=(MAX_LENGTH - filter_sizes[2] + 1, 1), 
-                          strides=(1,1), padding='valid')(conv_2)
-    concatenated_tensor = Concatenate(axis=1)(
-        [maxpool_0, maxpool_1, maxpool_2])
-    flatten = Flatten()(concatenated_tensor)
-    dropout = Dropout(drop)(flatten)
-    output = Dense(units=1, activation='sigmoid')(dropout)
-
-    model = Model(inputs=inputs, outputs=output)
-    adam = Adam(lr=1e-4, beta_1=0.9, beta_2=0.999, epsilon=1e-08, decay=0.0)
-
-    model.compile(optimizer=adam, loss='binary_crossentropy', metrics=['accuracy'])
-    
-    return model
-
-cnn_model_multi_channel = get_cnn_model()
-
-plot_model(cnn_model_multi_channel, 
-           to_file='./images/article_5/cnn_model_multi_channel.png', 
-           show_shapes=True, 
-           show_layer_names=True)</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">def get_cnn_model():</span><br><span class="line">    embedding_dim = 300</span><br><span class="line">    </span><br><span class="line">    filter_sizes = [2, 3, 5]</span><br><span class="line">    num_filters = 256</span><br><span class="line">    drop = 0.3</span><br><span class="line"></span><br><span class="line">    inputs = Input(shape=(MAX_LENGTH,), dtype=&#x27;int32&#x27;)</span><br><span class="line">    embedding = Embedding(input_dim=MAX_NB_WORDS,</span><br><span class="line">                                output_dim=embedding_dim,</span><br><span class="line">                                weights=[embedding_matrix],</span><br><span class="line">                                input_length=MAX_LENGTH,</span><br><span class="line">                                trainable=True)(inputs)</span><br><span class="line"></span><br><span class="line">    reshape = Reshape((MAX_LENGTH, embedding_dim, 1))(embedding)</span><br><span class="line">    conv_0 = Conv2D(num_filters, </span><br><span class="line">                    kernel_size=(filter_sizes[0], embedding_dim), </span><br><span class="line">                    padding=&#x27;valid&#x27;, kernel_initializer=&#x27;normal&#x27;, </span><br><span class="line">                    activation=&#x27;relu&#x27;)(reshape)</span><br><span class="line"></span><br><span class="line">    conv_1 = Conv2D(num_filters, </span><br><span class="line">                    kernel_size=(filter_sizes[1], embedding_dim), </span><br><span class="line">                    padding=&#x27;valid&#x27;, kernel_initializer=&#x27;normal&#x27;, </span><br><span class="line">                    activation=&#x27;relu&#x27;)(reshape)</span><br><span class="line">    conv_2 = Conv2D(num_filters, </span><br><span class="line">                    kernel_size=(filter_sizes[2], embedding_dim), </span><br><span class="line">                    padding=&#x27;valid&#x27;, kernel_initializer=&#x27;normal&#x27;, </span><br><span class="line">                    activation=&#x27;relu&#x27;)(reshape)</span><br><span class="line"></span><br><span class="line">    maxpool_0 = MaxPool2D(pool_size=(MAX_LENGTH - filter_sizes[0] + 1, 1), </span><br><span class="line">                          strides=(1,1), padding=&#x27;valid&#x27;)(conv_0)</span><br><span class="line"></span><br><span class="line">    maxpool_1 = MaxPool2D(pool_size=(MAX_LENGTH - filter_sizes[1] + 1, 1), </span><br><span class="line">                          strides=(1,1), padding=&#x27;valid&#x27;)(conv_1)</span><br><span class="line"></span><br><span class="line">    maxpool_2 = MaxPool2D(pool_size=(MAX_LENGTH - filter_sizes[2] + 1, 1), </span><br><span class="line">                          strides=(1,1), padding=&#x27;valid&#x27;)(conv_2)</span><br><span class="line">    concatenated_tensor = Concatenate(axis=1)(</span><br><span class="line">        [maxpool_0, maxpool_1, maxpool_2])</span><br><span class="line">    flatten = Flatten()(concatenated_tensor)</span><br><span class="line">    dropout = Dropout(drop)(flatten)</span><br><span class="line">    output = Dense(units=1, activation=&#x27;sigmoid&#x27;)(dropout)</span><br><span class="line"></span><br><span class="line">    model = Model(inputs=inputs, outputs=output)</span><br><span class="line">    adam = Adam(lr=1e-4, beta_1=0.9, beta_2=0.999, epsilon=1e-08, decay=0.0)</span><br><span class="line"></span><br><span class="line">    model.compile(optimizer=adam, loss=&#x27;binary_crossentropy&#x27;, metrics=[&#x27;accuracy&#x27;])</span><br><span class="line">    </span><br><span class="line">    return model</span><br><span class="line"></span><br><span class="line">cnn_model_multi_channel = get_cnn_model()</span><br><span class="line"></span><br><span class="line">plot_model(cnn_model_multi_channel, </span><br><span class="line">           to_file=&#x27;./images/article_5/cnn_model_multi_channel.png&#x27;, </span><br><span class="line">           show_shapes=True, </span><br><span class="line">           show_layer_names=True)</span><br></pre></td></tr></table></figure>
 
 <p style="text-align:center;"><img alt="" class="has" src="https://ahmedbesbes.com/images/article_5/cnn_model_multi_channel.png" /></p>
 
-<pre class="has">
-<code class="language-python">filepath="./models/cnn_multi_channel/weights-improvement-&#123;epoch:02d&#125;-&#123;val_acc:.4f&#125;.hdf5"
-checkpoint = ModelCheckpoint(filepath, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">filepath=&quot;./models/cnn_multi_channel/weights-improvement-&#123;epoch:02d&#125;-&#123;val_acc:.4f&#125;.hdf5&quot;</span><br><span class="line">checkpoint = ModelCheckpoint(filepath, monitor=&#x27;val_acc&#x27;, verbose=1, save_best_only=True, mode=&#x27;max&#x27;)</span><br><span class="line"></span><br><span class="line">batch_size = 256</span><br><span class="line">epochs = 4</span><br><span class="line"></span><br><span class="line">history = cnn_model_multi_channel.fit(x=padded_train_sequences, </span><br><span class="line">                    y=y_train, </span><br><span class="line">                    validation_data=(padded_test_sequences, y_test), </span><br><span class="line">                    batch_size=batch_size, </span><br><span class="line">                    callbacks=[checkpoint], </span><br><span class="line">                    epochs=epochs, </span><br><span class="line">                    verbose=1)</span><br><span class="line"></span><br><span class="line">best_cnn_model = load_model(&#x27;./models/cnn_multi_channel/weights-improvement-04-0.8264.hdf5&#x27;)</span><br><span class="line"></span><br><span class="line">y_pred_cnn_multi_channel = best_cnn_model.predict(padded_test_sequences, verbose=1, batch_size=2048)</span><br><span class="line"></span><br><span class="line">y_pred_cnn_multi_channel = pd.DataFrame(y_pred_cnn_multi_channel, columns=[&#x27;prediction&#x27;])</span><br><span class="line">y_pred_cnn_multi_channel[&#x27;prediction&#x27;] = y_pred_cnn_multi_channel[&#x27;prediction&#x27;].map(lambda p: 1 if p &gt;= 0.5 else 0)</span><br><span class="line">y_pred_cnn_multi_channel.to_csv(&#x27;./predictions/y_pred_cnn_multi_channel.csv&#x27;, index=False)</span><br></pre></td></tr></table></figure>
 
-batch_size = 256
-epochs = 4
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">y_pred_cnn_multi_channel = pd.read_csv(&#x27;./predictions/y_pred_cnn_multi_channel.csv&#x27;)</span><br><span class="line">print(accuracy_score(y_test, y_pred_cnn_multi_channel))</span><br></pre></td></tr></table></figure>
 
-history = cnn_model_multi_channel.fit(x=padded_train_sequences, 
-                    y=y_train, 
-                    validation_data=(padded_test_sequences, y_test), 
-                    batch_size=batch_size, 
-                    callbacks=[checkpoint], 
-                    epochs=epochs, 
-                    verbose=1)
-
-best_cnn_model = load_model('./models/cnn_multi_channel/weights-improvement-04-0.8264.hdf5')
-
-y_pred_cnn_multi_channel = best_cnn_model.predict(padded_test_sequences, verbose=1, batch_size=2048)
-
-y_pred_cnn_multi_channel = pd.DataFrame(y_pred_cnn_multi_channel, columns=['prediction'])
-y_pred_cnn_multi_channel['prediction'] = y_pred_cnn_multi_channel['prediction'].map(lambda p: 1 if p &gt;= 0.5 else 0)
-y_pred_cnn_multi_channel.to_csv('./predictions/y_pred_cnn_multi_channel.csv', index=False)</code></pre>
-
-<pre class="has">
-<code class="language-python">y_pred_cnn_multi_channel = pd.read_csv('./predictions/y_pred_cnn_multi_channel.csv')
-print(accuracy_score(y_test, y_pred_cnn_multi_channel))</code></pre>
-
-<pre>
-0.826409655689</pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0.826409655689</span><br></pre></td></tr></table></figure>
 
 <p>82.6％的准确度，我们不如RNN精确，但仍然优于BOW模型。 也许对超参数（过滤器的数量和大小）的调查给出了优势？</p>
 
@@ -894,60 +533,14 @@ print(accuracy_score(y_test, y_pred_cnn_multi_channel))</code></pre>
 
 <p>更多关于<a target="_blank" rel="noopener" href="http://konukoii.com/blog/2018/02/19/twitter-sentiment-analysis-using-combined-lstm-cnn-models/">这里</a>。</p>
 
-<pre class="has">
-<code class="language-python">def get_rnn_cnn_model():
-    embedding_dim = 300
-    inp = Input(shape=(MAX_LENGTH, ))
-    x = Embedding(MAX_NB_WORDS, embedding_dim, weights=[embedding_matrix], input_length=MAX_LENGTH, trainable=True)(inp)
-    x = SpatialDropout1D(0.3)(x)
-    x = Bidirectional(GRU(100, return_sequences=True))(x)
-    x = Conv1D(64, kernel_size = 2, padding = "valid", kernel_initializer = "he_uniform")(x)
-    avg_pool = GlobalAveragePooling1D()(x)
-    max_pool = GlobalMaxPooling1D()(x)
-    conc = concatenate([avg_pool, max_pool])
-    outp = Dense(1, activation="sigmoid")(conc)
-    
-    model = Model(inputs=inp, outputs=outp)
-    model.compile(loss='binary_crossentropy',
-                  optimizer='adam',
-                  metrics=['accuracy'])
-    return model
-
-rnn_cnn_model = get_rnn_cnn_model()
-
-plot_model(rnn_cnn_model, to_file='./images/article_5/rnn_cnn_model.png', show_shapes=True, show_layer_names=True)</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">def get_rnn_cnn_model():</span><br><span class="line">    embedding_dim = 300</span><br><span class="line">    inp = Input(shape=(MAX_LENGTH, ))</span><br><span class="line">    x = Embedding(MAX_NB_WORDS, embedding_dim, weights=[ embedding_matrix], input_length=MAX_LENGTH, trainable=True)(inp)</span><br><span class="line">    x = SpatialDropout1D(0.3)(x)</span><br><span class="line">    x = Bidirectional(GRU(100, return_sequences=True))(x)</span><br><span class="line">    x = Conv1D(64, kernel_size = 2, padding = &quot;valid&quot;, kernel_initializer = &quot;he_uniform&quot;)(x)</span><br><span class="line">    avg_pool = GlobalAveragePooling1D()(x)</span><br><span class="line">    max_pool = GlobalMaxPooling1D()(x)</span><br><span class="line">    conc = concatenate([avg_pool, max_pool])</span><br><span class="line">    outp = Dense(1, activation=&quot;sigmoid&quot;)(conc)</span><br><span class="line">    </span><br><span class="line">    model = Model(inputs=inp, outputs=outp)</span><br><span class="line">    model.compile(loss=&#x27;binary_crossentropy&#x27;,</span><br><span class="line">                  optimizer=&#x27;adam&#x27;,</span><br><span class="line">                  metrics=[&#x27;accuracy&#x27;])</span><br><span class="line">    return model</span><br><span class="line"></span><br><span class="line">rnn_cnn_model = get_rnn_cnn_model()</span><br><span class="line"></span><br><span class="line">plot_model(rnn_cnn_model, to_file=&#x27;./images/article_5/rnn_cnn_model.png&#x27;, show_shapes=True, show_layer_names=True)</span><br></pre></td></tr></table></figure>
 
 <p style="text-align:center;"><img alt="" class="has" src="https://ahmedbesbes.com/images/article_5/rnn_cnn_model.png" /></p>
 
-<pre class="has">
-<code class="language-python">filepath="./models/rnn_cnn/weights-improvement-&#123;epoch:02d&#125;-&#123;val_acc:.4f&#125;.hdf5"
-checkpoint = ModelCheckpoint(filepath, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">filepath=&quot;./models/rnn_cnn/weights-improvement-&#123;epoch:02d&#125;-&#123;val_acc:.4f&#125;.hdf5&quot;</span><br><span class="line">checkpoint = ModelCheckpoint(filepath, monitor=&#x27;val_acc&#x27;, verbose=1, save_best_only=True, mode=&#x27;max&#x27;)</span><br><span class="line"></span><br><span class="line">batch_size = 256</span><br><span class="line">epochs = 4</span><br><span class="line"></span><br><span class="line">history = rnn_cnn_model.fit(x=padded_train_sequences, </span><br><span class="line">                    y=y_train, </span><br><span class="line">                    validation_data=(padded_test_sequences, y_test), </span><br><span class="line">                    batch_size=batch_size, </span><br><span class="line">                    callbacks=[checkpoint], </span><br><span class="line">                    epochs=epochs, </span><br><span class="line">                    verbose=1)</span><br><span class="line"></span><br><span class="line">best_rnn_cnn_model = load_model(&#x27;./models/rnn_cnn/weights-improvement-03-0.8379.hdf5&#x27;)</span><br><span class="line"></span><br><span class="line">y_pred_rnn_cnn = best_rnn_cnn_model.predict(padded_test_sequences, verbose=1, batch_size=2048)</span><br><span class="line"></span><br><span class="line">y_pred_rnn_cnn = pd.DataFrame(y_pred_rnn_cnn, columns=[&#x27;prediction&#x27;])</span><br><span class="line">y_pred_rnn_cnn[&#x27;prediction&#x27;] = y_pred_rnn_cnn[&#x27;prediction&#x27;].map(lambda p: 1 if p &gt;= 0.5 else 0)</span><br><span class="line">y_pred_rnn_cnn.to_csv(&#x27;./predictions/y_pred_rnn_cnn.csv&#x27;, index=False)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">y_pred_rnn_cnn = pd.read_csv(&#x27;./predictions/y_pred_rnn_cnn.csv&#x27;)</span><br><span class="line">print(accuracy_score(y_test, y_pred_rnn_cnn))</span><br></pre></td></tr></table></figure>
 
-batch_size = 256
-epochs = 4
-
-history = rnn_cnn_model.fit(x=padded_train_sequences, 
-                    y=y_train, 
-                    validation_data=(padded_test_sequences, y_test), 
-                    batch_size=batch_size, 
-                    callbacks=[checkpoint], 
-                    epochs=epochs, 
-                    verbose=1)
-
-best_rnn_cnn_model = load_model('./models/rnn_cnn/weights-improvement-03-0.8379.hdf5')
-
-y_pred_rnn_cnn = best_rnn_cnn_model.predict(padded_test_sequences, verbose=1, batch_size=2048)
-
-y_pred_rnn_cnn = pd.DataFrame(y_pred_rnn_cnn, columns=['prediction'])
-y_pred_rnn_cnn['prediction'] = y_pred_rnn_cnn['prediction'].map(lambda p: 1 if p &gt;= 0.5 else 0)
-y_pred_rnn_cnn.to_csv('./predictions/y_pred_rnn_cnn.csv', index=False)</code></pre>
-
-<pre class="has">
-<code class="language-python">y_pred_rnn_cnn = pd.read_csv('./predictions/y_pred_rnn_cnn.csv')
-print(accuracy_score(y_test, y_pred_rnn_cnn))</code></pre>
-
-<pre>
-0.837882453033</pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0.837882453033</span><br></pre></td></tr></table></figure>
 
 <p>准确率为83.8％。 迄今为止最好的模特。</p>
 
@@ -955,67 +548,15 @@ print(accuracy_score(y_test, y_pred_rnn_cnn))</code></pre>
 
 <p>我们运行了七种不同的模型。 让我们看看他们如何比较：</p>
 
-<pre class="has">
-<code class="language-python">import seaborn as sns
-from sklearn.metrics import roc_auc_score
-sns.set_style("whitegrid")
-sns.set_palette("pastel")
-
-predictions_files = os.listdir('./predictions/')
-
-predictions_dfs = []
-for f in predictions_files:
-    aux = pd.read_csv('./predictions/&#123;0&#125;'.format(f))
-    aux.columns = [f.strip('.csv')]
-    predictions_dfs.append(aux)
-
-predictions = pd.concat(predictions_dfs, axis=1)
-
-scores = &#123;&#125;
-
-for column in tqdm_notebook(predictions.columns, leave=False):
-    if column != 'y_true':
-        s = accuracy_score(predictions['y_true'].values, predictions[column].values)
-        scores[column] = s
-
-scores = pd.DataFrame([scores], index=['accuracy'])
-
-mapping_name = dict(zip(list(scores.columns), 
-                        ['Char ngram + LR', '(Word + Char ngram) + LR', 
-                           'Word ngram + LR', 'CNN (multi channel)',
-                           'RNN + CNN', 'RNN no embd.', 'RNN + GloVe embds.']))
-
-scores = scores.rename(columns=mapping_name)
-scores = scores[['Word ngram + LR', 'Char ngram + LR', '(Word + Char ngram) + LR',
-                'RNN no embd.', 'RNN + GloVe embds.', 'CNN (multi channel)',
-                'RNN + CNN']]
-
-scores = scores.T
-
-ax = scores['accuracy'].plot(kind='bar', 
-                             figsize=(16, 5), 
-                             ylim=(scores.accuracy.min()*0.97, scores.accuracy.max() * 1.01), 
-                             color='red', 
-                             alpha=0.75, 
-                             rot=45, 
-                             fontsize=13)
-ax.set_title('Comparative accuracy of the different models')
-
-for i in ax.patches:
-    ax.annotate(str(round(i.get_height(), 3)), 
-                (i.get_x() + 0.1, i.get_height() * 1.002), color='dimgrey', fontsize=14)</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">import seaborn as sns</span><br><span class="line">from sklearn.metrics import roc_auc_score</span><br><span class="line">sns.set_style(&quot;whitegrid&quot;)</span><br><span class="line">sns.set_palette(&quot;pastel&quot;)</span><br><span class="line"></span><br><span class="line">predictions_files = os.listdir(&#x27;./predictions/&#x27;)</span><br><span class="line"></span><br><span class="line">predictions_dfs = []</span><br><span class="line">for f in predictions_files:</span><br><span class="line">    aux = pd.read_csv(&#x27;./predictions/&#123;0&#125;&#x27;.format(f))</span><br><span class="line">    aux.columns = [f.strip(&#x27;.csv&#x27;)]</span><br><span class="line">    predictions_dfs.append(aux)</span><br><span class="line"></span><br><span class="line">predictions = pd.concat(predictions_dfs, axis=1)</span><br><span class="line"></span><br><span class="line">scores = &#123;&#125;</span><br><span class="line"></span><br><span class="line">for column in tqdm_notebook(predictions.columns, leave=False):</span><br><span class="line">    if column != &#x27;y_true&#x27;:</span><br><span class="line">        s = accuracy_score(predictions[&#x27;y_true&#x27;].values, predictions[column].values)</span><br><span class="line">        scores[column] = s</span><br><span class="line"></span><br><span class="line">scores = pd.DataFrame([scores], index=[&#x27;accuracy&#x27;])</span><br><span class="line"></span><br><span class="line">mapping_name = dict(zip(list(scores.columns), </span><br><span class="line">                        [&#x27;Char ngram + LR&#x27;, &#x27;(Word + Char ngram) + LR&#x27;, </span><br><span class="line">                           &#x27;Word ngram + LR&#x27;, &#x27;CNN (multi channel)&#x27;,</span><br><span class="line">                           &#x27;RNN + CNN&#x27;, &#x27;RNN no embd.&#x27;, &#x27;RNN + GloVe embds.&#x27;]))</span><br><span class="line"></span><br><span class="line">scores = scores.rename(columns=mapping_name)</span><br><span class="line">scores = scores[[&#x27;Word ngram + LR&#x27;, &#x27;Char ngram + LR&#x27;, &#x27;(Word + Char ngram) + LR&#x27;,</span><br><span class="line">                &#x27;RNN no embd.&#x27;, &#x27;RNN + GloVe embds.&#x27;, &#x27;CNN (multi channel)&#x27;,</span><br><span class="line">                &#x27;RNN + CNN&#x27;]]</span><br><span class="line"></span><br><span class="line">scores = scores.T</span><br><span class="line"></span><br><span class="line">ax = scores[&#x27;accuracy&#x27;].plot(kind=&#x27;bar&#x27;, </span><br><span class="line">                             figsize=(16, 5), </span><br><span class="line">                             ylim=(scores.accuracy.min()*0.97, scores.accuracy.max() * 1.01), </span><br><span class="line">                             color=&#x27;red&#x27;, </span><br><span class="line">                             alpha=0.75, </span><br><span class="line">                             rot=45, </span><br><span class="line">                             fontsize=13)</span><br><span class="line">ax.set_title(&#x27;Comparative accuracy of the different models&#x27;)</span><br><span class="line"></span><br><span class="line">for i in ax.patches:</span><br><span class="line">    ax.annotate(str(round(i.get_height(), 3)), </span><br><span class="line">                (i.get_x() + 0.1, i.get_height() * 1.002), color=&#x27;dimgrey&#x27;, fontsize=14)</span><br></pre></td></tr></table></figure>
 
 <p style="text-align:center;"><img alt="" class="has" src="https://ahmedbesbes.com/images/article_5/benchmark.png" /></p>
 
 <p>让我们快速检查模型预测之间的相关性。</p>
 
-<pre class="has">
-<code class="language-python">fig = plt.figure(figsize=(10, 5))
-sns.heatmap(predictions.drop('y_true', axis=1).corr(method='kendall'), cmap="Blues", annot=True);</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fig = plt.figure(figsize=(10, 5))</span><br><span class="line">sns.heatmap(predictions.drop(&#x27;y_true&#x27;, axis=1).corr(method=&#x27;kendall&#x27;), cmap=&quot;Blues&quot;, annot=True);</span><br></pre></td></tr></table></figure>
 
 <p style="text-align:center;"><img alt="" class="has" src="https://ahmedbesbes.com/images/article_5/heatmap.png" /></p>
-
-<p> </p>
 
 <h1 id="Conclusion">Conclusion</h1>
 
@@ -1033,7 +574,7 @@ sns.heatmap(predictions.drop('y_true', axis=1).corr(method='kendall'), cmap="Blu
 
 <ul><li><a target="_blank" rel="noopener" href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/">http://colah.github.io/posts/2015-08-Understanding-LSTMs/</a></li>
     <li><a target="_blank" rel="noopener" href="http://wildml.com/2015/11/understanding-convolutional-neural-networks-for-nlp/">http://wildml.com/2015/11/understanding-convolutional-neural-networks-for-nlp/</a></li>
-</ul></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://qubeijun.github.io">qubeijun</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://qubeijun.github.io/2019/04/15/%EF%BC%88%E7%BF%BB%E8%AF%91%EF%BC%89%E4%BC%A0%E7%BB%9F%E5%92%8C%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E5%9C%A8%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E7%BB%BC%E8%BF%B0%E4%B8%8E%E5%9F%BA%E5%87%86/">https://qubeijun.github.io/2019/04/15/（翻译）传统和深度学习模型在文本分类中的应用综述与基准/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://qubeijun.github.io" target="_blank">qubeijun的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/quBlogHexo/tags/cnn-rnn-GloVe-%E5%88%86%E7%B1%BB/">cnn rnn GloVe 分类</a></div><div class="post_share"><div class="social-share" data-image="/quBlogHexo/image/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/quBlogHexo/2019/04/15/%EF%BC%88%E7%BF%BB%E8%AF%91%EF%BC%89Understanding%20Convolutional%20Neural%20Networks%20for%20NLP/" title="（翻译）Understanding Convolutional Neural Networks for NLP"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">（翻译）Understanding Convolutional Neural Networks for NLP</div></div></a></div><div class="next-post pull-right"><a href="/quBlogHexo/2019/04/09/%E5%B0%8F%E6%9C%A8%E8%99%AB%E8%AE%BA%E5%9D%9B-%E5%AD%A6%E6%9C%AF%E7%A7%91%E7%A0%94%E4%BA%92%E5%8A%A8%E5%B9%B3%E5%8F%B0%20%E7%88%AC%E8%99%AB/" title="小木虫论坛-学术科研互动平台 爬虫"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">小木虫论坛-学术科研互动平台 爬虫</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div class="comment-switch"><span class="first-comment">Valine</span><span id="switch-btn"></span><span class="second-comment">Disqus</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/quBlogHexo/image/avatar.jpg" onerror="this.onerror=null;this.src='/quBlogHexo/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">qubeijun</div><div class="author-info__description">qubeijun的博客</div></div><div class="card-info-data site-data is-center"><a href="/quBlogHexo/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/quBlogHexo/tags/"><div class="headline">标签</div><div class="length-num">22</div></a><a href="/quBlogHexo/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/qubeijun" target="_blank" title="Github"><i class="fab fa-github" style="color: #hdhfbb;"></i></a><a class="social-icon" href="/quBlogHexo/18640274769@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #000000;"></i></a><a class="social-icon" href="/quBlogHexo/qu825954789" target="_blank" title=""><i class="fa-brands fa-weixin"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is qu's Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0---Data-pre-processing"><span class="toc-number">1.</span> <span class="toc-text">0 - Data pre-processing</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1---Bag-of-word-model-based-on-word-ngrams"><span class="toc-number">2.</span> <span class="toc-text">1 - Bag of word model based on word ngrams</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#I-like-pizza-a-lot"><span class="toc-number">3.</span> <span class="toc-text">I like pizza a lot</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#i,-like,-pizza,-a,-lot,-i-like,-like-pizza,-pizza-a,-a-lot"><span class="toc-number">4.</span> <span class="toc-text">i, like, pizza, a, lot, i like, like pizza, pizza a, a lot</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2---Bag-of-word-model-based-on-character-ngrams"><span class="toc-number">5.</span> <span class="toc-text">2 - Bag of word model based on character ngrams</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#I,-l,-i,-k,-e,-...,-I-li,--lik,-like,-...,-this,-...-,-is-m,-s-mo,-movi,-..."><span class="toc-number">6.</span> <span class="toc-text">I, l, i, k, e, ..., I li, lik, like, ..., this, ... , is m, s mo, movi, ...</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3---Bag-of-word-model-based-on-word-and-character-ngrams"><span class="toc-number">7.</span> <span class="toc-text">3 - Bag of word model based on word and character ngrams</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4---Recurrent-Neural-Network-without-pre-trained-embedding"><span class="toc-number">8.</span> <span class="toc-text">4 - Recurrent Neural Network without pre-trained embedding</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5---Recurrent-Neural-Network-with-GloVe-pre-trained-embeddings"><span class="toc-number">9.</span> <span class="toc-text">5 - Recurrent Neural Network with GloVe pre-trained embeddings</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6---Multi-channel-Convolutional-Neural-Network"><span class="toc-number">10.</span> <span class="toc-text">6 - Multi-channel Convolutional Neural Network</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7---Recurrent-+-Convolutional-neural-network"><span class="toc-number">11.</span> <span class="toc-text">7 - Recurrent + Convolutional neural network</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8----Conclusion"><span class="toc-number">12.</span> <span class="toc-text">8 - Conclusion</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Conclusion"><span class="toc-number">13.</span> <span class="toc-text">Conclusion</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Some-helpful-links-to-explore"><span class="toc-number">14.</span> <span class="toc-text">Some helpful links to explore</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/quBlogHexo/2021/04/13/%E5%90%84%E7%A7%8D%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E7%AD%94%E6%A1%88%E6%B1%87%E6%80%BB/" title="各种问题解决答案汇总">各种问题解决答案汇总</a><time datetime="2021-04-13T09:37:36.000Z" title="发表于 2021-04-13 17:37:36">2021-04-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/quBlogHexo/2021/02/02/Alibaba%20Cloud%20Toolkit%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/" title="Alibaba Cloud Toolkit的使用说明">Alibaba Cloud Toolkit的使用说明</a><time datetime="2021-02-02T06:56:42.000Z" title="发表于 2021-02-02 14:56:42">2021-02-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/quBlogHexo/2020/03/19/Dojo%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/" title="Dojo简单入门">Dojo简单入门</a><time datetime="2020-03-19T02:50:05.000Z" title="发表于 2020-03-19 10:50:05">2020-03-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/quBlogHexo/2020/03/17/Angular%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/" title="Angular简单入门">Angular简单入门</a><time datetime="2020-03-17T06:47:58.000Z" title="发表于 2020-03-17 14:47:58">2020-03-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/quBlogHexo/2020/03/06/vue%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/" title="vue基础知识点总结">vue基础知识点总结</a><time datetime="2020-03-06T03:09:35.000Z" title="发表于 2020-03-06 11:09:35">2020-03-06</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By qubeijun</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/quBlogHexo/js/utils.js?v=4.13.0"></script><script src="/quBlogHexo/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+</ul></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://qubeijun.github.io">qubeijun</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://qubeijun.github.io/2019/04/15/%EF%BC%88%E7%BF%BB%E8%AF%91%EF%BC%89%E4%BC%A0%E7%BB%9F%E5%92%8C%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E5%9C%A8%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E7%BB%BC%E8%BF%B0%E4%B8%8E%E5%9F%BA%E5%87%86/">https://qubeijun.github.io/2019/04/15/（翻译）传统和深度学习模型在文本分类中的应用综述与基准/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://qubeijun.github.io" target="_blank">qubeijun的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/quBlogHexo/tags/cnn/">cnn</a><a class="post-meta__tags" href="/quBlogHexo/tags/rnn/">rnn</a><a class="post-meta__tags" href="/quBlogHexo/tags/GloVe/">GloVe</a><a class="post-meta__tags" href="/quBlogHexo/tags/%E5%88%86%E7%B1%BB/">分类</a></div><div class="post_share"><div class="social-share" data-image="/quBlogHexo/image/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/quBlogHexo/2019/04/15/%EF%BC%88%E7%BF%BB%E8%AF%91%EF%BC%89Understanding%20Convolutional%20Neural%20Networks%20for%20NLP/" title="（翻译）Understanding Convolutional Neural Networks for NLP"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">（翻译）Understanding Convolutional Neural Networks for NLP</div></div></a></div><div class="next-post pull-right"><a href="/quBlogHexo/2019/04/09/%E5%B0%8F%E6%9C%A8%E8%99%AB%E8%AE%BA%E5%9D%9B-%E5%AD%A6%E6%9C%AF%E7%A7%91%E7%A0%94%E4%BA%92%E5%8A%A8%E5%B9%B3%E5%8F%B0%E7%88%AC%E8%99%AB/" title="小木虫论坛-学术科研互动平台爬虫"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">小木虫论坛-学术科研互动平台爬虫</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/quBlogHexo/2019/04/15/%EF%BC%88%E7%BF%BB%E8%AF%91%EF%BC%89Understanding%20Convolutional%20Neural%20Networks%20for%20NLP/" title="（翻译）Understanding Convolutional Neural Networks for NLP"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-04-15</div><div class="title">（翻译）Understanding Convolutional Neural Networks for NLP</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div class="comment-switch"><span class="first-comment">Valine</span><span id="switch-btn"></span><span class="second-comment">Disqus</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/quBlogHexo/image/avatar.jpg" onerror="this.onerror=null;this.src='/quBlogHexo/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">qubeijun</div><div class="author-info__description">qubeijun的博客</div></div><div class="card-info-data site-data is-center"><a href="/quBlogHexo/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/quBlogHexo/tags/"><div class="headline">标签</div><div class="length-num">34</div></a><a href="/quBlogHexo/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/qubeijun" target="_blank" title="Github"><i class="fab fa-github" style="color: #hdhfbb;"></i></a><a class="social-icon" href="/quBlogHexo/18640274769@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #000000;"></i></a><a class="social-icon" href="/quBlogHexo/qu825954789" target="_blank" title=""><i class="fa-brands fa-weixin"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is qu's Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0---Data-pre-processing"><span class="toc-number">1.</span> <span class="toc-text">0 - Data pre-processing</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1---Bag-of-word-model-based-on-word-ngrams"><span class="toc-number">2.</span> <span class="toc-text">1 - Bag of word model based on word ngrams</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2---Bag-of-word-model-based-on-character-ngrams"><span class="toc-number">3.</span> <span class="toc-text">2 - Bag of word model based on character ngrams</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3---Bag-of-word-model-based-on-word-and-character-ngrams"><span class="toc-number">4.</span> <span class="toc-text">3 - Bag of word model based on word and character ngrams</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4---Recurrent-Neural-Network-without-pre-trained-embedding"><span class="toc-number">5.</span> <span class="toc-text">4 - Recurrent Neural Network without pre-trained embedding</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5---Recurrent-Neural-Network-with-GloVe-pre-trained-embeddings"><span class="toc-number">6.</span> <span class="toc-text">5 - Recurrent Neural Network with GloVe pre-trained embeddings</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6---Multi-channel-Convolutional-Neural-Network"><span class="toc-number">7.</span> <span class="toc-text">6 - Multi-channel Convolutional Neural Network</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7---Recurrent-+-Convolutional-neural-network"><span class="toc-number">8.</span> <span class="toc-text">7 - Recurrent + Convolutional neural network</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8----Conclusion"><span class="toc-number">9.</span> <span class="toc-text">8 - Conclusion</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Conclusion"><span class="toc-number">10.</span> <span class="toc-text">Conclusion</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Some-helpful-links-to-explore"><span class="toc-number">11.</span> <span class="toc-text">Some helpful links to explore</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/quBlogHexo/2021/04/13/%E5%90%84%E7%A7%8D%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E7%AD%94%E6%A1%88%E6%B1%87%E6%80%BB/" title="各种问题解决答案汇总">各种问题解决答案汇总</a><time datetime="2021-04-13T09:37:36.000Z" title="发表于 2021-04-13 17:37:36">2021-04-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/quBlogHexo/2021/02/02/Alibaba%20Cloud%20Toolkit%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/" title="Alibaba Cloud Toolkit的使用说明">Alibaba Cloud Toolkit的使用说明</a><time datetime="2021-02-02T06:56:42.000Z" title="发表于 2021-02-02 14:56:42">2021-02-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/quBlogHexo/2020/03/19/Dojo%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/" title="Dojo简单入门">Dojo简单入门</a><time datetime="2020-03-19T02:50:05.000Z" title="发表于 2020-03-19 10:50:05">2020-03-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/quBlogHexo/2020/03/17/Angular%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/" title="Angular简单入门">Angular简单入门</a><time datetime="2020-03-17T06:47:58.000Z" title="发表于 2020-03-17 14:47:58">2020-03-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/quBlogHexo/2020/03/06/vue%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/" title="vue基础知识点总结">vue基础知识点总结</a><time datetime="2020-03-06T03:09:35.000Z" title="发表于 2020-03-06 11:09:35">2020-03-06</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By qubeijun</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/quBlogHexo/js/utils.js?v=4.13.0"></script><script src="/quBlogHexo/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
   const initValine = () => {
     const valine = new Valine(Object.assign({
       el: '#vcomment',
