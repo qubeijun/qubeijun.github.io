@@ -1,0 +1,329 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>（翻译）Understanding LSTM Networks | qubeijun的博客</title><meta name="author" content="qubeijun"><meta name="copyright" content="qubeijun"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="（翻译）Understanding LSTM Networks">
+<meta property="og:type" content="article">
+<meta property="og:title" content="（翻译）Understanding LSTM Networks">
+<meta property="og:url" content="https://qubeijun.github.io/posts/63321.html">
+<meta property="og:site_name" content="qubeijun的博客">
+<meta property="og:description" content="（翻译）Understanding LSTM Networks">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://qubeijun.github.io/image/avatar.jpg">
+<meta property="article:published_time" content="2019-04-16T03:34:55.000Z">
+<meta property="article:modified_time" content="2024-10-06T12:25:56.567Z">
+<meta property="article:author" content="qubeijun">
+<meta property="article:tag" content="RNN">
+<meta property="article:tag" content="LSTM">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://qubeijun.github.io/image/avatar.jpg"><link rel="shortcut icon" href="/quBlogHexo/image/avatar.jpg"><link rel="canonical" href="https://qubeijun.github.io/posts/63321.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/quBlogHexo/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?2b2a845afa96671b1421a2af6215c0e4";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = {
+  root: '/quBlogHexo/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '（翻译）Understanding LSTM Networks',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-10-06 20:25:56'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/quBlogHexo/image/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/quBlogHexo/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/quBlogHexo/tags/"><div class="headline">标签</div><div class="length-num">34</div></a><a href="/quBlogHexo/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/quBlogHexo/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/galleryGroup/"><i class="fa-fw fa-solid fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/shuoshuo/"><i class="fa-fw fa-fw fas fa-comment-dots"></i><span> 说说</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><span id="blog-info"><a href="/quBlogHexo/" title="qubeijun的博客"><img class="site-icon" src="/quBlogHexo/image/avatar.jpg"/><span class="site-name">qubeijun的博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/quBlogHexo/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/galleryGroup/"><i class="fa-fw fa-solid fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/shuoshuo/"><i class="fa-fw fa-fw fas fa-comment-dots"></i><span> 说说</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">（翻译）Understanding LSTM Networks</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-04-16T03:34:55.000Z" title="发表于 2019-04-16 11:34:55">2019-04-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-10-06T12:25:56.567Z" title="更新于 2024-10-06 20:25:56">2024-10-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/quBlogHexo/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>10分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="（翻译）Understanding LSTM Networks"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><span id="more"></span>
+
+<p>原文：<a target="_blank" rel="noopener" href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/">Understanding LSTM Networks</a></p>
+
+<h2 id="recurrent-neural-networks">Recurrent Neural Networks</h2>
+
+<p>人类不会每时每刻都开始思考。 当你阅读这篇文章时，你会根据你对之前单词的理解来理解每个单词。 你不要扔掉所有东西，然后再从头开始思考。 你的想法有持久性。</p>
+
+<p>传统的神经网络不能做到这一点，这似乎是一个主要的缺点。 例如，假设您想要对电影中每个点发生的事件进行分类。 目前尚不清楚传统神经网络如何利用其对电影中先前事件的推理来告知后者。</p>
+
+<p>循环神经网络解决了这个问题。 它们是带有循环的网络，允许信息持续存在。</p>
+
+<div style="text-align:center;">
+<figure class="image has"><img alt="" height="200" src="https://i-blog.csdnimg.cn/blog_migrate/012a3d7c2d42ebc05cffae2a899bf0e9.png" width="129" /><figcaption><strong>Recurrent Neural Networks have loops.</strong><br /></figcaption></figure></div>
+
+<p>在上图中，一块神经网络A查看一些输入xt并输出一个值ht。 循环允许信息从网络的一个步骤传递到下一个步骤。</p>
+
+<p>这些循环使得循环神经网络看起来有点神秘。 但是，如果你多想一点，事实证明它们与普通的神经网络并没有什么不同。 可以将循环神经网络视为同一网络的多个副本，每个副本都将消息传递给后继者。 考虑如果我们展开循环会发生什么：</p>
+
+<p><img src="/quBlogHexo/image/lstm1.png" /></p>
+
+<p>这种类似链的性质表明，递归神经网络与序列和列表密切相关。 它们是用于此类数据的神经网络的自然架构。</p>
+
+<p>他们肯定会被使用！ 在过去几年中，将RNN应用于各种问题取得了令人难以置信的成功：语音识别，语言建模，翻译，图像字幕......这个列表还在继续。 我将讨论使用RNNs可以实现的惊人壮举，以及Andrej Karpathy的优秀博客文章，回归神经网络的不合理有效性。 但他们真的很棒。</p>
+
+<p>这些成功的关键在于使用“LSTM”，这是一种非常特殊的递归神经网络，对于许多任务而言，它比标准版本好得多。 几乎所有基于递归神经网络的令人兴奋的结果都是用它们实现的。 这篇论文将探讨这些LSTM。</p>
+
+<h2 id="the-problem-of-long-term-dependencies">The Problem of Long-Term Dependencies</h2>
+
+<p>RNN的一个吸引力是他们可能能够将先前信息连接到当前任务，例如使用先前的视频帧可能通知对当前帧的理解。 如果RNN可以做到这一点，它们将非常有用。 但他们可以吗？ 这取决于。</p>
+
+<p>有时，我们只需要查看最近的信息来执行当前任务。 例如，考虑一种语言模型，试图根据之前的单词预测下一个单词。 如果我们试图预测“云在天空中”的最后一个词，我们不需要任何进一步的背景 - 很明显下一个词将是天空。 在这种情况下，如果相关信息与所需信息之间的差距很小，则RNN可以学习使用过去的信息。</p>
+
+<p style="text-align:center;"><img alt="" class="has" height="200" src="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/RNN-shorttermdepdencies.png" width="434" /></p>
+
+<p>但也有一些情况需要更多的背景。 考虑尝试预测文本中的最后一个词“我在法国长大......我说流利的法语。”最近的信息表明，下一个词可能是一种语言的名称，但如果我们想缩小哪种语言，我们需要 从更进一步的背景来看，法国的背景。 相关信息与需要变得非常大的点之间的差距是完全可能的。</p>
+
+<p>不幸的是，随着差距的扩大，RNN无法学习连接信息。</p>
+
+<p><img src="/quBlogHexo/image/lstm2.png" /></p>
+
+<p>理论上，RNN绝对能够处理这种“长期依赖性”。人类可以仔细挑选参数来解决这种形式的玩具问题。 遗憾的是，在实践中，RNN似乎无法学习它们。 Hochreiter（1991）[德国]和Bengio等人对该问题进行了深入探讨（1994），他找到了一些非常根本的原因，为什么它可能很难。</p>
+
+<p>值得庆幸的是，LSTM没有这个问题！</p>
+
+<h2 id="lstm-networks">LSTM Networks</h2>
+
+<p>长短期内存网络 - 通常只称为“LSTM” - 是一种特殊的RNN，能够学习长期依赖性。 它们是由Hochreiter＆Schmidhuber（1997）介绍的，并且在下面的工作中被许多人精炼和推广(1)。他们在各种各样的问题上工作得非常好，现在被广泛使用。</p>
+
+<p>LSTM明确旨在避免长期依赖性问题。 长时间记住信息实际上是他们的默认行为，而不是他们难以学习的东西！</p>
+
+<p>所有递归神经网络都具有神经网络重复模块链的形式。 在标准RNN中，该重复模块将具有非常简单的结构，例如单个tanh层。</p>
+
+<div style="text-align:center;">
+<figure class="image has"><img alt="" height="250" src="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-SimpleRNN.png" width="668" /><figcaption><strong>The repeating module in a standard RNN contains a single layer.</strong></figcaption></figure></div>
+
+<p>LSTM也具有这种类似链的结构，但重复模块具有不同的结构。 有四个，而不是一个神经网络层，以一种非常特殊的方式进行交互。</p>
+
+<div style="text-align:center;">
+<figure class="image has"><img alt="A LSTM neural network." height="250" src="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-chain.png" width="665" /><figcaption><strong>The repeating module in an LSTM contains four interacting layers.</strong></figcaption></figure></div>
+
+<p>不要担心发生了什么的细节。 我们将逐步介绍LSTM图。 现在，让我们试着对我们将要使用的符号感到满意。</p>
+
+<p><img src="/quBlogHexo/image/lstm3.png" /></p>
+
+<p>在上图中，每一行都携带一个整个向量，从一个节点的输出到其他节点的输入。 粉色圆圈表示逐点运算，如矢量加法，而黄色框表示神经网络层。 行合并表示连接，而行分叉表示其内容被复制，副本将转移到不同的位置。</p>
+
+<h2 id="the-core-idea-behind-lstms">The Core Idea Behind LSTMs</h2>
+
+<p>LSTM的关键是细胞状态，水平线贯穿图的顶部。</p>
+
+<p>细胞状态有点像传送带。 它直接沿着整个链运行，只有一些次要的线性交互。 信息很容易沿着它不变地流动。</p>
+
+<p><img src="/quBlogHexo/image/lstm4.png" /></p>
+
+<p>LSTM确实能够移除或添加信息到细胞状态，由称为门的结构精心调节。</p>
+
+<p>门是一种可选择通过信息的方式。 它们由S形神经网络层和逐点乘法运算组成。</p>
+
+<p><img src="/quBlogHexo/image/lstm5.png" /></p>
+
+<p>sigmoid层输出0到1之间的数字，描述每个组件应该通过多少。 值为零意味着“不让任何东西通过”，而值为1则意味着“让一切都通过！”</p>
+
+<p>LSTM具有三个这样的门，用于保护和控制细胞状态。</p>
+
+<h2 id="step-by-step-lstm-walk-through">Step-by-Step LSTM Walk Through</h2>
+
+<p>我们的LSTM的第一步是确定我们将从细胞状态中丢弃哪些信息。 该判定由称为“遗忘门层”的S形层决定。它查看<img alt="h_{t-1}" class="mathcode" src="/quBlogHexo/image/lstm1.gif" />和<img alt="x_{t}" class="mathcode" src="/quBlogHexo/image/lstm2.gif" />，并为单元状态<img alt="C_{t-1}" class="mathcode" src="/quBlogHexo/image/lstm3.gif" />中的每个数字输出0到1之间的数字。 1代表“完全保持这个”，而0代表“完全摆脱这个”。</p>
+
+<p>让我们回到我们的语言模型示例，试图根据以前的所有单词预测下一个单词。 在这样的问题中，细胞状态可能包括当前受试者的性别，因此可以使用正确的代词。 当我们看到一个新主题时，我们想要忘记旧主题的性别。</p>
+
+<p style="text-align:center;"><img alt="" class="has" height="200" src="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-focus-f.png" width="648" /></p>
+
+<p>下一步是确定我们将在细胞状态中存储哪些新信息。 这有两个部分。 首先，称为“输入门层”的sigmoid层决定我们将更新哪些值。 接下来，tanh层创建可以添加到状态的新候选值<img alt="\tilde{C}_{t}" class="mathcode" src="/quBlogHexo/image/lstm4.gif" />的向量。 在下一步中，我们将结合这两个来创建状态更新。</p>
+
+<p>在我们的语言模型的例子中，我们想要将新主题的性别添加到细胞状态，以替换我们忘记的旧主题。</p>
+
+<p><img src="/quBlogHexo/image/lstm6.png" /></p>
+
+<p>现在是时候将旧的单元状态<img alt="C_{t-1}" class="mathcode" src="/quBlogHexo/image/lstm5.gif" />更新为新的单元状态<img alt="C_{t}" class="mathcode" src="/quBlogHexo/image/lstm6.gif" />。 之前的步骤已经决定要做什么，我们只需要实际做到这一点。</p>
+
+<p>我们将旧状态乘以<img alt="f_{t}" class="mathcode" src="/quBlogHexo/image/lstm7.gif" />，忘记我们之前决定忘记的事情。 然后我们添加<img alt="i_{t}*\tilde{C}_{t}" class="mathcode" src="/quBlogHexo/image/lstm8.gif" />。 这是新的候选值，根据我们决定更新每个状态的值来缩放。</p>
+
+<p>在语言模型的情况下，我们实际上放弃了关于旧主题的性别的信息并添加新信息，正如我们在前面的步骤中所做的那样。</p>
+
+<p style="text-align:center;"><img alt="" class="has" height="200" src="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-focus-C.png" width="648" /></p>
+
+<p>最后，我们需要决定我们要输出的内容。 此输出将基于我们的细胞状态，但将是过滤版本。 首先，我们运行一个sigmoid层，它决定我们要输出的细胞状态的哪些部分。 然后，我们将细胞状态置于tanh（将值推到介于-1和1之间）并将其乘以sigmoid门的输出，以便我们只输出我们决定的部分。</p>
+
+<p>对于语言模型示例，由于它只是看到一个主题，它可能想要输出与动词相关的信息，以防接下来会发生什么。 例如，它可能输出主语是单数还是复数，以便我们知道动词应该与什么形式共轭，如果接下来的话。</p>
+
+<p><img src="/quBlogHexo/image/lstm7.png" /></p>
+
+<h2 id="variants-on-long-short-term-memory">Variants on Long Short Term Memory</h2>
+
+<p>到目前为止我所描述的是一个非常正常的LSTM。 但并非所有LSTM都与上述相同。 事实上，似乎几乎所有涉及LSTM的论文都使用略有不同的版本。 差异很小，但值得一提的是其中一些。</p>
+
+<p>由Gers＆Schmidhuber（2000）引入的一种流行的LSTM变体是添加“窥视孔连接”。这意味着我们让栅极层看到细胞状态。</p>
+
+<p><img src="/quBlogHexo/image/lstm8.png" /></p>
+
+<p>上面的图表为所有门增加了窥视孔，但许多论文会给一些窥视孔而不是其他的。</p>
+
+<p>另一种变化是使用耦合的遗忘和输入门。 我们不是单独决定忘记什么以及应该添加新信息，而是共同做出这些决定。 我们只会忘记当我们要在其位置输入内容时。 当我们忘记旧事物时，我们只向状态输入新值。</p>
+
+<p><img src="/quBlogHexo/image/lstm9.png" /></p>
+
+<p>LSTM稍微有点戏剧性的变化是由Cho等人引入的门控循环单元（GRU）。（2014）。 它将遗忘和输入门组合成一个“更新门”。它还合并了单元状态和隐藏状态，并进行了一些其他更改。 由此产生的模型比标准LSTM模型简单，并且越来越受欢迎。</p>
+
+<p style="text-align:center;"><img alt="A gated recurrent unit neural network." class="has" height="200" src="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-var-GRU.png" width="648" /></p>
+
+<p>这些只是最着名的LSTM变种中的一小部分。 还有很多其他的东西，比如Yao等人的Depth Gated RNNs（2015年）。 还有一些完全不同的解决长期依赖关系的方法，如Koutnik等人的Clockwork RNNs（2014）。</p>
+
+<p>哪种变体最好？ 差异是否重要？ 格雷夫等人（2015）对流行的变种做了很好的比较，发现它们都差不多。 Jozefowicz，et al（2015）测试了超过一万个RNN架构，找到了一些在某些任务上比LSTM更好的架构。</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>早些时候，我提到了人们使用RNN取得的显着成果。基本上所有这些都是使用LSTM实现的。对于大多数任务来说，它们确实工作得更好！</p>
+
+<p>写下来作为一组方程式，LSTM看起来非常令人生畏。希望在这篇文章中逐步走过它们，使它们更加平易近人。</p>
+
+<p>LSTM是我们通过RNN实现的重要一步。很自然地想知道：还有另一个重要的步骤吗？研究人员普遍认为：“是的！下一步是它的注意力！“我们的想法是让RNN的每一步都从一些更大的信息集中选择信息。例如，如果您使用RNN创建描述图像的标题，则可能会选择图像的一部分来查看其输出的每个单词。实际上，徐等人（2015）做到这一点 - 如果你想探索注意力，它可能是一个有趣的起点！使用注意力已经取得了许多非常令人兴奋的结果，而且似乎还有很多事情即将来临......</p>
+
+<p>注意力不是RNN研究中唯一激动人心的线索。例如，Kalchbrenner等人的Grid LSTMs（2015）似乎非常有希望。在生成模型中使用RNN的工作 - 例如Gregor，et al（2015），Chung，et al（2015年），或Bayer＆Osendorfer（2015年）-似乎也很有趣。过去几年对于递归神经网络来说是一个激动人心的时刻，即将到来的神经网络承诺只会更加激动人心！</p>
+
+<h2 id="acknowledgments">Acknowledgments</h2>
+
+<p>我很感谢很多人帮助我更好地理解LSTM，评论可视化，并对这篇文章提供反馈。</p>
+
+<p>我非常感谢Google的同事提供的有用反馈，尤其是Oriol Vinyals，Greg Corrado，Jon Shlens，Luke Vilnis和Ilya Sutskever。 我也很感谢许多其他朋友和同事花时间帮助我，包括Dario Amodei和Jacob Steinhardt。 我特别感谢Kyunghyun Cho关于我的图表的非常周到的信件。</p>
+
+<p>在这篇文章之前，我在神经网络教授的两个研讨会系列中练习解释LSTM。 感谢所有参与这些活动的人，感谢他们对我的耐心和反馈。</p>
+
+<p>1、除了原作者之外，很多人都对现代LSTM做出了贡献。 一份非全面的名单是：Felix Gers，Fred Cummins，Santiago Fernandez，Justin Bayer，Daan Wierstra，Julian Togelius，Faustino Gomez，Matteo Gagliolo和Alex Graves。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://qubeijun.github.io">qubeijun</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://qubeijun.github.io/posts/63321.html">https://qubeijun.github.io/posts/63321.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://qubeijun.github.io" target="_blank">qubeijun的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/quBlogHexo/tags/RNN/">RNN</a><a class="post-meta__tags" href="/quBlogHexo/tags/LSTM/">LSTM</a></div><div class="post_share"><div class="social-share" data-image="/quBlogHexo/image/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/quBlogHexo/image/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/quBlogHexo/image/wechat.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/quBlogHexo/image/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/quBlogHexo/image/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/quBlogHexo/posts/5417.html" title="mysql数据库操作总结"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">mysql数据库操作总结</div></div></a></div><div class="next-post pull-right"><a href="/quBlogHexo/posts/42971.html" title="（翻译）Understanding Convolutional Neural Networks for NLP"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">（翻译）Understanding Convolutional Neural Networks for NLP</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/quBlogHexo/image/avatar.jpg" onerror="this.onerror=null;this.src='/quBlogHexo/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">qubeijun</div><div class="author-info__description">qubeijun的博客</div></div><div class="card-info-data site-data is-center"><a href="/quBlogHexo/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/quBlogHexo/tags/"><div class="headline">标签</div><div class="length-num">34</div></a><a href="/quBlogHexo/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/qubeijun"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/qubeijun" target="_blank" title="Github"><i class="fab fa-github" style="color: #hdhfbb;"></i></a><a class="social-icon" href="/quBlogHexo/18640274769@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #000000;"></i></a><a class="social-icon" href="/quBlogHexo/qu825954789" target="_blank" title=""><i class="fa-brands fa-weixin"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is qu's Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#recurrent-neural-networks"><span class="toc-number">1.</span> <span class="toc-text">Recurrent Neural Networks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#the-problem-of-long-term-dependencies"><span class="toc-number">2.</span> <span class="toc-text">The Problem of Long-Term Dependencies</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lstm-networks"><span class="toc-number">3.</span> <span class="toc-text">LSTM Networks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#the-core-idea-behind-lstms"><span class="toc-number">4.</span> <span class="toc-text">The Core Idea Behind LSTMs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#step-by-step-lstm-walk-through"><span class="toc-number">5.</span> <span class="toc-text">Step-by-Step LSTM Walk Through</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#variants-on-long-short-term-memory"><span class="toc-number">6.</span> <span class="toc-text">Variants on Long Short Term Memory</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#conclusion"><span class="toc-number">7.</span> <span class="toc-text">Conclusion</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#acknowledgments"><span class="toc-number">8.</span> <span class="toc-text">Acknowledgments</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/quBlogHexo/posts/14263.html" title="各种问题解决答案汇总">各种问题解决答案汇总</a><time datetime="2021-04-13T09:37:36.000Z" title="发表于 2021-04-13 17:37:36">2021-04-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/quBlogHexo/posts/2379.html" title="Alibaba Cloud Toolkit的使用说明">Alibaba Cloud Toolkit的使用说明</a><time datetime="2021-02-02T06:56:42.000Z" title="发表于 2021-02-02 14:56:42">2021-02-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/quBlogHexo/posts/54296.html" title="Dojo简单入门">Dojo简单入门</a><time datetime="2020-03-19T02:50:05.000Z" title="发表于 2020-03-19 10:50:05">2020-03-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/quBlogHexo/posts/44647.html" title="Angular简单入门">Angular简单入门</a><time datetime="2020-03-17T06:47:58.000Z" title="发表于 2020-03-17 14:47:58">2020-03-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/quBlogHexo/posts/29990.html" title="vue基础知识点总结">vue基础知识点总结</a><time datetime="2020-03-06T03:09:35.000Z" title="发表于 2020-03-06 11:09:35">2020-03-06</time></div></div></div></div></div></div></main><footer id="footer" style="background: linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347)"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By qubeijun</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a href="https://qubeijun.github.io/quBlogHexo/">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/quBlogHexo/js/utils.js?v=4.13.0"></script><script src="/quBlogHexo/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const initValine = () => {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'XYmqxeHh8UwYifOg99QJM6Ao-gzGzoHsz',
+      appKey: 'CJlknwAcFvxc6RBreHAWkxEz',
+      avatar: 'monsterid',
+      serverURLs: 'https://xymqxehh.lc-cn-n1-shared.com',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  const loadValine = async () => {
+    if (typeof Valine === 'function') initValine()
+    else {
+      await getScript('https://cdn.jsdelivr.net/npm/valine@1.5.1/dist/Valine.min.js')
+      initValine()
+    }
+  }
+
+  if ('Valine' === 'Valine' || !false) {
+    if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

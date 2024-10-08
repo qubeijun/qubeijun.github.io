@@ -1,0 +1,332 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>各种问题解决答案汇总 | qubeijun的博客</title><meta name="author" content="qubeijun"><meta name="copyright" content="qubeijun"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="各种疑难杂症的解决方法，例如数据库的备份和还原（整库）、linux之间传文件、java打包后获取resource文件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="各种问题解决答案汇总">
+<meta property="og:url" content="https://qubeijun.github.io/posts/14263.html">
+<meta property="og:site_name" content="qubeijun的博客">
+<meta property="og:description" content="各种疑难杂症的解决方法，例如数据库的备份和还原（整库）、linux之间传文件、java打包后获取resource文件">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://qubeijun.github.io/image/avatar.jpg">
+<meta property="article:published_time" content="2021-04-13T09:37:36.000Z">
+<meta property="article:modified_time" content="2024-10-07T14:58:17.081Z">
+<meta property="article:author" content="qubeijun">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="mysql">
+<meta property="article:tag" content="vue">
+<meta property="article:tag" content="linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://qubeijun.github.io/image/avatar.jpg"><link rel="shortcut icon" href="/quBlogHexo/image/avatar.jpg"><link rel="canonical" href="https://qubeijun.github.io/posts/14263.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/quBlogHexo/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?2b2a845afa96671b1421a2af6215c0e4";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = {
+  root: '/quBlogHexo/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '各种问题解决答案汇总',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-10-07 22:58:17'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/quBlogHexo/image/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/quBlogHexo/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/quBlogHexo/tags/"><div class="headline">标签</div><div class="length-num">34</div></a><a href="/quBlogHexo/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/quBlogHexo/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/galleryGroup/"><i class="fa-fw fa-solid fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/shuoshuo/"><i class="fa-fw fa-fw fas fa-comment-dots"></i><span> 说说</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><span id="blog-info"><a href="/quBlogHexo/" title="qubeijun的博客"><img class="site-icon" src="/quBlogHexo/image/avatar.jpg"/><span class="site-name">qubeijun的博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/quBlogHexo/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/galleryGroup/"><i class="fa-fw fa-solid fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/shuoshuo/"><i class="fa-fw fa-fw fas fa-comment-dots"></i><span> 说说</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">各种问题解决答案汇总</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-04-13T09:37:36.000Z" title="发表于 2021-04-13 17:37:36">2021-04-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-10-07T14:58:17.081Z" title="更新于 2024-10-07 22:58:17">2024-10-07</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/quBlogHexo/categories/%E6%9D%82/">杂</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="各种问题解决答案汇总"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><span id="more"></span>
+<p style="margin-left:50px;">目录</p>
+
+<p id="mysql添加字段并且设置默认值-toc" style="margin-left:50px;"><a href="#mysql添加字段并且设置默认值">1、mysql添加字段并且设置默认值</a></p>
+
+<p id="一键部署工具-toc" style="margin-left:50px;"><a href="#一键部署工具">2、一键部署工具</a></p>
+
+<p id="MySQL命令行导出数据库表-toc" style="margin-left:50px;"><a href="#MySQL命令行导出数据库表">3、MySQL命令行导出数据库表</a></p>
+
+<p id="vuevue导出word-toc" style="margin-left:50px;"><a href="#vuevue导出word">4、vue导出word</a></p>
+
+<p id="Failed to convert value of type 'java.lang.String' to required type 'java.util.Date';-toc" style="margin-left:50px;"><a href="#Failed to convert value of type 'java.lang.String' to required type 'java.util.Date';">5、Failed to convert value of type 'java.lang.String' to required type 'java.util.Date';</a></p>
+
+<p id="jsonArray中按某字段排序-toc" style="margin-left:50px;"><a href="#jsonArray中按某字段排序">6、jsonArray中按某字段排序</a></p>
+
+<p id="articleContentId-toc" style="margin-left:50px;"><a href="#articleContentId">7、关于element ui里的多选反选表格的问题（toggleRowSelection）</a></p>
+
+<p id="真正有效解决ONLY_FULL_GROUP_BY的问题-toc" style="margin-left:50px;"><a href="#真正有效解决ONLY_FULL_GROUP_BY的问题">8、真正有效解决ONLY_FULL_GROUP_BY的问题</a></p>
+
+<p id="java遍历map-toc" style="margin-left:50px;"><a href="#java遍历map">9、java遍历map</a></p>
+
+<p id="es时间范围小于等于查询-toc" style="margin-left:50px;"><a href="#es时间范围小于等于查询">10、es时间范围小于等于查询</a></p>
+
+<p id="es模糊查询-toc" style="margin-left:50px;"><a href="#es模糊查询">11、es模糊查询</a></p>
+
+<p id="判断字符串是否包含中文（也可以说是否为纯英文）-toc" style="margin-left:50px;"><a href="#判断字符串是否包含中文（也可以说是否为纯英文）">12、判断字符串是否包含中文（也可以说是否为纯英文）</a></p>
+
+<p id="mysql创建只读用户读取指定数据表-toc" style="margin-left:50px;"><a href="#mysql创建只读用户读取指定数据表">13、mysql创建只读用户读取指定数据表 </a></p>
+
+<p id="linux查看IP端口是否连通-toc" style="margin-left:50px;"><a href="#linux查看IP端口是否连通">14、linux查看IP端口是否连通</a></p>
+
+<p id="数据库的备份和还原（整库）-toc" style="margin-left:50px;"><a href="#数据库的备份和还原（整库）">15、数据库的备份和还原（整库） </a></p>
+
+<p id="java打包后获取resource文件，并转成流-toc" style="margin-left:50px;"><a href="#java打包后获取resource文件，并转成流">16、 java打包后获取resource文件，并转成流</a></p>
+
+<p id="linux之间传文件-toc" style="margin-left:50px;"><a href="#linux之间传文件">17、linux之间传文件 </a></p>
+
+<p id="vim 转换为 Unix 换行-toc" style="margin-left:50px;"><a href="#vim 转换为 Unix 换行">18、vim 转换为 Unix 换行</a></p>
+
+<p>2021-04-13</p>
+
+<h3 id="mysql添加字段并且设置默认值">1、mysql添加字段并且设置默认值</h3>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table t_acceptance_fund add is_complete varchar(2) default &#x27;0&#x27; comment &#x27;完成状态&#x27;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="一键部署工具">2、一键部署工具</h3>
+
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://help.aliyun.com/product/29966.html?spm=a2c4g.11186623.6.540.1a9d459alu9Mnz" >帮助中心 - 阿里云</a></p>
+</blockquote>
+
+<p>2021-04-14</p>
+
+<h3 id="MySQL命令行导出数据库表">3、MySQL命令行导出数据库表</h3>
+
+<blockquote>
+<p>1、首先进入mysql的bin文件</p>
+
+<p>2、mysqldump -uroot -proot neu_tyjr_base t_personnel_information > C:\Users\qu\Desktop\t_personnel_information.sql</p>
+
+<p><img src="/quBlogHexo/image/MySQL命令行导出数据库表.png" /></p>
+</blockquote>
+
+<h3 id="vuevue导出word">4、vue导出word</h3>
+
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/github_39365750/article/details/105584133">Vue项目导出word文档_Lik1024-CSDN博客_vue导出word文档</a></p>
+</blockquote>
+
+<p>2021-04-21</p>
+
+<h3 id="Failed to convert value of type 'java.lang.String' to required type 'java.util.Date';">5、Failed to convert value of type 'java.lang.String' to required type 'java.util.Date';</h3>
+
+<p>局部转换</p>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">@Controller</span><br><span class="line">public class UserController&#123;</span><br><span class="line">    @RequestMapping(value=&quot;/login.do&quot;)</span><br><span class="line">    public String login(String username,Date birthday)&#123;</span><br><span class="line">        System.out.println(&quot;________&quot;);</span><br><span class="line">        return &quot;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    //只需要加上下面这段即可，注意不能忘记注解</span><br><span class="line">    @InitBinder</span><br><span class="line">    public void initBinder(WebDataBinder binder, WebRequest request) &#123;</span><br><span class="line">        //转换日期 注意这里的转化要和传进来的字符串的格式一直 如2015-9-9 就应该为yyyy-MM-dd</span><br><span class="line">        DateFormat dateFormat=new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);</span><br><span class="line">        binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));// CustomDateEditor为自定义日期编辑器</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2021-04-25</p>
+
+<h3 id="jsonArray中按某字段排序">6、jsonArray中按某字段排序</h3>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 对json数组排序，</span><br><span class="line"> * @param jsonArr</span><br><span class="line"> * @param sortKey 排序关键字</span><br><span class="line"> * @param is_desc is_desc-false升序列  is_desc-true降序 (排序字段为字符串)</span><br><span class="line"> * @return</span><br><span class="line"> */</span><br><span class="line">public static String jsonArraySort(JSONArray jsonArr,String sortKey,boolean is_desc) &#123;</span><br><span class="line">    //存放排序结果json数组</span><br><span class="line">    JSONArray sortedJsonArray = new JSONArray();</span><br><span class="line">    //用于排序的list</span><br><span class="line">    List&lt;JSONObject&gt; jsonValues = new ArrayList&lt;JSONObject&gt;();</span><br><span class="line">    //将参数json数组每一项取出，放入list</span><br><span class="line">    for (int i = 0; i &lt; jsonArr.size(); i++) &#123;</span><br><span class="line">        jsonValues.add(JSONObject.fromObject(jsonArr.getJSONObject(i)));</span><br><span class="line">    &#125;</span><br><span class="line">    //快速排序，重写compare方法，完成按指定字段比较，完成排序</span><br><span class="line">    Collections.sort(jsonValues, new Comparator&lt;JSONObject&gt;() &#123;</span><br><span class="line">        //排序字段</span><br><span class="line">        private  final String KEY_NAME = sortKey;</span><br><span class="line">        //重写compare方法</span><br><span class="line">        @Override</span><br><span class="line">        public int compare(JSONObject a, JSONObject b) &#123;</span><br><span class="line">            String valA = new String();</span><br><span class="line">            String valB = new String();</span><br><span class="line">            try &#123;</span><br><span class="line">                valA = a.getString(KEY_NAME);</span><br><span class="line">                valB = b.getString(KEY_NAME);</span><br><span class="line">            &#125; catch (JSONException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">            //是升序还是降序</span><br><span class="line">            if (is_desc)&#123;</span><br><span class="line">                return -valA.compareTo(valB);</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                return -valB.compareTo(valA);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    //将排序后结果放入结果jsonArray</span><br><span class="line">    for (int i = 0; i &lt; jsonArr.size(); i++) &#123;</span><br><span class="line">        sortedJsonArray.add(jsonValues.get(i));</span><br><span class="line">    &#125;</span><br><span class="line">    return sortedJsonArray.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2021-04-27</p>
+
+<h3 id="articleContentId">7、关于element ui里的多选反选表格的问题（toggleRowSelection）</h3>
+
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44436078/article/details/107669679" >关于element ui里的多选反选表格的问题（toggleRowSelection）_小胡仙的博客-CSDN博客_element table 反选</a></p>
+</blockquote>
+
+<p>2021-04-28</p>
+
+<h3 id="真正有效解决ONLY_FULL_GROUP_BY的问题">8、真正有效解决ONLY_FULL_GROUP_BY的问题</h3>
+
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_34637782/article/details/101029487">真正有效解决ONLY_FULL_GROUP_BY的问题_索隆有几把刀的博客-CSDN博客_onlyfullgroupby意义</a></p>
+</blockquote>
+
+<p>2021-05-24</p>
+
+<h3 id="java遍历map">9、java遍历map</h3>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;Integer, Integer&gt; map = new HashMap&lt;Integer, Integer&gt;();</span><br><span class="line">for (Map.Entry&lt;Integer, Integer&gt; entry : map.entrySet()) &#123;</span><br><span class="line">    System.out.println(&quot;Key = &quot; + entry.getKey() + &quot;, Value = &quot; + entry.getValue());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2021-05-25</p>
+
+<h3 id="es时间范围小于等于查询">10、es时间范围小于等于查询</h3>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;query&quot;: &#123;</span><br><span class="line">    &quot;bool&quot;: &#123;</span><br><span class="line">      &quot;must&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">          &quot;range&quot;: &#123;</span><br><span class="line">            &quot;createTime&quot;: &#123;</span><br><span class="line">              &quot;lte&quot;: &quot;2020-12-01 00:00:00&quot;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="es模糊查询">11、es模糊查询</h3>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;query&quot;: &#123;</span><br><span class="line">    &quot;wildcard&quot; : &#123; &quot;search_word&quot; : &quot;*中国*&quot; &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2021-06-27</p>
+
+<h3 id="判断字符串是否包含中文（也可以说是否为纯英文）">12、判断字符串是否包含中文（也可以说是否为纯英文）</h3>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 字符串是否包含中文</span><br><span class="line"> *</span><br><span class="line"> * @param str 待校验字符串</span><br><span class="line"> * @return true 包含中文字符 false 不包含中文字符</span><br><span class="line"> * @throws EmptyException</span><br><span class="line"> */</span><br><span class="line">public static boolean isContainChinese(String str) throws EmptyException &#123;</span><br><span class="line">    if (StringUtils.isEmpty(str)) &#123;</span><br><span class="line">        throw new EmptyException(&quot;sms context is empty!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    Pattern p = Pattern.compile(&quot;[\u4E00-\u9FA5|\\！|\\，|\\。|\\（|\\）|\\《|\\》|\\“|\\”|\\？|\\：|\\；|\\【|\\】]&quot;);</span><br><span class="line">    Matcher m = p.matcher(str);</span><br><span class="line">    return m.find();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2021-07-14</p>
+
+<h3 id="mysql创建只读用户读取指定数据表">13、mysql创建只读用户读取指定数据表</h3>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRANT SELECT ON 表名 TO &#x27;username&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>2021-12-10</p>
+
+<h3 id="linux查看IP端口是否连通">14、linux查看IP端口是否连通</h3>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -v -p port username@ip</span><br></pre></td></tr></table></figure>
+
+<p>2021-12-16</p>
+
+<h3 id="数据库的备份和还原（整库）">15、数据库的备份和还原（整库）</h3>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">备份：mysqldump -uroot -proot --all-databases &gt; /path/data.sql</span><br><span class="line">还原：mysql -uroot -proot  --default-character-set=utf8 &gt; /path/data.sql</span><br></pre></td></tr></table></figure>
+
+<p>2023-06-14</p>
+
+<h3 id="java打包后获取resource文件，并转成流">16、java打包后获取resource文件，并转成流</h3>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ClassLoader classLoader = QRCodeUtils(类名).class.getClassLoader();</span><br><span class="line">InputStream inputStream = classLoader.getClass().getClassLoader().getResourceAsStream(&quot;weixin.png&quot;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="linux之间传文件">17、linux之间传文件</h3>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scp /home/pocean-cloud-api-zuul-server.jar root@10.1.3.208://ticket/apps/</span><br><span class="line">（之后会提示输入密码）</span><br></pre></td></tr></table></figure>
+
+<p>2023-06-24 </p>
+
+<h3 id="vim 转换为 Unix 换行">18、vim 转换为 Unix 换行</h3>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 转换为 Unix 换行</span><br><span class="line">$ vim windows.sh</span><br><span class="line">:set ff=unix</span><br><span class="line">:wq</span><br></pre></td></tr></table></figure>
+
+<p>持续更新......</p></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://qubeijun.github.io">qubeijun</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://qubeijun.github.io/posts/14263.html">https://qubeijun.github.io/posts/14263.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://qubeijun.github.io" target="_blank">qubeijun的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/quBlogHexo/tags/java/">java</a><a class="post-meta__tags" href="/quBlogHexo/tags/mysql/">mysql</a><a class="post-meta__tags" href="/quBlogHexo/tags/vue/">vue</a><a class="post-meta__tags" href="/quBlogHexo/tags/linux/">linux</a></div><div class="post_share"><div class="social-share" data-image="/quBlogHexo/image/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/quBlogHexo/image/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/quBlogHexo/image/wechat.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/quBlogHexo/image/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/quBlogHexo/image/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/quBlogHexo/posts/2379.html" title="Alibaba Cloud Toolkit的使用说明"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Alibaba Cloud Toolkit的使用说明</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/quBlogHexo/posts/2379.html" title="Alibaba Cloud Toolkit的使用说明"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-02-02</div><div class="title">Alibaba Cloud Toolkit的使用说明</div></div></a></div><div><a href="/quBlogHexo/posts/33031.html" title="java处理时间和日期api"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-02-28</div><div class="title">java处理时间和日期api</div></div></a></div><div><a href="/quBlogHexo/posts/55268.html" title="java常用字符串操作总结"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-02-25</div><div class="title">java常用字符串操作总结</div></div></a></div><div><a href="/quBlogHexo/posts/42389.html" title="java常见集合汇总"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-02-27</div><div class="title">java常见集合汇总</div></div></a></div><div><a href="/quBlogHexo/posts/43582.html" title="java常用工具类总结"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-02-26</div><div class="title">java常用工具类总结</div></div></a></div><div><a href="/quBlogHexo/posts/30622.html" title="java常用的io，输入输出"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-02-28</div><div class="title">java常用的io，输入输出</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/quBlogHexo/image/avatar.jpg" onerror="this.onerror=null;this.src='/quBlogHexo/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">qubeijun</div><div class="author-info__description">qubeijun的博客</div></div><div class="card-info-data site-data is-center"><a href="/quBlogHexo/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/quBlogHexo/tags/"><div class="headline">标签</div><div class="length-num">34</div></a><a href="/quBlogHexo/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/qubeijun"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/qubeijun" target="_blank" title="Github"><i class="fab fa-github" style="color: #hdhfbb;"></i></a><a class="social-icon" href="/quBlogHexo/18640274769@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #000000;"></i></a><a class="social-icon" href="/quBlogHexo/qu825954789" target="_blank" title=""><i class="fa-brands fa-weixin"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is qu's Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#mysql%E6%B7%BB%E5%8A%A0%E5%AD%97%E6%AE%B5%E5%B9%B6%E4%B8%94%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="toc-text">1、mysql添加字段并且设置默认值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E5%B7%A5%E5%85%B7"><span class="toc-text">2、一键部署工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MySQL%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%AF%BC%E5%87%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8"><span class="toc-text">3、MySQL命令行导出数据库表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vuevue%E5%AF%BC%E5%87%BAword"><span class="toc-text">4、vue导出word</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Failed%20to%20convert%20value%20of%20type%20'java.lang.String'%20to%20required%20type%20'java.util.Date';"><span class="toc-text">5、Failed to convert value of type &#39;java.lang.String&#39; to required type &#39;java.util.Date&#39;;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jsonArray%E4%B8%AD%E6%8C%89%E6%9F%90%E5%AD%97%E6%AE%B5%E6%8E%92%E5%BA%8F"><span class="toc-text">6、jsonArray中按某字段排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#articleContentId"><span class="toc-text">7、关于element ui里的多选反选表格的问题（toggleRowSelection）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9C%9F%E6%AD%A3%E6%9C%89%E6%95%88%E8%A7%A3%E5%86%B3ONLY_FULL_GROUP_BY%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">8、真正有效解决ONLY_FULL_GROUP_BY的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#java%E9%81%8D%E5%8E%86map"><span class="toc-text">9、java遍历map</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#es%E6%97%B6%E9%97%B4%E8%8C%83%E5%9B%B4%E5%B0%8F%E4%BA%8E%E7%AD%89%E4%BA%8E%E6%9F%A5%E8%AF%A2"><span class="toc-text">10、es时间范围小于等于查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#es%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2"><span class="toc-text">11、es模糊查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%90%A6%E5%8C%85%E5%90%AB%E4%B8%AD%E6%96%87%EF%BC%88%E4%B9%9F%E5%8F%AF%E4%BB%A5%E8%AF%B4%E6%98%AF%E5%90%A6%E4%B8%BA%E7%BA%AF%E8%8B%B1%E6%96%87%EF%BC%89"><span class="toc-text">12、判断字符串是否包含中文（也可以说是否为纯英文）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mysql%E5%88%9B%E5%BB%BA%E5%8F%AA%E8%AF%BB%E7%94%A8%E6%88%B7%E8%AF%BB%E5%8F%96%E6%8C%87%E5%AE%9A%E6%95%B0%E6%8D%AE%E8%A1%A8"><span class="toc-text">13、mysql创建只读用户读取指定数据表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#linux%E6%9F%A5%E7%9C%8BIP%E7%AB%AF%E5%8F%A3%E6%98%AF%E5%90%A6%E8%BF%9E%E9%80%9A"><span class="toc-text">14、linux查看IP端口是否连通</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%A4%87%E4%BB%BD%E5%92%8C%E8%BF%98%E5%8E%9F%EF%BC%88%E6%95%B4%E5%BA%93%EF%BC%89"><span class="toc-text">15、数据库的备份和还原（整库）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#java%E6%89%93%E5%8C%85%E5%90%8E%E8%8E%B7%E5%8F%96resource%E6%96%87%E4%BB%B6%EF%BC%8C%E5%B9%B6%E8%BD%AC%E6%88%90%E6%B5%81"><span class="toc-text">16、java打包后获取resource文件，并转成流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#linux%E4%B9%8B%E9%97%B4%E4%BC%A0%E6%96%87%E4%BB%B6"><span class="toc-text">17、linux之间传文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vim%20%E8%BD%AC%E6%8D%A2%E4%B8%BA%20Unix%20%E6%8D%A2%E8%A1%8C"><span class="toc-text">18、vim 转换为 Unix 换行</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/quBlogHexo/posts/14263.html" title="各种问题解决答案汇总">各种问题解决答案汇总</a><time datetime="2021-04-13T09:37:36.000Z" title="发表于 2021-04-13 17:37:36">2021-04-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/quBlogHexo/posts/2379.html" title="Alibaba Cloud Toolkit的使用说明">Alibaba Cloud Toolkit的使用说明</a><time datetime="2021-02-02T06:56:42.000Z" title="发表于 2021-02-02 14:56:42">2021-02-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/quBlogHexo/posts/54296.html" title="Dojo简单入门">Dojo简单入门</a><time datetime="2020-03-19T02:50:05.000Z" title="发表于 2020-03-19 10:50:05">2020-03-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/quBlogHexo/posts/44647.html" title="Angular简单入门">Angular简单入门</a><time datetime="2020-03-17T06:47:58.000Z" title="发表于 2020-03-17 14:47:58">2020-03-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/quBlogHexo/posts/29990.html" title="vue基础知识点总结">vue基础知识点总结</a><time datetime="2020-03-06T03:09:35.000Z" title="发表于 2020-03-06 11:09:35">2020-03-06</time></div></div></div></div></div></div></main><footer id="footer" style="background: linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347)"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By qubeijun</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a href="https://qubeijun.github.io/quBlogHexo/">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/quBlogHexo/js/utils.js?v=4.13.0"></script><script src="/quBlogHexo/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const initValine = () => {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'XYmqxeHh8UwYifOg99QJM6Ao-gzGzoHsz',
+      appKey: 'CJlknwAcFvxc6RBreHAWkxEz',
+      avatar: 'monsterid',
+      serverURLs: 'https://xymqxehh.lc-cn-n1-shared.com',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  const loadValine = async () => {
+    if (typeof Valine === 'function') initValine()
+    else {
+      await getScript('https://cdn.jsdelivr.net/npm/valine@1.5.1/dist/Valine.min.js')
+      initValine()
+    }
+  }
+
+  if ('Valine' === 'Valine' || !false) {
+    if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
