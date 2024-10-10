@@ -7,7 +7,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://qubeijun.github.io/image/avatar.jpg">
 <meta property="article:published_time" content="2019-04-16T03:34:55.000Z">
-<meta property="article:modified_time" content="2024-10-08T07:04:06.118Z">
+<meta property="article:modified_time" content="2024-10-10T07:29:21.614Z">
 <meta property="article:author" content="qubeijun">
 <meta property="article:tag" content="RNN">
 <meta property="article:tag" content="LSTM">
@@ -64,7 +64,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2024-10-08 15:04:06'
+  postUpdate: '2024-10-10 15:29:21'
 }</script><script>(win=>{
       win.saveToLocal = {
         set: (key, value, ttl) => {
@@ -144,7 +144,7 @@
         }
       }
       detectApple()
-    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/quBlogHexo/image/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/quBlogHexo/archives/"><div class="headline">文章</div><div class="length-num">75</div></a><a href="/quBlogHexo/tags/"><div class="headline">标签</div><div class="length-num">42</div></a><a href="/quBlogHexo/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/quBlogHexo/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/galleryGroup/"><i class="fa-fw fa-solid fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 后院</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/quBlogHexo/dairy/"><i class="fa-fw fa-solid fa-book"></i><span> 个人日记</span></a></li><li><a class="site-page child" href="/quBlogHexo/father/"><i class="fa-fw fa-solid fa-backward"></i><span> 父亲往事</span></a></li><li><a class="site-page child" href="/quBlogHexo/son/"><i class="fa-fw fa-solid fa-envelope"></i><span> 儿子的信</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><span id="blog-info"><a href="/quBlogHexo/" title="qubeijun的博客"><img class="site-icon" src="/quBlogHexo/image/avatar.jpg"/><span class="site-name">qubeijun的博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/quBlogHexo/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/galleryGroup/"><i class="fa-fw fa-solid fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 后院</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/quBlogHexo/dairy/"><i class="fa-fw fa-solid fa-book"></i><span> 个人日记</span></a></li><li><a class="site-page child" href="/quBlogHexo/father/"><i class="fa-fw fa-solid fa-backward"></i><span> 父亲往事</span></a></li><li><a class="site-page child" href="/quBlogHexo/son/"><i class="fa-fw fa-solid fa-envelope"></i><span> 儿子的信</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">（翻译）Understanding LSTM Networks</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-04-16T03:34:55.000Z" title="发表于 2019-04-16 11:34:55">2019-04-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-10-08T07:04:06.118Z" title="更新于 2024-10-08 15:04:06">2024-10-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/quBlogHexo/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>10分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="（翻译）Understanding LSTM Networks"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><span id="more"></span>
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/quBlogHexo/image/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/quBlogHexo/archives/"><div class="headline">文章</div><div class="length-num">75</div></a><a href="/quBlogHexo/tags/"><div class="headline">标签</div><div class="length-num">42</div></a><a href="/quBlogHexo/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/quBlogHexo/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/galleryGroup/"><i class="fa-fw fa-solid fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 后院</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/quBlogHexo/dairy/"><i class="fa-fw fa-solid fa-book"></i><span> 个人日记</span></a></li><li><a class="site-page child" href="/quBlogHexo/father/"><i class="fa-fw fa-solid fa-backward"></i><span> 父亲往事</span></a></li><li><a class="site-page child" href="/quBlogHexo/son/"><i class="fa-fw fa-solid fa-envelope"></i><span> 儿子的信</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><span id="blog-info"><a href="/quBlogHexo/" title="qubeijun的博客"><img class="site-icon" src="/quBlogHexo/image/avatar.jpg"/><span class="site-name">qubeijun的博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/quBlogHexo/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/galleryGroup/"><i class="fa-fw fa-solid fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 后院</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/quBlogHexo/dairy/"><i class="fa-fw fa-solid fa-book"></i><span> 个人日记</span></a></li><li><a class="site-page child" href="/quBlogHexo/father/"><i class="fa-fw fa-solid fa-backward"></i><span> 父亲往事</span></a></li><li><a class="site-page child" href="/quBlogHexo/son/"><i class="fa-fw fa-solid fa-envelope"></i><span> 儿子的信</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/quBlogHexo/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">（翻译）Understanding LSTM Networks</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-04-16T03:34:55.000Z" title="发表于 2019-04-16 11:34:55">2019-04-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-10-10T07:29:21.614Z" title="更新于 2024-10-10 15:29:21">2024-10-10</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/quBlogHexo/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>10分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="（翻译）Understanding LSTM Networks"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><span id="more"></span>
 
 <p>原文：<a target="_blank" rel="noopener" href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/">Understanding LSTM Networks</a></p>
 
@@ -163,7 +163,7 @@
 
 <p>这些循环使得循环神经网络看起来有点神秘。 但是，如果你多想一点，事实证明它们与普通的神经网络并没有什么不同。 可以将循环神经网络视为同一网络的多个副本，每个副本都将消息传递给后继者。 考虑如果我们展开循环会发生什么：</p>
 
-<p><img src="/quBlogHexo/image/lstm1.png" /></p>
+<img src="/quBlogHexo/posts/63321/lstm1.png" class="">
 
 <p>这种类似链的性质表明，递归神经网络与序列和列表密切相关。 它们是用于此类数据的神经网络的自然架构。</p>
 
@@ -183,7 +183,7 @@
 
 <p>不幸的是，随着差距的扩大，RNN无法学习连接信息。</p>
 
-<p><img src="/quBlogHexo/image/lstm2.png" /></p>
+<img src="/quBlogHexo/posts/63321/lstm2.png" class="">
 
 <p>理论上，RNN绝对能够处理这种“长期依赖性”。人类可以仔细挑选参数来解决这种形式的玩具问题。 遗憾的是，在实践中，RNN似乎无法学习它们。 Hochreiter（1991）[德国]和Bengio等人对该问题进行了深入探讨（1994），他找到了一些非常根本的原因，为什么它可能很难。</p>
 
@@ -207,7 +207,7 @@
 
 <p>不要担心发生了什么的细节。 我们将逐步介绍LSTM图。 现在，让我们试着对我们将要使用的符号感到满意。</p>
 
-<p><img src="/quBlogHexo/image/lstm3.png" /></p>
+<img src="/quBlogHexo/posts/63321/lstm3.png" class="">
 
 <p>在上图中，每一行都携带一个整个向量，从一个节点的输出到其他节点的输入。 粉色圆圈表示逐点运算，如矢量加法，而黄色框表示神经网络层。 行合并表示连接，而行分叉表示其内容被复制，副本将转移到不同的位置。</p>
 
@@ -217,13 +217,13 @@
 
 <p>细胞状态有点像传送带。 它直接沿着整个链运行，只有一些次要的线性交互。 信息很容易沿着它不变地流动。</p>
 
-<p><img src="/quBlogHexo/image/lstm4.png" /></p>
+<img src="/quBlogHexo/posts/63321/lstm4.png" class="">
 
 <p>LSTM确实能够移除或添加信息到细胞状态，由称为门的结构精心调节。</p>
 
 <p>门是一种可选择通过信息的方式。 它们由S形神经网络层和逐点乘法运算组成。</p>
 
-<p><img src="/quBlogHexo/image/lstm5.png" /></p>
+<img src="/quBlogHexo/posts/63321/lstm5.png" class="">
 
 <p>sigmoid层输出0到1之间的数字，描述每个组件应该通过多少。 值为零意味着“不让任何东西通过”，而值为1则意味着“让一切都通过！”</p>
 
@@ -231,21 +231,21 @@
 
 <h2 id="step-by-step-lstm-walk-through">Step-by-Step LSTM Walk Through</h2>
 
-<p>我们的LSTM的第一步是确定我们将从细胞状态中丢弃哪些信息。 该判定由称为“遗忘门层”的S形层决定。它查看<img alt="h_{t-1}" class="mathcode" src="/quBlogHexo/image/lstm1.gif" />和<img alt="x_{t}" class="mathcode" src="/quBlogHexo/image/lstm2.gif" />，并为单元状态<img alt="C_{t-1}" class="mathcode" src="/quBlogHexo/image/lstm3.gif" />中的每个数字输出0到1之间的数字。 1代表“完全保持这个”，而0代表“完全摆脱这个”。</p>
+<p>我们的LSTM的第一步是确定我们将从细胞状态中丢弃哪些信息。 该判定由称为“遗忘门层”的S形层决定。它查看<img src="/quBlogHexo/posts/63321/lstm1.gif" class="">和<img src="/quBlogHexo/posts/63321/lstm2.gif" class="">，并为单元状态<img src="/quBlogHexo/posts/63321/lstm3.gif" class="">中的每个数字输出0到1之间的数字。 1代表“完全保持这个”，而0代表“完全摆脱这个”。</p>
 
 <p>让我们回到我们的语言模型示例，试图根据以前的所有单词预测下一个单词。 在这样的问题中，细胞状态可能包括当前受试者的性别，因此可以使用正确的代词。 当我们看到一个新主题时，我们想要忘记旧主题的性别。</p>
 
 <p style="text-align:center;"><img alt="" class="has" height="200" src="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-focus-f.png" width="648" /></p>
 
-<p>下一步是确定我们将在细胞状态中存储哪些新信息。 这有两个部分。 首先，称为“输入门层”的sigmoid层决定我们将更新哪些值。 接下来，tanh层创建可以添加到状态的新候选值<img alt="\tilde{C}_{t}" class="mathcode" src="/quBlogHexo/image/lstm4.gif" />的向量。 在下一步中，我们将结合这两个来创建状态更新。</p>
+<p>下一步是确定我们将在细胞状态中存储哪些新信息。 这有两个部分。 首先，称为“输入门层”的sigmoid层决定我们将更新哪些值。 接下来，tanh层创建可以添加到状态的新候选值<img src="/quBlogHexo/posts/63321/lstm4.gif" class="">的向量。 在下一步中，我们将结合这两个来创建状态更新。</p>
 
 <p>在我们的语言模型的例子中，我们想要将新主题的性别添加到细胞状态，以替换我们忘记的旧主题。</p>
 
-<p><img src="/quBlogHexo/image/lstm6.png" /></p>
+<img src="/quBlogHexo/posts/63321/lstm6.png" class="">
 
-<p>现在是时候将旧的单元状态<img alt="C_{t-1}" class="mathcode" src="/quBlogHexo/image/lstm5.gif" />更新为新的单元状态<img alt="C_{t}" class="mathcode" src="/quBlogHexo/image/lstm6.gif" />。 之前的步骤已经决定要做什么，我们只需要实际做到这一点。</p>
+<p>现在是时候将旧的单元状态<img src="/quBlogHexo/posts/63321/lstm5.gif" class="">更新为新的单元状态<img src="/quBlogHexo/posts/63321/lstm6.gif" class="">。 之前的步骤已经决定要做什么，我们只需要实际做到这一点。</p>
 
-<p>我们将旧状态乘以<img alt="f_{t}" class="mathcode" src="/quBlogHexo/image/lstm7.gif" />，忘记我们之前决定忘记的事情。 然后我们添加<img alt="i_{t}*\tilde{C}_{t}" class="mathcode" src="/quBlogHexo/image/lstm8.gif" />。 这是新的候选值，根据我们决定更新每个状态的值来缩放。</p>
+<p>我们将旧状态乘以<img src="/quBlogHexo/posts/63321/lstm7.gif" class="">，忘记我们之前决定忘记的事情。 然后我们添加<img src="/quBlogHexo/posts/63321/lstm8.gif" class="">。 这是新的候选值，根据我们决定更新每个状态的值来缩放。</p>
 
 <p>在语言模型的情况下，我们实际上放弃了关于旧主题的性别的信息并添加新信息，正如我们在前面的步骤中所做的那样。</p>
 
@@ -255,7 +255,7 @@
 
 <p>对于语言模型示例，由于它只是看到一个主题，它可能想要输出与动词相关的信息，以防接下来会发生什么。 例如，它可能输出主语是单数还是复数，以便我们知道动词应该与什么形式共轭，如果接下来的话。</p>
 
-<p><img src="/quBlogHexo/image/lstm7.png" /></p>
+<img src="/quBlogHexo/posts/63321/lstm7.png" class="">
 
 <h2 id="variants-on-long-short-term-memory">Variants on Long Short Term Memory</h2>
 
@@ -263,13 +263,13 @@
 
 <p>由Gers＆Schmidhuber（2000）引入的一种流行的LSTM变体是添加“窥视孔连接”。这意味着我们让栅极层看到细胞状态。</p>
 
-<p><img src="/quBlogHexo/image/lstm8.png" /></p>
+<img src="/quBlogHexo/posts/63321/lstm8.png" class="">
 
 <p>上面的图表为所有门增加了窥视孔，但许多论文会给一些窥视孔而不是其他的。</p>
 
 <p>另一种变化是使用耦合的遗忘和输入门。 我们不是单独决定忘记什么以及应该添加新信息，而是共同做出这些决定。 我们只会忘记当我们要在其位置输入内容时。 当我们忘记旧事物时，我们只向状态输入新值。</p>
 
-<p><img src="/quBlogHexo/image/lstm9.png" /></p>
+<img src="/quBlogHexo/posts/63321/lstm9.png" class="">
 
 <p>LSTM稍微有点戏剧性的变化是由Cho等人引入的门控循环单元（GRU）。（2014）。 它将遗忘和输入门组合成一个“更新门”。它还合并了单元状态和隐藏状态，并进行了一些其他更改。 由此产生的模型比标准LSTM模型简单，并且越来越受欢迎。</p>
 
