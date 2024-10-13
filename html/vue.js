@@ -1,3 +1,4 @@
+
 let vm = new Vue({
   el: '#app',
   data() {
@@ -21,14 +22,6 @@ let vm = new Vue({
         output: 0
       },
       rules: { input: [{ validator: inputvalidatePass, trigger: 'blur' }] },
-      borderTopLeftRadius: '30% 30%',
-      borderTopRightRadius: '70% 30%',
-      borderBottomRightRadius: '70% 70%',
-      borderBottomLeftRadius: '30% 70%',
-      value1: 30,
-      value2: 70,
-      value3: 70,
-      value4: 30
     }
   },
   mounted: function () { },
@@ -54,37 +47,5 @@ let vm = new Vue({
         }
       })
     },
-    handleTop(value) {
-      var _borderTopLeftRadius = this.$refs.middle.style.borderTopLeftRadius.split(' ')
-      var _borderTopRightRadius = this.$refs.middle.style.borderTopRightRadius.split(' ')
-      _borderTopLeftRadius[0] = value.toString() + '%'
-      _borderTopRightRadius[0] = (100 - value).toString() + '%'
-      this.borderTopLeftRadius = _borderTopLeftRadius.join(' ')
-      this.borderTopRightRadius = _borderTopRightRadius.join(' ')
-    },
-    handleLeft(value) {
-      var _borderTopLeftRadius = this.$refs.middle.style.borderTopLeftRadius.split(' ')
-      var _borderBottomLeftRadius = this.$refs.middle.style.borderBottomLeftRadius.split(' ')
-      _borderTopLeftRadius[1] = (100 - value).toString() + '%'
-      _borderBottomLeftRadius[1] = value.toString() + '%'
-      this.borderTopLeftRadius = _borderTopLeftRadius.join(' ')
-      this.borderBottomLeftRadius = _borderBottomLeftRadius.join(' ')
-    },
-    handleRight(value) {
-      var _borderTopRightRadius = this.$refs.middle.style.borderTopRightRadius.split(' ')
-      var _borderBottomRightRadius = this.$refs.middle.style.borderBottomRightRadius.split(' ')
-      _borderTopRightRadius[1] = (100 - value).toString() + '%'
-      _borderBottomRightRadius[1] = value.toString() + '%'
-      this.borderTopRightRadius = _borderTopRightRadius.join(' ')
-      this.borderBottomRightRadius = _borderBottomRightRadius.join(' ')
-    },
-    handleBottom(value) {
-      var _borderBottomRightRadius = this.$refs.middle.style.borderBottomRightRadius.split(' ')
-      var _borderBottomLeftRadius = this.$refs.middle.style.borderBottomLeftRadius.split(' ')
-      _borderBottomLeftRadius[0] = value.toString() + '%'
-      _borderBottomRightRadius[0] = (100 - value).toString() + '%'
-      this.borderBottomRightRadius = _borderBottomRightRadius.join(' ')
-      this.borderBottomLeftRadius = _borderBottomLeftRadius.join(' ')
-    }
   }
 })
