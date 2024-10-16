@@ -1,0 +1,37 @@
+
+.bordermain {
+  padding: 20px 0px 20px 0px;
+  width: 100%;
+}
+.top {
+  width: 200px;
+}
+.left {
+  width: 200px;
+  height: 200px;
+}
+.left.is-vertical .el-slider__runway {
+  margin: 0 0 0 200px;
+}
+.middle {
+  width: 200px;
+  height: 200px;
+  border-top-left-radius: 30% 30%;
+  border-top-right-radius: 70% 30%;
+  border-bottom-right-radius: 70% 70%;
+  border-bottom-left-radius: 30% 70%;
+  background: #55b9f3;
+}
+.right {
+  width: 200px;
+  height: 200px;
+}
+.right.is-vertical .el-slider__runway {
+  margin: 0 0 0 0px;
+}
+.bottom {
+  width: 200px;
+}
+.el-slider__bar {
+  background-color: #e4e7ed;
+}

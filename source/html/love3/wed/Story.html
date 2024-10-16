@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>爱您</title>
+  <link rel="stylesheet" href="./main.css">
+
+  <style>
+    .StyledTitle {
+      font-family: "SP-F";
+      font-weight: 800;
+      z-index: 998;
+      width: 100%;
+      text-align: center;
+      font-size: 40px;
+      margin: 0.4rem 0;
+      color: #ff4545;
+      font-weight: 800;
+    }
+
+    .StyledTitle::after {
+      content: "";
+      display: block;
+      background: url("./title.bg.png");
+      background-size: 50%;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 40px;
+      width: 100%;
+      margin-top: 10px;
+    }
+    .StyledWrapper {
+      width: 100%;
+      background-color: #eee;
+      padding: 0.3rem 0;
+    }
+
+    .tl {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .items {
+      overflow-y: scroll;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.4rem;
+    }
+
+    .content {
+      position: relative;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid #eef;
+      padding: 0.2rem;
+      border-radius: 10px;
+      width: 400px;
+    }
+
+    .title {
+      font-size: 30px;
+    }
+
+    .date {
+      margin: 0.1rem 0;
+      font-style: oblique;
+      color: #666;
+    }
+
+    .desc {
+      overflow: scroll;
+      line-height: 1.5;
+      margin-top: 0.12rem;
+      font-size: 15px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    span {
+      margin-bottom: 0.1rem;
+    }
+
+
+    .item::nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .heart {
+      margin: 0 0.2rem;
+      font-size: 0.3rem;
+      animation-direction: alternate;
+      animation-delay: inherit;
+    }
+
+    .pic {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+
+    img {
+      z-index: 8;
+      border-radius: 50%;
+      border: 3px solid #999;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="StyledWrapper">
+    <div class="StyledTitle">我们的故事</div>
+    <div class="tl">
+      <ul class="items" :key="index">
+        <li class="item">
+          <div class="pic">
+            <img src="https://image.baidu.com/search/down?url=https://wx3.sinaimg.cn/mw690/9af5bf0dly1hgxaespjsuj20k00zk4nw.jpg" alt="picture" />
+          </div>
+          <i class="heart">💓</i>
+          <div class="content">
+            <h4 class="title">相遇：幸运施了魔法~</h4>
+            <time class="date">2016.10.06</time>
+            <p class="desc">
+              <span>2016年研究生开学，我在新生报到处发现了你。</span>
+              <span>那天你一袭白衣，美丽的长发，楚楚动人~</span>
+              <span>第一次见面就给了我心动的感觉。</span></p>
+          </div>
+        </li>
+        <li class="item">
+          <div class="pic">
+            <img src="https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/mw690/9af5bf0dly1hgxaf1mprxj22o03k07wj.jpg" alt="picture" />
+          </div>
+          <i class="heart">💓</i>
+          <div class="content">
+            <h4 class="title">相知：爱情中的模样~</h4>
+            <time class="date">2016.11.18</time>
+            <p class="desc">
+              <span>丘比特之箭射中了我们，空气都是甜甜的玉米味儿。</span>
+              <span>我们一起生活后，当然也免不了生活的摩擦。</span>
+              <span>我偏理性，她偏感性。</span>
+              <span>我是个慢性子，她是个急脾气。</span>
+              <span>我生气起来不爱说话，她生气起来爱飙狠话。</span>
+              <span>好在每次吵架我们都能冷静下来及时复盘，并学着去表达自己的感受，然后互相调整。</span>
+              <span>好的亲密关系是相处磨合出来的，我们愿意为了彼此去付出爱与精力，并时刻感恩。</span></p>
+          </div>
+        </li>
+        <li class="item">
+          <div class="pic">
+            <img src="https://image.baidu.com/search/down?url=https://wx3.sinaimg.cn/mw690/9af5bf0dly1hgxafi9n0pj21qg2lox6q.jpg" alt="picture" />
+          </div>
+          <i class="heart">💓</i>
+          <div class="content">
+            <h4 class="title">相守：心安即是归处~</h4>
+            <time class="date">2022.05.27</time>
+            <p class="desc">
+              <span>2022年5月27日，我们领证了！</span>
+              <span>只有那5分钟的紧张激动，很快就恢复平静。</span>
+              <span>可能在我心里，我们早就结婚了，这已然成为我们的日常生活。</span>
+              <span>我们以后将更珍惜彼此，小心呵护这份难得的感情~ 有福同享、有难同当，齐心协力、共同为我们的美好未来努力！</span></p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script>
+  </script>
+</body>
+
+</html>

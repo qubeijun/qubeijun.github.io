@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>爱您</title>
+  <link rel="stylesheet" href="./main.css">
+
+  <style>
+    .StyledTitle {
+      font-family: "SP-F";
+      font-weight: 800;
+      z-index: 998;
+      width: 100%;
+      text-align: center;
+      font-size: 40px;
+      margin: 0.4rem 0;
+      color: #ff4545;
+      font-weight: 800;
+    }
+
+    .StyledTitle::after {
+      content: "";
+      display: block;
+      background: url("./title.bg.png");
+      background-size: 50%;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 40px;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .StyledWrapper {
+      width: 100%;
+      background-color: #fff;
+      padding: 30px 0;
+    }
+
+    .cp {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @media screen and (max-width: 414px) {
+        flex-direction: column;
+        margin: 0;
+      }
+    }
+
+    .profile {
+      color: #222;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-right: 40px;
+    }
+
+    .pic {
+      width: 280px;
+      height: 280px;
+      background-repeat: no-repeat;
+      background-size: 80%, 100%;
+      background-position: center;
+      overflow: hidden;
+    }
+
+    .pic.boy {
+      background-image: url("https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/mw690/9af5bf0dly1hgxb6zfzlyj23uw2kle81.jpg"),
+        url("./frame.png");
+      background-size: 75%, 100%;
+    }
+
+    .pic.girl {
+      background-image: url("https://image.baidu.com/search/down?url=https://wx1.sinaimg.cn/mw690/9af5bf0dly1hgxb705okvj23uw2klb29.jpg"),
+        url("./frame.png");
+      background-size: 75%, 100%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .name1 {
+      font-family: "SERIF";
+      font-size: 40px;
+      padding: 20px 0;
+      margin: 20px 0;
+    }
+
+    .intro {
+      font-size: 12px;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="StyledWrapper">
+    <div class="StyledTitle">新郎 · 新娘</div>
+    <div class="cp">
+      <div class="profile">
+        <div class="pic girl">
+          <img src="./frame.png" alt="man" />
+        </div>
+        <div class="name1">金斯文👰🏻</div>
+        <div class="intro">
+          我有三样东西不可或缺：水，空气，以及左面那个男人
+        </div>
+      </div>
+      <div class="profile">
+        <div class="pic boy">
+          <img src="./frame.png" alt="man" />
+        </div>
+        <div class="name1">渠北浚🤵🏻</div>
+        <div class="intro">
+          我有三样东西不可或缺：水，空气，以及右面那个女人
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+  </script>
+</body>
+
+</html>
