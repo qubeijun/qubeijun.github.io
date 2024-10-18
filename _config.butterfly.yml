@@ -22,16 +22,17 @@ menu:
   标签: /tags/ || fas fa-tags
   分类: /categories/ || fas fa-folder-open
   图库: /galleryGroup/ || fa-solid fa-image
-  友链: /link/ || fas fa-link
   后院||fas fa-list:
     个人日记: /dairy/ || fa-solid fa-book
     父亲往事: /father/ || fa-solid fa-backward
     儿子的信: /son/ || fa-solid fa-envelope
-  关于: /about/ || fa-fw fas fa-comment-dots
   爱情|| fas fa-heart:
     爱情1: /html/love1/love1.html || fas fa-heart
     爱情2: /html/love2/love2.html || fas fa-heart
     爱情3: /html/love3/love3.html || fas fa-heart
+  关于: /about/ || fa-fw fas fa-comment-dots
+  友链: /link/ || fas fa-link
+  开往: https://www.travellings.cn/go.html || fa-solid fa-train-subway
 
 # --------------------------------------
 # Code Blocks Settings

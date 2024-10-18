@@ -3,7 +3,9 @@ title: 100DAYS
 author: qubeijun
 abbrlink: 20564
 date: 2024-10-11 16:53:34
-tags:
+tags: 小组件
+description: 100天100个小程序
+categories: 技术
 ---
 
 <div id="app">

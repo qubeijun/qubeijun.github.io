@@ -5,7 +5,7 @@ abbrlink: 63116
 tags:
   - grafana
 categories:
-  - grafana
+  - 技术
 description: 基于grafana的监控部署
 toc_number: false
 date: 2023-04-06 17:03:00

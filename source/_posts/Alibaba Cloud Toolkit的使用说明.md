@@ -3,8 +3,8 @@ title: Alibaba Cloud Toolkit的使用说明
 tags:
   - java
   - 一键部署
-  - cloud toolkit
-categories: tool
+  - Alibaba Cloud Toolkit
+categories: 技术
 description: Alibaba Cloud Toolkit（Eclipse插件，后文简称Cloud Toolkit）是阿里云针对IDE平台为开发者提供的一款插件，用于帮助开发者高效开发并部署适合在云端运行的应用。
 toc_number: false
 abbrlink: 2379
