@@ -300,7 +300,7 @@ aside:
       link: https://github.com/qubeijun
   card_announcement:
     enable: true
-    content: 喜欢瞎折腾的一个人 <div style='text-align:center'><img height='150' width='150' src="/image/wechat.jpg"/><img height='150' width='150' src="/image/douyin.jpg"/></div>
+    content: 喜欢瞎折腾的一个人 <div style='text-align:center'><img height='150' width='150' src="/image/wechat.jpg"/><img height='150' width='150' src="/image/douyin.jpg"/><img height='150' width='150' src="/image/beikebiaoqing.png"/></div>
   card_recent_post:
     enable: false
     # If set 0 will show all
