@@ -15,11 +15,7 @@ function mapChart () {
   let script = document.createElement("script")
   // let paramUrl = '&start_date=' + start_date + '&end_date=' + end_date + '&metrics=' + metrics + '&method=visit/district/a'; // 更换请求地址
   let paramUrl = '&start_date=' + start_date + '&end_date=' + end_date + '&metrics=' + metrics + '&method=overview/getDistrictRpt';
-  fetch(dataUrl + paramUrl,{
-    headers: {
-      'Origin': 'https://qubeijun.github.io/' // 设置请求的来源
-    }
-  }).then(data => data.json()).then(data => {
+  fetch(dataUrl + paramUrl).then(data => data.json()).then(data => {
     let mapName = data.result.items[0]
     let mapValue = data.result.items[1]
     let mapArr = []
