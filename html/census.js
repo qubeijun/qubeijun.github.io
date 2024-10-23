@@ -257,7 +257,6 @@ function calChart() {
       if (i > 0) {
         let pre = new Date(data[i - 1].x.replace(/-/g, "/"));
         let tmp = new Date(data[i].x.replace(/-/g, "/"));
-        console.log(tmp.getTime(), pre.getTime())
         if (tmp.getTime() - pre.getTime() != 86400 * 1000)
           for (let k = 1; k < (tmp.getTime() - pre.getTime()) / (86400 * 1000); k++) {
             tmp = new Date(pre.getTime() + 86400 * 1000 * k);
@@ -269,7 +268,6 @@ function calChart() {
       total += data[i].y;
     }
     if (calArr[calArr.length - 1][0] != filterTime(now)) calArr.push([filterTime(now), 0]);
-    console.log(calArr)
     for (let i = calArr.length - 1; i >= calArr.length - 7; i--) {
       if (i < 0) {
         break
@@ -377,12 +375,7 @@ function mapChart() {
     let maxValue = 0;
     for (let i = 0; i < data.length; i++) {
       maxValue = data[i].y > maxValue ? data[i].y : maxValue;
-      mapArr.push({ name: '中国', value: data[i].y });
-    }
-    for (let key in country) {
-      if (country.hasOwnProperty(key)) {
-        mapArr.push({ name: country[key], value: 0 });
-      }
+      mapArr.push({ name: country[data[i].x], value: data[i].y });
     }
     let mapArrJson = JSON.stringify(mapArr);
     console.log(mapArrJson)
