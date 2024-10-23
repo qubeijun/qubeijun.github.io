@@ -858,6 +858,13 @@
   </url>
   
   <url>
+    <loc>https://qubeijun.github.io/tags/dojo/</loc>
+    <lastmod>2024-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://qubeijun.github.io/tags/angular2/</loc>
     <lastmod>2024-10-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -865,7 +872,7 @@
   </url>
   
   <url>
-    <loc>https://qubeijun.github.io/tags/dojo/</loc>
+    <loc>https://qubeijun.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
     <lastmod>2024-10-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -894,13 +901,6 @@
   
   <url>
     <loc>https://qubeijun.github.io/tags/cron/</loc>
-    <lastmod>2024-10-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://qubeijun.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
     <lastmod>2024-10-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -942,14 +942,14 @@
   </url>
   
   <url>
-    <loc>https://qubeijun.github.io/tags/grafana/</loc>
+    <loc>https://qubeijun.github.io/tags/%E7%88%AC%E8%99%AB/</loc>
     <lastmod>2024-10-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://qubeijun.github.io/tags/%E7%88%AC%E8%99%AB/</loc>
+    <loc>https://qubeijun.github.io/tags/grafana/</loc>
     <lastmod>2024-10-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1033,13 +1033,6 @@
   </url>
   
   <url>
-    <loc>https://qubeijun.github.io/tags/logging/</loc>
-    <lastmod>2024-10-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://qubeijun.github.io/tags/json/</loc>
     <lastmod>2024-10-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -1062,6 +1055,13 @@
   
   <url>
     <loc>https://qubeijun.github.io/tags/%E9%95%9C%E5%83%8F/</loc>
+    <lastmod>2024-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://qubeijun.github.io/tags/logging/</loc>
     <lastmod>2024-10-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
