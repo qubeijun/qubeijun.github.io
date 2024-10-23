@@ -31,6 +31,7 @@ menu:
     爱情2: /html/love2/love2.html || fas fa-heart
     爱情3: /html/love3/love3.html || fas fa-heart
   关于: /about/ || fa-fw fas fa-comment-dots
+  统计: /census/ || fa-fw fa-solid fa-chart-line
   友链: /link/ || fas fa-link
   开往: https://www.travellings.cn/go.html || fa-solid fa-train-subway
 
@@ -818,7 +819,7 @@ beautify:
 font:
   global_font_size:
   code_font_size:
-  font_family:
+  font_family: LXGW WenKai,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif
   code_font_family:
 
 # Font settings for the site title and site subtitle
@@ -1041,8 +1042,13 @@ inject:
     - <script src="/html/100days/colorcycle.js"></script>
     - <script src="/html/100days/christmaslights.js"></script>
     - <script src="/html/100days/border.js"></script>
+    - <script src="/html/census.js"></script>
+    
     - <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    - <script src="https://npm.elemecdn.com/echarts@4.9.0/dist/echarts.min.js"></script>
+    - <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+    - <script src="https://cdn.jsdelivr.net/npm/echarts@4.7.0/map/js/world.js"></script>
+
+    - <script defer src="https://umami.qubeijun.cn/script.js" data-website-id="ff95fa55-9a47-4050-aaf4-b2b626797bfe"></script>
   bottom:
     # - <script src="xxxx"></script>
     - <script src="/html/vue.js"></script>  

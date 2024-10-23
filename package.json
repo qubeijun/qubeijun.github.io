@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@renbaoshuo/markdown-it-katex": "^2.0.2",
-    "cheerio": "^1.0.0",
+    "@umami/api-client": "^0.76.0",
     "hexo": "^7.3.0",
     "hexo-abbrlink": "^2.2.1",
     "hexo-admin": "^2.3.0",
