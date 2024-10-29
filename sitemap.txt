@@ -1,3 +1,5 @@
+https://qubeijun.github.io/article/index.html
+https://qubeijun.github.io/census/index.html
 https://qubeijun.github.io/posts/37065.html
 https://qubeijun.github.io/posts/20940.html
 https://qubeijun.github.io/posts/27307.html
@@ -17,8 +19,6 @@ https://qubeijun.github.io/posts/9915.html
 https://qubeijun.github.io/posts/6446.html
 https://qubeijun.github.io/posts/33091.html
 https://qubeijun.github.io/posts/53308.html
-https://qubeijun.github.io/article/index.html
-https://qubeijun.github.io/census/index.html
 https://qubeijun.github.io/about/index.html
 https://qubeijun.github.io/posts/37199.html
 https://qubeijun.github.io/posts/37247.html
@@ -101,9 +101,9 @@ https://qubeijun.github.io/tags/mysql/
 https://qubeijun.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%87%E4%BB%BD/
 https://qubeijun.github.io/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/
 https://qubeijun.github.io/tags/cron/
-https://qubeijun.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/
 https://qubeijun.github.io/tags/solr/
 https://qubeijun.github.io/tags/python/
+https://qubeijun.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/
 https://qubeijun.github.io/tags/vue/
 https://qubeijun.github.io/tags/%E4%B8%AA%E4%BA%BA%E7%94%9F%E6%B4%BB/
 https://qubeijun.github.io/tags/linux/
@@ -121,14 +121,14 @@ https://qubeijun.github.io/tags/GloVe/
 https://qubeijun.github.io/tags/gwy/
 https://qubeijun.github.io/tags/%E8%BD%AF%E8%80%83/
 https://qubeijun.github.io/tags/logging/
-https://qubeijun.github.io/tags/pip/
-https://qubeijun.github.io/tags/%E9%95%9C%E5%83%8F/
 https://qubeijun.github.io/tags/json/
 https://qubeijun.github.io/tags/%E8%AF%BB%E5%86%99%E6%96%87%E4%BB%B6/
-https://qubeijun.github.io/tags/%E5%BE%AE%E4%BF%A1%E6%96%87%E7%AB%A0/
-https://qubeijun.github.io/tags/post/
 https://qubeijun.github.io/tags/selenium/
 https://qubeijun.github.io/tags/%E6%90%9C%E7%8B%97%E5%BE%AE%E4%BF%A1/
+https://qubeijun.github.io/tags/pip/
+https://qubeijun.github.io/tags/%E9%95%9C%E5%83%8F/
+https://qubeijun.github.io/tags/%E5%BE%AE%E4%BF%A1%E6%96%87%E7%AB%A0/
+https://qubeijun.github.io/tags/post/
 https://qubeijun.github.io/tags/excel/
 https://qubeijun.github.io/tags/pymysql/
 https://qubeijun.github.io/tags/%E6%96%87%E4%BB%B6%E5%90%8D/
