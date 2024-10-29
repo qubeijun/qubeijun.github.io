@@ -506,7 +506,7 @@ function sourcesChart() {
   }).then(data => data.json()).then(data => {
     for (let i = 0; i < data.length; i++) {
       var ref = data[i].x;
-      if (ref == "" || ref.includes("foolishfox.cn")) direct += data[i].y;
+      if (ref == "" || ref.includes("qubeijun")) direct += data[i].y;
       else if (ref.includes("bing.com")) bing += data[i].y;
       else if (ref.includes("baidu.com")) baidu += data[i].y;
       else if (ref.includes("google.com")) google += data[i].y;
