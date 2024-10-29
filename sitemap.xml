@@ -867,14 +867,14 @@
   </url>
   
   <url>
-    <loc>https://qubeijun.github.io/tags/angular2/</loc>
+    <loc>https://qubeijun.github.io/tags/dojo/</loc>
     <lastmod>2024-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://qubeijun.github.io/tags/dojo/</loc>
+    <loc>https://qubeijun.github.io/tags/angular2/</loc>
     <lastmod>2024-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -937,20 +937,6 @@
   </url>
   
   <url>
-    <loc>https://qubeijun.github.io/tags/%E4%B8%AA%E4%BA%BA%E7%94%9F%E6%B4%BB/</loc>
-    <lastmod>2024-10-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://qubeijun.github.io/tags/linux/</loc>
-    <lastmod>2024-10-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://qubeijun.github.io/tags/grafana/</loc>
     <lastmod>2024-10-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -965,6 +951,13 @@
   </url>
   
   <url>
+    <loc>https://qubeijun.github.io/tags/%E4%B8%AA%E4%BA%BA%E7%94%9F%E6%B4%BB/</loc>
+    <lastmod>2024-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://qubeijun.github.io/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</loc>
     <lastmod>2024-10-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -973,13 +966,6 @@
   
   <url>
     <loc>https://qubeijun.github.io/tags/%E7%BB%B4%E5%9F%BA%E7%99%BE%E7%A7%91/</loc>
-    <lastmod>2024-10-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://qubeijun.github.io/tags/hanlp/</loc>
     <lastmod>2024-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1014,6 +1000,13 @@
   </url>
   
   <url>
+    <loc>https://qubeijun.github.io/tags/hanlp/</loc>
+    <lastmod>2024-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://qubeijun.github.io/tags/rnn/</loc>
     <lastmod>2024-10-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -1022,13 +1015,6 @@
   
   <url>
     <loc>https://qubeijun.github.io/tags/GloVe/</loc>
-    <lastmod>2024-10-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://qubeijun.github.io/tags/logging/</loc>
     <lastmod>2024-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1049,14 +1035,28 @@
   </url>
   
   <url>
-    <loc>https://qubeijun.github.io/tags/pip/</loc>
+    <loc>https://qubeijun.github.io/tags/linux/</loc>
     <lastmod>2024-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://qubeijun.github.io/tags/%E9%95%9C%E5%83%8F/</loc>
+    <loc>https://qubeijun.github.io/tags/logging/</loc>
+    <lastmod>2024-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://qubeijun.github.io/tags/selenium/</loc>
+    <lastmod>2024-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://qubeijun.github.io/tags/%E6%90%9C%E7%8B%97%E5%BE%AE%E4%BF%A1/</loc>
     <lastmod>2024-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1077,14 +1077,14 @@
   </url>
   
   <url>
-    <loc>https://qubeijun.github.io/tags/selenium/</loc>
+    <loc>https://qubeijun.github.io/tags/pip/</loc>
     <lastmod>2024-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://qubeijun.github.io/tags/%E6%90%9C%E7%8B%97%E5%BE%AE%E4%BF%A1/</loc>
+    <loc>https://qubeijun.github.io/tags/%E9%95%9C%E5%83%8F/</loc>
     <lastmod>2024-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1170,13 +1170,6 @@
   </url>
   
   <url>
-    <loc>https://qubeijun.github.io/categories/java/</loc>
-    <lastmod>2024-10-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://qubeijun.github.io/categories/gwy/</loc>
     <lastmod>2024-10-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -1185,6 +1178,13 @@
   
   <url>
     <loc>https://qubeijun.github.io/categories/%E8%BD%AF%E8%80%83/</loc>
+    <lastmod>2024-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://qubeijun.github.io/categories/java/</loc>
     <lastmod>2024-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

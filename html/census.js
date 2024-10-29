@@ -513,7 +513,7 @@ function sourcesChart() {
       else if (ref.includes("sogou.com") || ref.includes("sm.cn") || ref.includes("toutiao.com") || ref.includes("so.com"))
         search += data[i].y
       else if (ref.includes("github.com")) github += data[i].y;
-      else if (ref.includes("travellings") || ref.includes("foreverblog")) travel += data[i].y;
+      else if (ref.includes("travellings") || ref.includes("foreverblog") || ref.includes("storeweb")) travel += data[i].y;
       else link += data[i].y
     }
 
