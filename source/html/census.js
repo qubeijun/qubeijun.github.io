@@ -506,14 +506,14 @@ function sourcesChart() {
   }).then(data => data.json()).then(data => {
     for (let i = 0; i < data.length; i++) {
       var ref = data[i].x;
-      if (ref == "" || ref.includes("foolishfox.cn")) direct += data[i].y;
+      if (ref == "" || ref.includes("qubeijun")) direct += data[i].y;
       else if (ref.includes("bing.com")) bing += data[i].y;
       else if (ref.includes("baidu.com")) baidu += data[i].y;
       else if (ref.includes("google.com")) google += data[i].y;
       else if (ref.includes("sogou.com") || ref.includes("sm.cn") || ref.includes("toutiao.com") || ref.includes("so.com"))
         search += data[i].y
       else if (ref.includes("github.com")) github += data[i].y;
-      else if (ref.includes("travellings") || ref.includes("foreverblog")) travel += data[i].y;
+      else if (ref.includes("travellings") || ref.includes("foreverblog") || ref.includes("storeweb")) travel += data[i].y;
       else link += data[i].y
     }
 

@@ -1035,6 +1035,7 @@ inject:
     - <meta name="msvalidate.01" content="B5E7346247739FA3DE6189AF7FA7D46C" />
     # - <link rel="stylesheet" href="/xxx.css">
     - <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    - <link rel="stylesheet" href="https://static.zeoseven.com/cn/292/main/result.css">
     - <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     - <script src="https://unpkg.com/element-ui/lib/index.js"></script>
 
