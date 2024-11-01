@@ -6,7 +6,7 @@
   <link href="https://qubeijun.github.io/atom.xml" rel="self"/>
   
   <link href="https://qubeijun.github.io/"/>
-  <updated>2024-10-31T16:37:24.607Z</updated>
+  <updated>2024-11-01T02:04:37.890Z</updated>
   <id>https://qubeijun.github.io/</id>
   
   <author>
@@ -21,17 +21,10 @@
     <link href="https://qubeijun.github.io/posts/61069.html"/>
     <id>https://qubeijun.github.io/posts/61069.html</id>
     <published>2024-10-31T14:14:59.000Z</published>
-    <updated>2024-10-31T16:37:24.607Z</updated>
+    <updated>2024-11-01T02:04:37.890Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;第一节-带入排除法&quot;&gt;第一节 带入排除法&lt;/h2&gt;
-&lt;div class=&quot;note purple icon-padding flat&quot;&gt;&lt;i class=&quot;note-icon fas</summary>
-        
-      
+    <summary type="html">新版数量关系总结（以后以这版为准）</summary>
     
     
     
@@ -85,10 +78,10 @@
     <link href="https://qubeijun.github.io/posts/37065.html"/>
     <id>https://qubeijun.github.io/posts/37065.html</id>
     <published>2024-10-12T05:31:05.000Z</published>
-    <updated>2024-10-30T13:18:32.518Z</updated>
+    <updated>2024-11-01T01:03:19.211Z</updated>
     
     
-    <summary type="html">小贝壳成长时期的疫苗计划</summary>
+    <summary type="html">我的小贝壳0-6周岁的疫苗计划</summary>
     
     
     
@@ -104,10 +97,10 @@
     <link href="https://qubeijun.github.io/posts/20564.html"/>
     <id>https://qubeijun.github.io/posts/20564.html</id>
     <published>2024-10-11T08:53:34.000Z</published>
-    <updated>2024-10-21T06:35:13.842Z</updated>
+    <updated>2024-11-01T01:03:47.147Z</updated>
     
     
-    <summary type="html">100天100个小程序</summary>
+    <summary type="html">100天100个组件</summary>
     
     
     
@@ -342,10 +335,10 @@
     <link href="https://qubeijun.github.io/posts/27020.html"/>
     <id>https://qubeijun.github.io/posts/27020.html</id>
     <published>2024-03-24T05:33:31.000Z</published>
-    <updated>2024-10-10T14:50:30.593Z</updated>
+    <updated>2024-11-01T01:04:14.027Z</updated>
     
     
-    <summary type="html">图形推理</summary>
+    <summary type="html">图形推理总结</summary>
     
     
     
@@ -361,7 +354,7 @@
     <link href="https://qubeijun.github.io/posts/23096.html"/>
     <id>https://qubeijun.github.io/posts/23096.html</id>
     <published>2024-03-13T05:33:22.000Z</published>
-    <updated>2024-10-31T15:03:05.754Z</updated>
+    <updated>2024-11-01T01:04:35.261Z</updated>
     
     
     <summary type="html">数学运算</summary>
@@ -1030,11 +1023,11 @@
     
     <category term="cnn" scheme="https://qubeijun.github.io/tags/cnn/"/>
     
+    <category term="分类" scheme="https://qubeijun.github.io/tags/%E5%88%86%E7%B1%BB/"/>
+    
     <category term="rnn" scheme="https://qubeijun.github.io/tags/rnn/"/>
     
     <category term="GloVe" scheme="https://qubeijun.github.io/tags/GloVe/"/>
-    
-    <category term="分类" scheme="https://qubeijun.github.io/tags/%E5%88%86%E7%B1%BB/"/>
     
   </entry>
   
@@ -1183,9 +1176,9 @@
     
     <category term="json" scheme="https://qubeijun.github.io/tags/json/"/>
     
-    <category term="微信文章" scheme="https://qubeijun.github.io/tags/%E5%BE%AE%E4%BF%A1%E6%96%87%E7%AB%A0/"/>
-    
     <category term="excel" scheme="https://qubeijun.github.io/tags/excel/"/>
+    
+    <category term="微信文章" scheme="https://qubeijun.github.io/tags/%E5%BE%AE%E4%BF%A1%E6%96%87%E7%AB%A0/"/>
     
   </entry>
   
