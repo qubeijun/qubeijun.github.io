@@ -8,7 +8,7 @@ comments: true
 评论提交格式
 name: qubeijun
 link: https://qubeijun.github.io/
-avatar: https://qubeijun.github.io/image/avatar.jpg
+avatar: https://qubeijun.github.io/image/quj.png
 descr: 折腾
 {% flink %}
 - class_name: 友情鏈接
@@ -16,7 +16,7 @@ descr: 折腾
   link_list:
     - name: qubeijun
       link: https://qubeijun.github.io/
-      avatar: https://qubeijun.github.io/image/avatar.jpg
+      avatar: https://qubeijun.github.io/image/quj.png
       descr: 折腾
     - name: 西瓜撞地球
       link: https://www.bio-w.cn/
