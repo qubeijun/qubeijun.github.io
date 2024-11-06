@@ -948,14 +948,14 @@
   </url>
   
   <url>
-    <loc>https://qubeijun.github.io/tags/%E4%B8%AA%E4%BA%BA%E7%94%9F%E6%B4%BB/</loc>
+    <loc>https://qubeijun.github.io/tags/vue/</loc>
     <lastmod>2024-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://qubeijun.github.io/tags/vue/</loc>
+    <loc>https://qubeijun.github.io/tags/%E4%B8%AA%E4%BA%BA%E7%94%9F%E6%B4%BB/</loc>
     <lastmod>2024-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1004,6 +1004,20 @@
   </url>
   
   <url>
+    <loc>https://qubeijun.github.io/tags/RNN/</loc>
+    <lastmod>2024-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://qubeijun.github.io/tags/LSTM/</loc>
+    <lastmod>2024-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://qubeijun.github.io/tags/cnn/</loc>
     <lastmod>2024-11-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -1026,20 +1040,6 @@
   
   <url>
     <loc>https://qubeijun.github.io/tags/GloVe/</loc>
-    <lastmod>2024-11-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://qubeijun.github.io/tags/RNN/</loc>
-    <lastmod>2024-11-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://qubeijun.github.io/tags/LSTM/</loc>
     <lastmod>2024-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1123,14 +1123,14 @@
   </url>
   
   <url>
-    <loc>https://qubeijun.github.io/tags/excel/</loc>
+    <loc>https://qubeijun.github.io/tags/pymysql/</loc>
     <lastmod>2024-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://qubeijun.github.io/tags/pymysql/</loc>
+    <loc>https://qubeijun.github.io/tags/excel/</loc>
     <lastmod>2024-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
