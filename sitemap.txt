@@ -125,10 +125,10 @@ https://qubeijun.github.io/tags/%E8%BD%AF%E8%80%83/
 https://qubeijun.github.io/tags/logging/
 https://qubeijun.github.io/tags/json/
 https://qubeijun.github.io/tags/%E8%AF%BB%E5%86%99%E6%96%87%E4%BB%B6/
-https://qubeijun.github.io/tags/pip/
-https://qubeijun.github.io/tags/%E9%95%9C%E5%83%8F/
 https://qubeijun.github.io/tags/selenium/
 https://qubeijun.github.io/tags/%E6%90%9C%E7%8B%97%E5%BE%AE%E4%BF%A1/
+https://qubeijun.github.io/tags/pip/
+https://qubeijun.github.io/tags/%E9%95%9C%E5%83%8F/
 https://qubeijun.github.io/tags/%E5%BE%AE%E4%BF%A1%E6%96%87%E7%AB%A0/
 https://qubeijun.github.io/tags/post/
 https://qubeijun.github.io/tags/excel/

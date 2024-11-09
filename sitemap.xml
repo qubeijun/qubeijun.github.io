@@ -1081,20 +1081,6 @@
   </url>
   
   <url>
-    <loc>https://qubeijun.github.io/tags/pip/</loc>
-    <lastmod>2024-11-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://qubeijun.github.io/tags/%E9%95%9C%E5%83%8F/</loc>
-    <lastmod>2024-11-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://qubeijun.github.io/tags/selenium/</loc>
     <lastmod>2024-11-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -1103,6 +1089,20 @@
   
   <url>
     <loc>https://qubeijun.github.io/tags/%E6%90%9C%E7%8B%97%E5%BE%AE%E4%BF%A1/</loc>
+    <lastmod>2024-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://qubeijun.github.io/tags/pip/</loc>
+    <lastmod>2024-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://qubeijun.github.io/tags/%E9%95%9C%E5%83%8F/</loc>
     <lastmod>2024-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
