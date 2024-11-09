@@ -22,4 +22,8 @@ descr: 折腾
       link: https://www.bio-w.cn/
       avatar: https://bu.dusays.com/2023/04/19/643f59048bc63.png
       descr: 我在人间贩卖彩虹
+    - name: FF
+      link: https://foolishfox.cn/
+      avatar: https://asset.foolishfox.cn/static/avatar.jpg
+      descr: foolish fox
 {% endflink %}
