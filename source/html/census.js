@@ -228,15 +228,15 @@ function filterTime(time) {
 function calChart() {
   let script = document.createElement("script");
   // 90 天版本
-  // let now = new Date();
-  // let endAt = now.getTime();
-  // let startAt = endAt - 90 * 86400 * 1000;
+  let now = new Date();
+  let endAt = now.getTime();
+  let startAt = endAt - 90 * 86400 * 1000;
 
   // 1 年版本
-  let now = new Date();
-  let date = new Date('2024-10-22 00:00:00');
-  let startAt = date.getTime() - 3600 * 24 * ((date.getDay() + 1) % 7);
-  let endAt = now.getTime();
+  // let now = new Date();
+  // let date = new Date('2024-10-22 00:00:00');
+  // let startAt = date.getTime() - 3600 * 24 * ((date.getDay() + 1) % 7);
+  // let endAt = now.getTime();
 
   var url = 'https://umami.qubeijun.cn/api/websites/ff95fa55-9a47-4050-aaf4-b2b626797bfe/pageviews'
   // API根据自己的实际更改
@@ -345,7 +345,7 @@ function calChart() {
     let style = '<style>.number{margin-top: 10px;text-align:center;width:100%;padding:10px;margin:0 auto;}.contrib-column{text-align:center;border-left:1px solid #ddd;border-top:1px solid #ddd;}.contrib-column-first{border-left:0;}.table-column{padding:10px;display:table-cell;flex:1;vertical-align:top;}.contrib-number{font-weight:400;line-height:1.3em;font-size:24px;display:block;}.left.text-muted{float:left;margin-left:9px;color:#767676;}.left.text-muted a{color:#4078c0;text-decoration:none;}.left.text-muted a:hover{text-decoration:underline;}h2.f4.text-normal.mb-3{display:none;}.float-left.text-gray{float:left;}.position-relative{width:100%;}@media screen and (max-width:650px){.contrib-column{display:none}}</style>';
     var thirty = calArr.length < 30 ? calArr[0][0] : calArr[calArr.length - 30][0]
     var seven = calArr.length < 7 ? calArr[0][0] : calArr[calArr.length - 7][0]
-    style = '<div style="display:flex;width:100%" class="number"><div class="contrib-column contrib-column-first table-column"><span class="text-muted">过去一年访问</span><span class="contrib-number">' + total + '</span><span class="text-muted">' + calArr[0][0] + '&nbsp;-&nbsp;' + calArr[calArr.length - 1][0] + '</span></div><div class="contrib-column table-column"><span class="text-muted">最近30天访问</span><span class="contrib-number">' + thisweekdatacore + '</span><span class="text-muted">' + thirty + '&nbsp;-&nbsp;' + calArr[calArr.length - 1][0] + '</span></div><div class="contrib-column table-column"><span class="text-muted">最近7天访问</span><span class="contrib-number">' + weekdatacore + '</span><span class="text-muted">' + seven + '&nbsp;-&nbsp;' + calArr[calArr.length - 1][0] + '</span></div></div>' + style;
+    style = '<div style="display:flex;width:100%" class="number"><div class="contrib-column contrib-column-first table-column"><span class="text-muted">最近90天访问</span><span class="contrib-number">' + total + '</span><span class="text-muted">' + calArr[0][0] + '&nbsp;-&nbsp;' + calArr[calArr.length - 1][0] + '</span></div><div class="contrib-column table-column"><span class="text-muted">最近30天访问</span><span class="contrib-number">' + thisweekdatacore + '</span><span class="text-muted">' + thirty + '&nbsp;-&nbsp;' + calArr[calArr.length - 1][0] + '</span></div><div class="contrib-column table-column"><span class="text-muted">最近7天访问</span><span class="contrib-number">' + weekdatacore + '</span><span class="text-muted">' + seven + '&nbsp;-&nbsp;' + calArr[calArr.length - 1][0] + '</span></div></div>' + style;
 
     document.getElementById("calendar_container").after(script);
     append_div_visitcalendar(calendar_container, style);
@@ -488,7 +488,7 @@ function sourcesChart() {
   let script = document.createElement("script");
   var link = 0, direct = 0, search = 0;
   var google = 0, baidu = 0, bing = 0;
-  var github = 0, travel = 0;
+  var github = 0, travel = 0, forever = 0, storeweb = 0;
 
   let now = new Date();
   let date1 = new Date('2024-10-22 00:00:00');
@@ -513,11 +513,13 @@ function sourcesChart() {
       else if (ref.includes("sogou.com") || ref.includes("sm.cn") || ref.includes("toutiao.com") || ref.includes("so.com"))
         search += data[i].y
       else if (ref.includes("github.com")) github += data[i].y;
-      else if (ref.includes("travellings") || ref.includes("foreverblog") || ref.includes("storeweb")) travel += data[i].y;
+      else if (ref.includes("travellings")) travel += data[i].y;
+      else if (ref.includes("foreverblog")) forever += data[i].y;
+      else if (ref.includes("storeweb")) storeweb += data[i].y;
       else link += data[i].y
     }
 
-    link += github + travel;
+    link += github + travel + forever + storeweb;
     search += baidu + google + bing;
     script.innerHTML += `
       var sourcesChart = echarts.init(document.getElementById('sources_container'), 'light');
@@ -525,7 +527,7 @@ function sourcesChart() {
           title: { text: '访问来源', x: 'center', },
           tooltip: { trigger: 'item', formatter: '{a} <br/>{b}: {c} ({d}%)' },
           legend: {
-              data: ['直达', '外链', '搜索', '百度', '谷歌', '必应', 'Github', '开往/十年之约'],
+              data: ['直达', '其他渠道', '其他搜索', '百度', '谷歌', '必应', 'Github', '开往', '十年之约', '个站商店'],
               y: 'bottom'
           },
           series: [
@@ -544,14 +546,16 @@ function sourcesChart() {
                       }
                   },
                   data: [
-                      {value: ${search - google - baidu - bing}, name: '其他', itemStyle: { color : '#008000' }},
+                      {value: ${search - google - baidu - bing}, name: '其他搜索', itemStyle: { color : '#008000' }},
                       {value: ${google}, name: '谷歌', itemStyle: { color : '#009000' }},
                       {value: ${baidu}, name: '百度', itemStyle: { color : '#00A000' }},
                       {value: ${bing}, name: '必应', itemStyle: { color : '#00B000' }},
                       {value: ${direct}, name: '直达', itemStyle: { color : '#FFDB5C' }},
                       {value: ${github}, name: 'Github', itemStyle: { color : '#10A3C7' }},
-                      {value: ${travel}, name: '开往/十年之约', itemStyle: { color : '#21B4D8' }},
-                      {value: ${link - github - travel}, name: '其他', itemStyle: { color : '#32C5E9' }}
+                      {value: ${travel}, name: '开往', itemStyle: { color : '#21B4D8' }},
+                      {value: ${forever}, name: '十年之约', itemStyle: { color : '#CE807E' }},
+                      {value: ${storeweb}, name: '个站商店', itemStyle: { color : '#FDDCF9' }},
+                      {value: ${link - github - travel - forever - storeweb}, name: '其他渠道', itemStyle: { color : '#32C5E9' }}
                   ]
               },
               {
