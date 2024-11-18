@@ -36,7 +36,7 @@ menu:
     文章统计: /article/ || fa-fw fa-solid fa-chart-line
   友链: /link/ || fas fa-link
   开往: https://www.travellings.cn/go.html || fa-solid fa-train-subway
-  虫洞: https://storeweb.cn/s/2239 || fa-solid fa-circle-dot
+  # 虫洞: https://storeweb.cn/s/2239 || fa-solid fa-circle-dot
 
 # --------------------------------------
 # Code Blocks Settings
@@ -935,7 +935,7 @@ abcjs:
 mermaid:
   enable: true
   # Write Mermaid diagrams using code blocks
-  code_write: true
+  code_write: false
   # built-in themes: default / forest / dark / neutral
   theme:
     light: default
@@ -961,7 +961,7 @@ note:
 
 # https://github.com/MoOx/pjax
 pjax:
-  enable: false
+  enable: true
   # Exclude the specified pages from pjax, such as '/music/'
   exclude:
     # - /xxxxxx/
