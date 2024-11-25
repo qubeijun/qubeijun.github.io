@@ -6,7 +6,7 @@
   <link href="https://qubeijun.github.io/atom.xml" rel="self"/>
   
   <link href="https://qubeijun.github.io/"/>
-  <updated>2024-11-23T15:47:57.882Z</updated>
+  <updated>2024-11-25T09:21:57.235Z</updated>
   <id>https://qubeijun.github.io/</id>
   
   <author>
@@ -17,11 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>公务员行测</title>
+    <link href="https://qubeijun.github.io/posts/20497.html"/>
+    <id>https://qubeijun.github.io/posts/20497.html</id>
+    <published>2024-11-25T05:49:52.000Z</published>
+    <updated>2024-11-25T09:21:57.235Z</updated>
+    
+    
+    <summary type="html">公务员行测</summary>
+    
+    
+    
+    <category term="gwy" scheme="https://qubeijun.github.io/categories/gwy/"/>
+    
+    
+    <category term="gwy" scheme="https://qubeijun.github.io/tags/gwy/"/>
+    
+  </entry>
+  
+  <entry>
     <title>判断推理</title>
     <link href="https://qubeijun.github.io/posts/862.html"/>
     <id>https://qubeijun.github.io/posts/862.html</id>
     <published>2024-11-14T14:14:59.000Z</published>
-    <updated>2024-11-23T15:47:57.882Z</updated>
+    <updated>2024-11-24T14:50:33.682Z</updated>
     
     
     <summary type="html">新版判断推理总结（以后以这版为准）</summary>
@@ -1093,11 +1112,11 @@
     
     <category term="cnn" scheme="https://qubeijun.github.io/tags/cnn/"/>
     
-    <category term="分类" scheme="https://qubeijun.github.io/tags/%E5%88%86%E7%B1%BB/"/>
-    
     <category term="rnn" scheme="https://qubeijun.github.io/tags/rnn/"/>
     
     <category term="GloVe" scheme="https://qubeijun.github.io/tags/GloVe/"/>
+    
+    <category term="分类" scheme="https://qubeijun.github.io/tags/%E5%88%86%E7%B1%BB/"/>
     
   </entry>
   
@@ -1358,11 +1377,11 @@
   </entry>
   
   <entry>
-    <title>2017年5月15日</title>
-    <link href="https://qubeijun.github.io/posts/20469.html"/>
-    <id>https://qubeijun.github.io/posts/20469.html</id>
+    <title>2017年5月16日</title>
+    <link href="https://qubeijun.github.io/posts/3061.html"/>
+    <id>https://qubeijun.github.io/posts/3061.html</id>
     <published>2017-05-15T09:00:29.000Z</published>
-    <updated>2024-11-09T14:09:01.687Z</updated>
+    <updated>2024-11-09T14:09:03.750Z</updated>
     
     
     <summary type="html">有东西被加密了, 请输入密码查看.</summary>
@@ -1377,11 +1396,11 @@
   </entry>
   
   <entry>
-    <title>2017年5月16日</title>
-    <link href="https://qubeijun.github.io/posts/3061.html"/>
-    <id>https://qubeijun.github.io/posts/3061.html</id>
+    <title>2017年5月15日</title>
+    <link href="https://qubeijun.github.io/posts/20469.html"/>
+    <id>https://qubeijun.github.io/posts/20469.html</id>
     <published>2017-05-15T09:00:29.000Z</published>
-    <updated>2024-11-09T14:09:03.750Z</updated>
+    <updated>2024-11-09T14:09:01.687Z</updated>
     
     
     <summary type="html">有东西被加密了, 请输入密码查看.</summary>
