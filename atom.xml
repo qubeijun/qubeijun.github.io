@@ -6,7 +6,7 @@
   <link href="https://qubeijun.github.io/atom.xml" rel="self"/>
   
   <link href="https://qubeijun.github.io/"/>
-  <updated>2024-12-04T00:43:05.833Z</updated>
+  <updated>2024-12-15T14:58:08.528Z</updated>
   <id>https://qubeijun.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>言语理解与表达</title>
+    <link href="https://qubeijun.github.io/posts/23097.html"/>
+    <id>https://qubeijun.github.io/posts/23097.html</id>
+    <published>2024-12-08T05:33:22.000Z</published>
+    <updated>2024-12-15T14:58:08.528Z</updated>
+    
+    
+    <summary type="html">言语理解与表达</summary>
+    
+    
+    
+    <category term="gwy" scheme="https://qubeijun.github.io/categories/gwy/"/>
+    
+    
+    <category term="gwy" scheme="https://qubeijun.github.io/tags/gwy/"/>
+    
+  </entry>
   
   <entry>
     <title>父亲往事-我儿子叫冬冬</title>
@@ -46,7 +65,7 @@
     <link href="https://qubeijun.github.io/posts/20497.html"/>
     <id>https://qubeijun.github.io/posts/20497.html</id>
     <published>2024-11-25T05:49:52.000Z</published>
-    <updated>2024-12-03T01:39:34.704Z</updated>
+    <updated>2024-12-07T14:50:15.126Z</updated>
     
     
     <summary type="html">公务员行测答题顺序及用时及答题技巧</summary>
@@ -126,6 +145,25 @@
     
     
     <summary type="html">(2022年)冬甜夫妇5.10-5.21日本蜜月行程安排</summary>
+    
+    
+    
+    <category term="个人生活" scheme="https://qubeijun.github.io/categories/%E4%B8%AA%E4%BA%BA%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="个人生活" scheme="https://qubeijun.github.io/tags/%E4%B8%AA%E4%BA%BA%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>5.1</title>
+    <link href="https://qubeijun.github.io/posts/31436.html"/>
+    <id>https://qubeijun.github.io/posts/31436.html</id>
+    <published>2024-10-18T08:50:56.000Z</published>
+    <updated>2024-12-04T07:52:42.911Z</updated>
+    
+    
+    <summary type="html">5.1</summary>
     
     
     
@@ -654,7 +692,7 @@
     <link href="https://qubeijun.github.io/posts/58595.html"/>
     <id>https://qubeijun.github.io/posts/58595.html</id>
     <published>2023-10-21T15:43:14.000Z</published>
-    <updated>2024-10-18T08:27:40.006Z</updated>
+    <updated>2024-12-11T04:32:37.153Z</updated>
     
     
     <summary type="html">软件设计师复习攻略</summary>
@@ -1288,9 +1326,9 @@
     <category term="python" scheme="https://qubeijun.github.io/categories/python/"/>
     
     
-    <category term="json" scheme="https://qubeijun.github.io/tags/json/"/>
-    
     <category term="微信文章" scheme="https://qubeijun.github.io/tags/%E5%BE%AE%E4%BF%A1%E6%96%87%E7%AB%A0/"/>
+    
+    <category term="json" scheme="https://qubeijun.github.io/tags/json/"/>
     
     <category term="excel" scheme="https://qubeijun.github.io/tags/excel/"/>
     
@@ -1402,11 +1440,11 @@
   </entry>
   
   <entry>
-    <title>2017年5月16日</title>
-    <link href="https://qubeijun.github.io/posts/3061.html"/>
-    <id>https://qubeijun.github.io/posts/3061.html</id>
+    <title>2017年5月15日</title>
+    <link href="https://qubeijun.github.io/posts/20469.html"/>
+    <id>https://qubeijun.github.io/posts/20469.html</id>
     <published>2017-05-15T09:00:29.000Z</published>
-    <updated>2024-11-09T14:09:03.750Z</updated>
+    <updated>2024-11-09T14:09:01.687Z</updated>
     
     
     <summary type="html">有东西被加密了, 请输入密码查看.</summary>
@@ -1421,11 +1459,11 @@
   </entry>
   
   <entry>
-    <title>2017年5月15日</title>
-    <link href="https://qubeijun.github.io/posts/20469.html"/>
-    <id>https://qubeijun.github.io/posts/20469.html</id>
+    <title>2017年5月16日</title>
+    <link href="https://qubeijun.github.io/posts/3061.html"/>
+    <id>https://qubeijun.github.io/posts/3061.html</id>
     <published>2017-05-15T09:00:29.000Z</published>
-    <updated>2024-11-09T14:09:01.687Z</updated>
+    <updated>2024-11-09T14:09:03.750Z</updated>
     
     
     <summary type="html">有东西被加密了, 请输入密码查看.</summary>
